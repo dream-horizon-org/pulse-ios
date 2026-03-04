@@ -1,0 +1,145 @@
+name: Publish Pulse iOS Framework
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  publish:
+    name: Tag, Release & Publish to CocoaPods
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+       startsWith(github.event.pull_request.head.ref, 'release/'))
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract version from podspec
+        run: |
+          VERSION=$(grep "spec.version" PulseKit.podspec | head -1 | sed "s/.*\"\(.*\)\"/\1/")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "::notice::Publishing version: $VERSION"
+
+      - name: Check publish status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG_EXISTS="false"
+          RELEASE_EXISTS="false"
+
+          if git tag -l | grep -q "^${VERSION}$"; then
+            TAG_EXISTS="true"
+            echo "::warning::Git tag $VERSION already exists. Will skip tag creation."
+          fi
+
+          if gh release view "$VERSION" &>/dev/null; then
+            RELEASE_EXISTS="true"
+            echo "::warning::GitHub Release $VERSION already exists. Will skip release creation."
+          fi
+
+          if [ "$TAG_EXISTS" = "true" ] && [ "$RELEASE_EXISTS" = "true" ]; then
+            echo "::notice::Tag and Release both exist. Will only attempt CocoaPods trunk push."
+          fi
+
+          echo "TAG_EXISTS=$TAG_EXISTS" >> $GITHUB_ENV
+          echo "RELEASE_EXISTS=$RELEASE_EXISTS" >> $GITHUB_ENV
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create git tag
+        if: env.TAG_EXISTS == 'false'
+        run: |
+          git tag "$VERSION"
+          git push origin "$VERSION"
+          echo "::notice::Created and pushed tag $VERSION"
+
+      - name: Create GitHub Release with zip
+        if: env.RELEASE_EXISTS == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ ! -f PulseKit.xcframework.zip ]; then
+            echo "::error::PulseKit.xcframework.zip not found in repo."
+            exit 1
+          fi
+
+          gh release create "$VERSION" \
+            PulseKit.xcframework.zip \
+            --title "PulseKit v${VERSION}" \
+            --notes "$(cat <<EOF
+          ## PulseKit v${VERSION}
+
+          ### CocoaPods
+          \`\`\`ruby
+          pod 'PulseKit', '${VERSION}'
+          \`\`\`
+
+          ### Swift Package Manager
+          \`\`\`
+          https://github.com/${{ github.repository }}.git
+          \`\`\`
+
+          ### Requirements
+          - iOS 15.1+
+          - Swift 5.10+
+          - Dynamic framework — use \`use_frameworks!\` in Podfile
+          EOF
+          )"
+          echo "::notice::Created GitHub Release $VERSION with zip"
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Setup CocoaPods trunk authentication
+        run: |
+          cat <<EOF > ~/.netrc
+          machine trunk.cocoapods.org
+            login ${{ secrets.COCOAPODS_TRUNK_EMAIL }}
+            password ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+          EOF
+          chmod 600 ~/.netrc
+
+      - name: Publish to CocoaPods trunk
+        run: |
+          if pod trunk info PulseKit 2>/dev/null | grep -q "$VERSION"; then
+            echo "::warning::PulseKit $VERSION already exists on CocoaPods trunk. Skipping."
+          else
+            echo "::notice::Publishing PulseKit $VERSION to CocoaPods trunk..."
+            pod trunk push PulseKit.podspec --allow-warnings
+            echo "::notice::Successfully published to CocoaPods trunk"
+          fi
+
+      - name: Clean up zip from repo
+        run: |
+          rm -f PulseKit.xcframework.zip
+          git add -A
+          if git diff --cached --quiet; then
+            echo "::notice::No zip to clean up"
+          else
+            git commit -m "chore: clean up release zip after v${VERSION}"
+            git push origin main
+            echo "::notice::Cleaned up zip from repo"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Publish Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Step | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | \`$VERSION\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Git Tag | $( [ '${{ env.TAG_EXISTS }}' = 'true' ] && echo 'Already existed' || echo 'Created' ) |" >> $GITHUB_STEP_SUMMARY
+          echo "| GitHub Release | $( [ '${{ env.RELEASE_EXISTS }}' = 'true' ] && echo 'Already existed' || echo 'Created' ) |" >> $GITHUB_STEP_SUMMARY
+          echo "| CocoaPods Trunk | Check logs above |" >> $GITHUB_STEP_SUMMARY
