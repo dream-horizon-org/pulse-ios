@@ -750,6 +750,13 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "PulseKit",
         "declAttributes": [
           "RawDocComment"
@@ -12922,6 +12929,1044 @@
         "moduleName": "PulseKit"
       },
       {
+        "kind": "Import",
+        "name": "OpenTelemetrySdk",
+        "printedName": "OpenTelemetrySdk",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "OpenTelemetryApi",
+        "printedName": "OpenTelemetryApi",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationAttributesLogRecordProcessor",
+        "printedName": "LocationAttributesLogRecordProcessor",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nextProcessor:userDefaults:cacheKey:cacheInvalidationTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationAttributesLogRecordProcessor",
+                "printedName": "PulseKit.LocationAttributesLogRecordProcessor",
+                "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LogRecordProcessor",
+                "printedName": "any OpenTelemetrySdk.LogRecordProcessor",
+                "usr": "s:16OpenTelemetrySdk18LogRecordProcessorP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserDefaults",
+                "printedName": "Foundation.UserDefaults",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)NSUserDefaults"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC04nextG012userDefaults8cacheKey0K16InvalidationTimeAC16OpenTelemetrySdk0efG0_p_So06NSUserJ0CSSSdtcfc",
+            "mangledName": "$s8PulseKit36LocationAttributesLogRecordProcessorC04nextG012userDefaults8cacheKey0K16InvalidationTimeAC16OpenTelemetrySdk0efG0_p_So06NSUserJ0CSSSdtcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "onEmit",
+            "printedName": "onEmit(logRecord:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ReadableLogRecord",
+                "printedName": "OpenTelemetrySdk.ReadableLogRecord",
+                "usr": "s:16OpenTelemetrySdk17ReadableLogRecordV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC6onEmit03logF0y16OpenTelemetrySdk08ReadableeF0V_tF",
+            "mangledName": "$s8PulseKit36LocationAttributesLogRecordProcessorC6onEmit03logF0y16OpenTelemetrySdk08ReadableeF0V_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shutdown",
+            "printedName": "shutdown(explicitTimeout:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ExportResult",
+                "printedName": "OpenTelemetrySdk.ExportResult",
+                "usr": "s:16OpenTelemetrySdk12ExportResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC8shutdown15explicitTimeout16OpenTelemetrySdk12ExportResultOSdSg_tF",
+            "mangledName": "$s8PulseKit36LocationAttributesLogRecordProcessorC8shutdown15explicitTimeout16OpenTelemetrySdk12ExportResultOSdSg_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "forceFlush",
+            "printedName": "forceFlush(explicitTimeout:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ExportResult",
+                "printedName": "OpenTelemetrySdk.ExportResult",
+                "usr": "s:16OpenTelemetrySdk12ExportResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC10forceFlush15explicitTimeout16OpenTelemetrySdk12ExportResultOSdSg_tF",
+            "mangledName": "$s8PulseKit36LocationAttributesLogRecordProcessorC10forceFlush15explicitTimeout16OpenTelemetrySdk12ExportResultOSdSg_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:8PulseKit36LocationAttributesLogRecordProcessorC",
+        "mangledName": "$s8PulseKit36LocationAttributesLogRecordProcessorC",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LogRecordProcessor",
+            "printedName": "LogRecordProcessor",
+            "usr": "s:16OpenTelemetrySdk18LogRecordProcessorP",
+            "mangledName": "$s16OpenTelemetrySdk18LogRecordProcessorP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "OpenTelemetrySdk",
+        "printedName": "OpenTelemetrySdk",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "OpenTelemetryApi",
+        "printedName": "OpenTelemetryApi",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationAttributesSpanAppender",
+        "printedName": "LocationAttributesSpanAppender",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isStartRequired",
+            "printedName": "isStartRequired",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvp",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvg",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvs",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvs",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvM",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC15isStartRequiredSbvM",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isEndRequired",
+            "printedName": "isEndRequired",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvp",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvg",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvs",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvs",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvM",
+                "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC13isEndRequiredSbvM",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(userDefaults:cacheKey:cacheInvalidationTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationAttributesSpanAppender",
+                "printedName": "PulseKit.LocationAttributesSpanAppender",
+                "usr": "s:8PulseKit30LocationAttributesSpanAppenderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserDefaults",
+                "printedName": "Foundation.UserDefaults",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)NSUserDefaults"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC12userDefaults8cacheKey0I16InvalidationTimeACSo06NSUserH0C_SSSdtcfc",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC12userDefaults8cacheKey0I16InvalidationTimeACSo06NSUserH0C_SSSdtcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "onStart",
+            "printedName": "onStart(parentContext:span:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OpenTelemetryApi.SpanContext?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpanContext",
+                    "printedName": "OpenTelemetryApi.SpanContext",
+                    "usr": "s:16OpenTelemetryApi11SpanContextV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ReadableSpan",
+                "printedName": "any OpenTelemetrySdk.ReadableSpan",
+                "usr": "s:16OpenTelemetrySdk12ReadableSpanP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC7onStart13parentContext4spany16OpenTelemetryApi0eJ0VSg_0lM3Sdk08ReadableE0_ptF",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC7onStart13parentContext4spany16OpenTelemetryApi0eJ0VSg_0lM3Sdk08ReadableE0_ptF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onEnd",
+            "printedName": "onEnd(span:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ReadableSpan",
+                "printedName": "any OpenTelemetrySdk.ReadableSpan",
+                "usr": "s:16OpenTelemetrySdk12ReadableSpanP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC5onEnd4spany16OpenTelemetrySdk08ReadableE0_p_tF",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC5onEnd4spany16OpenTelemetrySdk08ReadableE0_p_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shutdown",
+            "printedName": "shutdown(explicitTimeout:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC8shutdown15explicitTimeoutySdSg_tF",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC8shutdown15explicitTimeoutySdSg_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "forceFlush",
+            "printedName": "forceFlush(timeout:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit30LocationAttributesSpanAppenderC10forceFlush7timeoutySdSg_tF",
+            "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC10forceFlush7timeoutySdSg_tF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:8PulseKit30LocationAttributesSpanAppenderC",
+        "mangledName": "$s8PulseKit30LocationAttributesSpanAppenderC",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SpanProcessor",
+            "printedName": "SpanProcessor",
+            "usr": "s:16OpenTelemetrySdk13SpanProcessorP",
+            "mangledName": "$s16OpenTelemetrySdk13SpanProcessorP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "OpenTelemetryApi",
+        "printedName": "OpenTelemetryApi",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationConstants",
+        "printedName": "LocationConstants",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "locationCacheKey",
+            "printedName": "locationCacheKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit17LocationConstantsO16locationCacheKeySSvpZ",
+            "mangledName": "$s8PulseKit17LocationConstantsO16locationCacheKeySSvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit17LocationConstantsO16locationCacheKeySSvgZ",
+                "mangledName": "$s8PulseKit17LocationConstantsO16locationCacheKeySSvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "defaultCacheInvalidationTime",
+            "printedName": "defaultCacheInvalidationTime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit17LocationConstantsO28defaultCacheInvalidationTimeSdvpZ",
+            "mangledName": "$s8PulseKit17LocationConstantsO28defaultCacheInvalidationTimeSdvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit17LocationConstantsO28defaultCacheInvalidationTimeSdvgZ",
+                "mangledName": "$s8PulseKit17LocationConstantsO28defaultCacheInvalidationTimeSdvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PulseKit17LocationConstantsO",
+        "mangledName": "$s8PulseKit17LocationConstantsO",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationInstrumentation",
+        "printedName": "LocationInstrumentation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "provider",
+            "printedName": "provider",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "PulseKit.LocationProvider",
+                    "usr": "c:@M@PulseKit@objc(cs)LocationProvider"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit23LocationInstrumentationC8providerAA0C8ProviderCSgvpZ",
+            "mangledName": "$s8PulseKit23LocationInstrumentationC8providerAA0C8ProviderCSgvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "PulseKit.LocationProvider?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationProvider",
+                        "printedName": "PulseKit.LocationProvider",
+                        "usr": "c:@M@PulseKit@objc(cs)LocationProvider"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit23LocationInstrumentationC8providerAA0C8ProviderCSgvgZ",
+                "mangledName": "$s8PulseKit23LocationInstrumentationC8providerAA0C8ProviderCSgvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "install",
+            "printedName": "install(userDefaults:cacheInvalidationTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserDefaults",
+                "printedName": "Foundation.UserDefaults",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)NSUserDefaults"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit23LocationInstrumentationC7install12userDefaults21cacheInvalidationTimeySo06NSUserG0C_SdtFZ",
+            "mangledName": "$s8PulseKit23LocationInstrumentationC7install12userDefaults21cacheInvalidationTimeySo06NSUserG0C_SdtFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "uninstall",
+            "printedName": "uninstall()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit23LocationInstrumentationC9uninstallyyFZ",
+            "mangledName": "$s8PulseKit23LocationInstrumentationC9uninstallyyFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationInstrumentation",
+                "printedName": "PulseKit.LocationInstrumentation",
+                "usr": "s:8PulseKit23LocationInstrumentationC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit23LocationInstrumentationCACycfc",
+            "mangledName": "$s8PulseKit23LocationInstrumentationCACycfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "install",
+            "printedName": "install(userDefaults:cacheInvalidationTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserDefaults",
+                "printedName": "Foundation.UserDefaults",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)NSUserDefaults"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit23LocationInstrumentationC7install12userDefaults21cacheInvalidationTimeySo06NSUserG0C_SdtF",
+            "mangledName": "$s8PulseKit23LocationInstrumentationC7install12userDefaults21cacheInvalidationTimeySo06NSUserG0C_SdtF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "uninstall",
+            "printedName": "uninstall()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit23LocationInstrumentationC9uninstallyyF",
+            "mangledName": "$s8PulseKit23LocationInstrumentationC9uninstallyyF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:8PulseKit23LocationInstrumentationC",
+        "mangledName": "$s8PulseKit23LocationInstrumentationC",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
         "kind": "TypeDecl",
         "name": "LocationInstrumentationConfig",
         "printedName": "LocationInstrumentationConfig",
@@ -13051,6 +14096,342 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationProvider",
+        "printedName": "LocationProvider",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(userDefaults:cacheKey:cacheInvalidationTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationProvider",
+                "printedName": "PulseKit.LocationProvider",
+                "usr": "c:@M@PulseKit@objc(cs)LocationProvider"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserDefaults",
+                "printedName": "Foundation.UserDefaults",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)NSUserDefaults"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit16LocationProviderC12userDefaults8cacheKey0G16InvalidationTimeACSo06NSUserF0C_SSSdtcfc",
+            "mangledName": "$s8PulseKit16LocationProviderC12userDefaults8cacheKey0G16InvalidationTimeACSo06NSUserF0C_SSSdtcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "startPeriodicRefresh",
+            "printedName": "startPeriodicRefresh()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit16LocationProviderC20startPeriodicRefreshyyF",
+            "mangledName": "$s8PulseKit16LocationProviderC20startPeriodicRefreshyyF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopPeriodicRefresh",
+            "printedName": "stopPeriodicRefresh()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit16LocationProviderC19stopPeriodicRefreshyyF",
+            "mangledName": "$s8PulseKit16LocationProviderC19stopPeriodicRefreshyyF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationProvider",
+                "printedName": "PulseKit.LocationProvider",
+                "usr": "c:@M@PulseKit@objc(cs)LocationProvider"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@PulseKit@objc(cs)LocationProvider(im)init",
+            "mangledName": "$s8PulseKit16LocationProviderCACycfc",
+            "moduleName": "PulseKit",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "locationManager",
+            "printedName": "locationManager(_:didUpdateLocations:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocationManager",
+                "printedName": "CoreLocation.CLLocationManager",
+                "usr": "c:objc(cs)CLLocationManager"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[CoreLocation.CLLocation]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PulseKit@objc(cs)LocationProvider(im)locationManager:didUpdateLocations:",
+            "mangledName": "$s8PulseKit16LocationProviderC15locationManager_18didUpdateLocationsySo010CLLocationF0C_SaySo0J0CGtF",
+            "moduleName": "PulseKit",
+            "objc_name": "locationManager:didUpdateLocations:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "locationManager",
+            "printedName": "locationManager(_:didFailWithError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocationManager",
+                "printedName": "CoreLocation.CLLocationManager",
+                "usr": "c:objc(cs)CLLocationManager"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PulseKit@objc(cs)LocationProvider(im)locationManager:didFailWithError:",
+            "mangledName": "$s8PulseKit16LocationProviderC15locationManager_16didFailWithErrorySo010CLLocationF0C_s0J0_ptF",
+            "moduleName": "PulseKit",
+            "objc_name": "locationManager:didFailWithError:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "locationManagerDidChangeAuthorization",
+            "printedName": "locationManagerDidChangeAuthorization(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocationManager",
+                "printedName": "CoreLocation.CLLocationManager",
+                "usr": "c:objc(cs)CLLocationManager"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PulseKit@objc(cs)LocationProvider(im)locationManagerDidChangeAuthorization:",
+            "mangledName": "$s8PulseKit16LocationProviderC37locationManagerDidChangeAuthorizationyySo010CLLocationF0CF",
+            "moduleName": "PulseKit",
+            "objc_name": "locationManagerDidChangeAuthorization:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@PulseKit@objc(cs)LocationProvider",
+        "mangledName": "$s8PulseKit16LocationProviderC",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
       },
       {
         "kind": "Import",
@@ -89894,16 +91275,100 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesSpanAppender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 420,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesSpanAppender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 462,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 331,
+      "length": 18,
+      "value": "\"geo.location.lat\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 382,
+      "length": 18,
+      "value": "\"geo.location.lon\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 436,
+      "length": 22,
+      "value": "\"geo.country.iso_code\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 493,
+      "length": 21,
+      "value": "\"geo.region.iso_code\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 548,
+      "length": 19,
+      "value": "\"geo.locality.name\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationAttributesUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 599,
+      "length": 17,
+      "value": "\"geo.postal_code\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 182,
+      "length": 16,
+      "value": "\"location_cache\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 316,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/Instrumentation\/Location\/LocationInstrumentation.swift",
+      "kind": "Array",
+      "offset": 1304,
+      "length": 2,
+      "value": "[]"
+    },
+    {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/Instrumentation\/LocationInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 203,
+      "offset": 156,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/Instrumentation\/LocationInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 242,
+      "offset": 195,
       "length": 5,
       "value": "false"
     },
@@ -94286,125 +95751,132 @@
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
       "offset": 1081,
-      "length": 13,
-      "value": "\"X-Tenant-ID\""
+      "length": 11,
+      "value": "\"X-API-KEY\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1288,
+      "offset": 1142,
+      "length": 13,
+      "value": "\"X-TENANT-ID\""
+    },
+    {
+      "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 1349,
       "length": 17,
       "value": "\"pulse_ios_swift\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1340,
+      "offset": 1401,
       "length": 14,
       "value": "\"pulse_ios_rn\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1461,
+      "offset": 1522,
       "length": 14,
       "value": "\"custom_event\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1513,
+      "offset": 1574,
       "length": 11,
       "value": "\"non_fatal\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1592,
+      "offset": 1653,
       "length": 9,
       "value": "\"network\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1641,
+      "offset": 1702,
       "length": 13,
       "value": "\"screen_load\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1692,
+      "offset": 1753,
       "length": 11,
       "value": "\"app_start\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1746,
+      "offset": 1807,
       "length": 16,
       "value": "\"screen_session\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1827,
+      "offset": 1888,
       "length": 14,
       "value": "\"device.crash\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1874,
+      "offset": 1935,
       "length": 5,
       "value": "\"anr\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1915,
+      "offset": 1976,
       "length": 8,
       "value": "\"frozen\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1957,
+      "offset": 2018,
       "length": 6,
       "value": "\"slow\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1998,
+      "offset": 2059,
       "length": 7,
       "value": "\"touch\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2048,
+      "offset": 2109,
       "length": 16,
       "value": "\"network_change\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2114,
+      "offset": 2175,
       "length": 30,
       "value": "\"pulse.app.installation.start\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2270,
+      "offset": 2331,
       "length": 15,
       "value": "\"session.start\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2328,
+      "offset": 2389,
       "length": 13,
       "value": "\"session.end\""
     },
@@ -94425,140 +95897,140 @@
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 215,
+      "offset": 168,
       "length": 19,
       "value": "\"com.pulse.ios.sdk\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 275,
+      "offset": 228,
       "length": 7,
       "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 440,
+      "offset": 393,
       "length": 34,
       "value": "\"com.pulse.ios.sdk.initialization\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 509,
+      "offset": 462,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 545,
+      "offset": 498,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 1493,
+      "offset": 1446,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 1961,
+      "offset": 1914,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2613,
+      "offset": 2566,
       "length": 35,
       "value": "\"com.pulse.ios.sdk.sampling.config\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 3063,
+      "offset": 3016,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3374,
+      "offset": 3327,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3673,
+      "offset": 3626,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 22247,
+      "offset": 22379,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 23010,
+      "offset": 23142,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 23782,
+      "offset": 23914,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 25027,
+      "offset": 25159,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 25416,
+      "offset": 25548,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27183,
+      "offset": 27315,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27220,
+      "offset": 27352,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27266,
+      "offset": 27398,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/shubhamgupta\/D11Repo\/temps\/main-pulse\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27315,
+      "offset": 27447,
       "length": 2,
       "value": "30"
     },

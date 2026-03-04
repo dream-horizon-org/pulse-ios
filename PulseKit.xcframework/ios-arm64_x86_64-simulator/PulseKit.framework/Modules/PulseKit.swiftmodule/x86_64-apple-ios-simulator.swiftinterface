@@ -1,9 +1,10 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
+// swift-module-flags: -target x86_64-apple-ios15.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import Combine
 import Compression
+import CoreLocation
 import CoreTelephony
 import Darwin
 import Foundation
@@ -426,12 +427,55 @@ public protocol ITelemetryDataSource {
   var name: Swift.String { get }
   var language: Swift.String { get }
 }
+final public class LocationAttributesLogRecordProcessor : OpenTelemetrySdk.LogRecordProcessor {
+  public init(nextProcessor: any OpenTelemetrySdk.LogRecordProcessor, userDefaults: Foundation.UserDefaults = .standard, cacheKey: Swift.String = LocationConstants.locationCacheKey, cacheInvalidationTime: Foundation.TimeInterval = LocationConstants.defaultCacheInvalidationTime)
+  final public func onEmit(logRecord: OpenTelemetrySdk.ReadableLogRecord)
+  final public func shutdown(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  final public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+final public class LocationAttributesSpanAppender : OpenTelemetrySdk.SpanProcessor {
+  final public var isStartRequired: Swift.Bool
+  final public var isEndRequired: Swift.Bool
+  public init(userDefaults: Foundation.UserDefaults = .standard, cacheKey: Swift.String = LocationConstants.locationCacheKey, cacheInvalidationTime: Foundation.TimeInterval = LocationConstants.defaultCacheInvalidationTime)
+  final public func onStart(parentContext: OpenTelemetryApi.SpanContext?, span: any OpenTelemetrySdk.ReadableSpan)
+  final public func onEnd(span: any OpenTelemetrySdk.ReadableSpan)
+  final public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  final public func forceFlush(timeout: Foundation.TimeInterval?)
+  @objc deinit
+}
+public enum LocationConstants {
+  public static let locationCacheKey: Swift.String
+  public static let defaultCacheInvalidationTime: Swift.Double
+}
+final public class LocationInstrumentation {
+  public static var provider: PulseKit.LocationProvider? {
+    get
+  }
+  public static func install(userDefaults: Foundation.UserDefaults = .standard, cacheInvalidationTime: Foundation.TimeInterval = LocationConstants.defaultCacheInvalidationTime)
+  public static func uninstall()
+  public init()
+  final public func install(userDefaults: Foundation.UserDefaults = .standard, cacheInvalidationTime: Foundation.TimeInterval = LocationConstants.defaultCacheInvalidationTime)
+  final public func uninstall()
+  @objc deinit
+}
 public struct LocationInstrumentationConfig {
   public var enabled: Swift.Bool {
     get
   }
   public init(enabled: Swift.Bool = false)
   public mutating func enabled(_ value: Swift.Bool)
+}
+@objc final public class LocationProvider : ObjectiveC.NSObject {
+  public init(userDefaults: Foundation.UserDefaults = .standard, cacheKey: Swift.String = LocationConstants.locationCacheKey, cacheInvalidationTime: Foundation.TimeInterval = LocationConstants.defaultCacheInvalidationTime)
+  final public func startPeriodicRefresh()
+  final public func stopPeriodicRefresh()
+  @objc deinit
+}
+extension PulseKit.LocationProvider : CoreLocation.CLLocationManagerDelegate {
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
+  @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
 }
 @_hasMissingDesignatedInitializers public class LogRecordAdapter {
   public static func toProtoResourceRecordLog(logRecordList: [OpenTelemetrySdk.ReadableLogRecord]) -> [PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs]
