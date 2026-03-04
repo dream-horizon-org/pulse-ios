@@ -1,0 +1,2682 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import Combine
+import Compression
+import CoreTelephony
+import Darwin
+import Foundation
+import KSCrash
+import Network
+import ObjectiveC
+import OpenTelemetryApi
+import OpenTelemetrySdk
+@_exported import PulseKit
+import Security
+import Swift
+import SwiftProtobuf
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+public struct ApiResponse<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
+  public let data: T
+  public let error: Swift.String?
+  public init(data: T, error: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class ApplicationDataSource : PulseKit.IApplicationDataSource {
+  public init()
+  public var name: Swift.String? {
+    get
+  }
+  public var identifier: Swift.String? {
+    get
+  }
+  public var version: Swift.String? {
+    get
+  }
+  public var build: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ApplicationResourceProvider : PulseKit.ResourceProvider {
+  public init(source: any PulseKit.IApplicationDataSource)
+  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+    get
+  }
+  @objc deinit
+}
+public struct Opentelemetry_Proto_Common_V1_AnyValue : @unchecked Swift.Sendable {
+  public var value: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value?
+  public var stringValue: Swift.String {
+    get
+    set
+  }
+  public var boolValue: Swift.Bool {
+    get
+    set
+  }
+  public var intValue: Swift.Int64 {
+    get
+    set
+  }
+  public var doubleValue: Swift.Double {
+    get
+    set
+  }
+  public var arrayValue: PulseKit.Opentelemetry_Proto_Common_V1_ArrayValue {
+    get
+    set
+  }
+  public var kvlistValue: PulseKit.Opentelemetry_Proto_Common_V1_KeyValueList {
+    get
+    set
+  }
+  public var bytesValue: Foundation.Data {
+    get
+    set
+  }
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum OneOf_Value : Swift.Equatable, @unchecked Swift.Sendable {
+    case stringValue(Swift.String)
+    case boolValue(Swift.Bool)
+    case intValue(Swift.Int64)
+    case doubleValue(Swift.Double)
+    case arrayValue(PulseKit.Opentelemetry_Proto_Common_V1_ArrayValue)
+    case kvlistValue(PulseKit.Opentelemetry_Proto_Common_V1_KeyValueList)
+    case bytesValue(Foundation.Data)
+    public static func == (a: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value, b: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value) -> Swift.Bool
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Common_V1_ArrayValue : Swift.Sendable {
+  public var values: [PulseKit.Opentelemetry_Proto_Common_V1_AnyValue]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Common_V1_KeyValueList : Swift.Sendable {
+  public var values: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Common_V1_KeyValue : Swift.Sendable {
+  public var key: Swift.String
+  public var value: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue {
+    get
+    set
+  }
+  public var hasValue: Swift.Bool {
+    get
+  }
+  public mutating func clearValue()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Common_V1_InstrumentationScope : Swift.Sendable {
+  public var name: Swift.String
+  public var version: Swift.String
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var droppedAttributesCount: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Common_V1_AnyValue : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue, rhs: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Common_V1_ArrayValue : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Common_V1_ArrayValue, rhs: PulseKit.Opentelemetry_Proto_Common_V1_ArrayValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Common_V1_KeyValueList : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Common_V1_KeyValueList, rhs: PulseKit.Opentelemetry_Proto_Common_V1_KeyValueList) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Common_V1_KeyValue : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Common_V1_KeyValue, rhs: PulseKit.Opentelemetry_Proto_Common_V1_KeyValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope, rhs: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CommonAdapter {
+  public static func toProtoAttribute(key: Swift.String, attributeValue: OpenTelemetryApi.AttributeValue) -> PulseKit.Opentelemetry_Proto_Common_V1_KeyValue
+  public static func toProtoAnyValue(attributeValue: OpenTelemetryApi.AttributeValue) -> PulseKit.Opentelemetry_Proto_Common_V1_AnyValue
+  public static func toProtoInstrumentationScope(instrumentationScopeInfo: OpenTelemetrySdk.InstrumentationScopeInfo) -> PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope
+}
+public struct Crc32 : Swift.CustomStringConvertible {
+  public init()
+  public var checksum: Swift.UInt32
+  public mutating func advance(withChunk chunk: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+}
+public enum Constants {
+  public enum OTLP {
+    public static let version: Swift.String
+  }
+  public enum HTTP {
+    public static let userAgent: Swift.String
+  }
+}
+public enum CrashEventName {
+  public static let deviceCrash: Swift.String
+}
+final public class CrashInstrumentation {
+  public static var isInstalled: Swift.Bool {
+    get
+  }
+  public init(loggerProvider: any OpenTelemetryApi.LoggerProvider, instrumentationScopeName: Swift.String = "com.pulse.ios.sdk.crash", instrumentationVersion: Swift.String = "0.0.1", flushLogProcessor: (() -> Swift.Void)? = nil)
+  final public func install()
+  public static func uninstall()
+  @objc deinit
+}
+public struct CrashInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+public class DefaultResources {
+  public init()
+  public func get() -> OpenTelemetrySdk.Resource
+  @objc deinit
+}
+public class DeviceDataSource : PulseKit.IDeviceDataSource {
+  public init()
+  public var model: Swift.String? {
+    get
+  }
+  public var identifier: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DeviceResourceProvider : PulseKit.ResourceProvider {
+  public init(source: any PulseKit.IDeviceDataSource)
+  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+    get
+  }
+  @objc deinit
+}
+public struct EnvVarHeaders {
+  public static let attributes: [(Swift.String, Swift.String)]?
+  public static func attributes(for rawEnvAttributes: Swift.String? = ProcessInfo.processInfo.environment["OTEL_EXPORTER_OTLP_HEADERS"]) -> [(Swift.String, Swift.String)]?
+}
+public class ExporterMetrics {
+  public enum TransporterType : Swift.String {
+    case grpc
+    case protoBuf
+    case httpJson
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static let ATTRIBUTE_KEY_TYPE: Swift.String
+  public static let ATTRIBUTE_KEY_SUCCESS: Swift.String
+  public init(type: Swift.String, meterProvider: any OpenTelemetryApi.MeterProvider, exporterName: Swift.String, transportName: PulseKit.ExporterMetrics.TransporterType)
+  public func addSeen(value: Swift.Int)
+  public func addSuccess(value: Swift.Int)
+  public func addFailed(value: Swift.Int)
+  public static func makeExporterMetric(type: Swift.String, meterProvider: any OpenTelemetryApi.MeterProvider, exporterName: Swift.String, transportName: PulseKit.ExporterMetrics.TransporterType) -> PulseKit.ExporterMetrics
+  @objc deinit
+}
+public enum Headers {
+  public static func getUserAgentHeader() -> Swift.String
+}
+public protocol HTTPClient {
+  func send(request: Foundation.URLRequest, completion: @escaping (Swift.Result<Foundation.HTTPURLResponse, any Swift.Error>) -> Swift.Void)
+}
+final public class BaseHTTPClient : PulseKit.HTTPClient {
+  convenience public init()
+  public init(session: Foundation.URLSession)
+  final public func send(request: Foundation.URLRequest, completion: @escaping (Swift.Result<Foundation.HTTPURLResponse, any Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public protocol IApplicationDataSource {
+  var name: Swift.String? { get }
+  var identifier: Swift.String? { get }
+  var version: Swift.String? { get }
+  var build: Swift.String? { get }
+}
+public protocol IDeviceDataSource {
+  var identifier: Swift.String? { get }
+  var model: Swift.String? { get }
+}
+public struct InstrumentationConfiguration {
+  public init()
+  public mutating func urlSession(_ configure: (inout PulseKit.URLSessionInstrumentationConfig) -> Swift.Void)
+  public mutating func sessions(_ configure: (inout PulseKit.SessionsInstrumentationConfig) -> Swift.Void)
+  public mutating func signPost(_ configure: (inout PulseKit.SignPostInstrumentationConfig) -> Swift.Void)
+  public mutating func interaction(_ configure: (inout PulseKit.InteractionInstrumentationConfig) -> Swift.Void)
+  public mutating func location(_ configure: (inout PulseKit.LocationInstrumentationConfig) -> Swift.Void)
+  public mutating func crash(_ configure: (inout PulseKit.CrashInstrumentationConfig) -> Swift.Void)
+}
+public struct Interaction : Swift.Equatable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let props: [Swift.String : Any?]
+  public init(id: Swift.String, name: Swift.String, props: [Swift.String : Any?] = [:])
+  public var events: [PulseKit.InteractionLocalEvent] {
+    get
+  }
+  public var markerEvents: [PulseKit.InteractionLocalEvent] {
+    get
+  }
+  public var isErrored: Swift.Bool {
+    get
+  }
+  public var timeSpanInNanos: (start: Swift.Int64, end: Swift.Int64)? {
+    get
+  }
+  public static func == (lhs: PulseKit.Interaction, rhs: PulseKit.Interaction) -> Swift.Bool
+}
+public struct InteractionAttrsEntry : Swift.Codable {
+  public let name: Swift.String
+  public let value: Swift.String
+  public let `operator`: Swift.String
+  public init(name: Swift.String, value: Swift.String, operator: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InteractionConfig : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let events: [PulseKit.InteractionEvent]
+  public let globalBlacklistedEvents: [PulseKit.InteractionEvent]
+  public let uptimeLowerLimitInMs: Swift.Int64
+  public let uptimeMidLimitInMs: Swift.Int64
+  public let uptimeUpperLimitInMs: Swift.Int64
+  public let thresholdInMs: Swift.Int64
+  public var eventsSize: Swift.Int {
+    get
+  }
+  public var firstEvent: PulseKit.InteractionEvent {
+    get
+  }
+  public init(id: Swift.Int, name: Swift.String, events: [PulseKit.InteractionEvent], globalBlacklistedEvents: [PulseKit.InteractionEvent] = [], uptimeLowerLimitInMs: Swift.Int64, uptimeMidLimitInMs: Swift.Int64, uptimeUpperLimitInMs: Swift.Int64, thresholdInMs: Swift.Int64)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol InteractionConfigFetcher {
+  func getConfigs() async throws -> [PulseKit.InteractionConfig]?
+}
+public class InteractionConfigMockFetcher : PulseKit.InteractionConfigFetcher {
+  public init()
+  public func getConfigs() async throws -> [PulseKit.InteractionConfig]?
+  @objc deinit
+}
+public class InteractionConfigRestFetcher : PulseKit.InteractionConfigFetcher {
+  public init(urlProvider: @escaping () -> Swift.String, headers: [Swift.String : Swift.String] = [:], urlSession: Foundation.URLSession = .shared)
+  public func getConfigs() async throws -> [PulseKit.InteractionConfig]?
+  @objc deinit
+}
+public struct InteractionEvent : Swift.Codable {
+  public let name: Swift.String
+  public let props: [PulseKit.InteractionAttrsEntry]?
+  public let isBlacklisted: Swift.Bool
+  public init(name: Swift.String, props: [PulseKit.InteractionAttrsEntry]? = nil, isBlacklisted: Swift.Bool = false)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class InteractionInstrumentation {
+  public static func getInstance() -> PulseKit.InteractionInstrumentation?
+  public var configuration: PulseKit.InteractionInstrumentationConfiguration {
+    get
+    set
+  }
+  public init(configuration: PulseKit.InteractionInstrumentationConfiguration)
+  public var managerInstance: PulseKit.InteractionManager {
+    get
+  }
+  public func install()
+  public func uninstall()
+  @objc deinit
+}
+public struct InteractionInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public var configUrlProvider: (() -> Swift.String)? {
+    get
+  }
+  public init(enabled: Swift.Bool = true, configUrlProvider: (() -> Swift.String)? = nil)
+  public mutating func enabled(_ value: Swift.Bool)
+  public mutating func setConfigUrl(_ provider: @escaping () -> Swift.String)
+}
+public struct InteractionInstrumentationConfiguration {
+  public var configUrlProvider: () -> Swift.String
+  public var headers: [Swift.String : Swift.String]
+  public var attributeExtractor: ((Any) -> [Swift.String : OpenTelemetryApi.AttributeValue])?
+  public init(configUrlProvider: @escaping () -> Swift.String = {
+            "http://10.0.2.2:8080/v1/interactions/all-active-interactions"
+        }, headers: [Swift.String : Swift.String] = [:], attributeExtractor: ((Any) -> [Swift.String : OpenTelemetryApi.AttributeValue])? = nil)
+}
+public struct InteractionLocalEvent {
+  public let name: Swift.String
+  public let timeInNano: Swift.Int64
+  public let props: [Swift.String : Swift.String]?
+  public init(name: Swift.String, timeInNano: Swift.Int64, props: [Swift.String : Swift.String]? = nil)
+}
+public class InteractionLogListener : OpenTelemetrySdk.LogRecordProcessor {
+  public init(nextProcessor: any OpenTelemetrySdk.LogRecordProcessor)
+  public func onEmit(logRecord: OpenTelemetrySdk.ReadableLogRecord)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+final public class InteractionManager {
+  public init(interactionFetcher: any PulseKit.InteractionConfigFetcher)
+  @objc deinit
+}
+indirect public enum InteractionRunningStatus : Swift.Equatable {
+  case noOngoingMatch(oldOngoingInteractionRunningStatus: PulseKit.InteractionRunningStatus?)
+  case ongoingMatch(index: Swift.Int, interactionId: Swift.String, interactionConfig: PulseKit.InteractionConfig, interaction: PulseKit.Interaction?)
+  public static func == (lhs: PulseKit.InteractionRunningStatus, rhs: PulseKit.InteractionRunningStatus) -> Swift.Bool
+}
+public protocol IOperatingSystemDataSource {
+  var type: Swift.String { get }
+  var description: Swift.String { get }
+  var name: Swift.String { get }
+  var version: Swift.String { get }
+}
+public protocol ITelemetryDataSource {
+  var version: Swift.String? { get }
+  var name: Swift.String { get }
+  var language: Swift.String { get }
+}
+public struct LocationInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = false)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers public class LogRecordAdapter {
+  public static func toProtoResourceRecordLog(logRecordList: [OpenTelemetrySdk.ReadableLogRecord]) -> [PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs]
+  @objc deinit
+}
+public enum Opentelemetry_Proto_Logs_V1_SeverityNumber : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case unspecified
+  case trace
+  case trace2
+  case trace3
+  case trace4
+  case debug
+  case debug2
+  case debug3
+  case debug4
+  case info
+  case info2
+  case info3
+  case info4
+  case warn
+  case warn2
+  case warn3
+  case warn4
+  case error
+  case error2
+  case error3
+  case error4
+  case fatal
+  case fatal2
+  case fatal3
+  case fatal4
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Logs_V1_SeverityNumber]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Logs_V1_SeverityNumber]
+}
+public enum Opentelemetry_Proto_Logs_V1_LogRecordFlags : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case doNotUse
+  case traceFlagsMask
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Logs_V1_LogRecordFlags]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Logs_V1_LogRecordFlags]
+}
+public struct Opentelemetry_Proto_Logs_V1_LogsData : Swift.Sendable {
+  public var resourceLogs: [PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Logs_V1_ResourceLogs : Swift.Sendable {
+  public var resource: PulseKit.Opentelemetry_Proto_Resource_V1_Resource {
+    get
+    set
+  }
+  public var hasResource: Swift.Bool {
+    get
+  }
+  public mutating func clearResource()
+  public var scopeLogs: [PulseKit.Opentelemetry_Proto_Logs_V1_ScopeLogs]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Logs_V1_ScopeLogs : Swift.Sendable {
+  public var scope: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope {
+    get
+    set
+  }
+  public var hasScope: Swift.Bool {
+    get
+  }
+  public mutating func clearScope()
+  public var logRecords: [PulseKit.Opentelemetry_Proto_Logs_V1_LogRecord]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Logs_V1_LogRecord : @unchecked Swift.Sendable {
+  public var timeUnixNano: Swift.UInt64
+  public var observedTimeUnixNano: Swift.UInt64
+  public var severityNumber: PulseKit.Opentelemetry_Proto_Logs_V1_SeverityNumber
+  public var severityText: Swift.String
+  public var body: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue {
+    get
+    set
+  }
+  public var hasBody: Swift.Bool {
+    get
+  }
+  public mutating func clearBody()
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var droppedAttributesCount: Swift.UInt32
+  public var flags: Swift.UInt32
+  public var traceID: Foundation.Data
+  public var spanID: Foundation.Data
+  public var eventName: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_SeverityNumber : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_LogRecordFlags : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_LogsData : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Logs_V1_LogsData, rhs: PulseKit.Opentelemetry_Proto_Logs_V1_LogsData) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs, rhs: PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_ScopeLogs : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Logs_V1_ScopeLogs, rhs: PulseKit.Opentelemetry_Proto_Logs_V1_ScopeLogs) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Logs_V1_LogRecord : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Logs_V1_LogRecord, rhs: PulseKit.Opentelemetry_Proto_Logs_V1_LogRecord) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceRequest : Swift.Sendable {
+  public var resourceLogs: [PulseKit.Opentelemetry_Proto_Logs_V1_ResourceLogs]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceResponse : Swift.Sendable {
+  public var partialSuccess: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSuccess {
+    get
+    set
+  }
+  public var hasPartialSuccess: Swift.Bool {
+    get
+  }
+  public mutating func clearPartialSuccess()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSuccess : Swift.Sendable {
+  public var rejectedLogRecords: Swift.Int64
+  public var errorMessage: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceRequest, rhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceResponse, rhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsServiceResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSuccess : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSuccess, rhs: PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSuccess) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Opentelemetry_Proto_Metrics_V1_AggregationTemporality : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case unspecified
+  case delta
+  case cumulative
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality]
+}
+public enum Opentelemetry_Proto_Metrics_V1_DataPointFlags : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case doNotUse
+  case noRecordedValueMask
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Metrics_V1_DataPointFlags]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Metrics_V1_DataPointFlags]
+}
+public struct Opentelemetry_Proto_Metrics_V1_MetricsData : Swift.Sendable {
+  public var resourceMetrics: [PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_ResourceMetrics : Swift.Sendable {
+  public var resource: PulseKit.Opentelemetry_Proto_Resource_V1_Resource {
+    get
+    set
+  }
+  public var hasResource: Swift.Bool {
+    get
+  }
+  public mutating func clearResource()
+  public var scopeMetrics: [PulseKit.Opentelemetry_Proto_Metrics_V1_ScopeMetrics]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_ScopeMetrics : Swift.Sendable {
+  public var scope: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope {
+    get
+    set
+  }
+  public var hasScope: Swift.Bool {
+    get
+  }
+  public mutating func clearScope()
+  public var metrics: [PulseKit.Opentelemetry_Proto_Metrics_V1_Metric]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Metric : Swift.Sendable {
+  public var name: Swift.String
+  public var description_p: Swift.String
+  public var unit: Swift.String
+  public var data: PulseKit.Opentelemetry_Proto_Metrics_V1_Metric.OneOf_Data?
+  public var gauge: PulseKit.Opentelemetry_Proto_Metrics_V1_Gauge {
+    get
+    set
+  }
+  public var sum: PulseKit.Opentelemetry_Proto_Metrics_V1_Sum {
+    get
+    set
+  }
+  public var histogram: PulseKit.Opentelemetry_Proto_Metrics_V1_Histogram {
+    get
+    set
+  }
+  public var exponentialHistogram: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogram {
+    get
+    set
+  }
+  public var summary: PulseKit.Opentelemetry_Proto_Metrics_V1_Summary {
+    get
+    set
+  }
+  public var metadata: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum OneOf_Data : Swift.Equatable, Swift.Sendable {
+    case gauge(PulseKit.Opentelemetry_Proto_Metrics_V1_Gauge)
+    case sum(PulseKit.Opentelemetry_Proto_Metrics_V1_Sum)
+    case histogram(PulseKit.Opentelemetry_Proto_Metrics_V1_Histogram)
+    case exponentialHistogram(PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogram)
+    case summary(PulseKit.Opentelemetry_Proto_Metrics_V1_Summary)
+    public static func == (a: PulseKit.Opentelemetry_Proto_Metrics_V1_Metric.OneOf_Data, b: PulseKit.Opentelemetry_Proto_Metrics_V1_Metric.OneOf_Data) -> Swift.Bool
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Gauge : Swift.Sendable {
+  public var dataPoints: [PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Sum : Swift.Sendable {
+  public var dataPoints: [PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint]
+  public var aggregationTemporality: PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality
+  public var isMonotonic: Swift.Bool
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Histogram : Swift.Sendable {
+  public var dataPoints: [PulseKit.Opentelemetry_Proto_Metrics_V1_HistogramDataPoint]
+  public var aggregationTemporality: PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_ExponentialHistogram : Swift.Sendable {
+  public var dataPoints: [PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint]
+  public var aggregationTemporality: PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Summary : Swift.Sendable {
+  public var dataPoints: [PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_NumberDataPoint : Swift.Sendable {
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var startTimeUnixNano: Swift.UInt64
+  public var timeUnixNano: Swift.UInt64
+  public var value: PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint.OneOf_Value?
+  public var asDouble: Swift.Double {
+    get
+    set
+  }
+  public var asInt: Swift.Int64 {
+    get
+    set
+  }
+  public var exemplars: [PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar]
+  public var flags: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum OneOf_Value : Swift.Equatable, Swift.Sendable {
+    case asDouble(Swift.Double)
+    case asInt(Swift.Int64)
+    public static func == (a: PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint.OneOf_Value, b: PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint.OneOf_Value) -> Swift.Bool
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_HistogramDataPoint : Swift.Sendable {
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var startTimeUnixNano: Swift.UInt64
+  public var timeUnixNano: Swift.UInt64
+  public var count: Swift.UInt64
+  public var sum: Swift.Double {
+    get
+    set
+  }
+  public var hasSum: Swift.Bool {
+    get
+  }
+  public mutating func clearSum()
+  public var bucketCounts: [Swift.UInt64]
+  public var explicitBounds: [Swift.Double]
+  public var exemplars: [PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar]
+  public var flags: Swift.UInt32
+  public var min: Swift.Double {
+    get
+    set
+  }
+  public var hasMin: Swift.Bool {
+    get
+  }
+  public mutating func clearMin()
+  public var max: Swift.Double {
+    get
+    set
+  }
+  public var hasMax: Swift.Bool {
+    get
+  }
+  public mutating func clearMax()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint : Swift.Sendable {
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var startTimeUnixNano: Swift.UInt64
+  public var timeUnixNano: Swift.UInt64
+  public var count: Swift.UInt64
+  public var sum: Swift.Double {
+    get
+    set
+  }
+  public var hasSum: Swift.Bool {
+    get
+  }
+  public mutating func clearSum()
+  public var scale: Swift.Int32
+  public var zeroCount: Swift.UInt64
+  public var positive: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint.Buckets {
+    get
+    set
+  }
+  public var hasPositive: Swift.Bool {
+    get
+  }
+  public mutating func clearPositive()
+  public var negative: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint.Buckets {
+    get
+    set
+  }
+  public var hasNegative: Swift.Bool {
+    get
+  }
+  public mutating func clearNegative()
+  public var flags: Swift.UInt32
+  public var exemplars: [PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar]
+  public var min: Swift.Double {
+    get
+    set
+  }
+  public var hasMin: Swift.Bool {
+    get
+  }
+  public mutating func clearMin()
+  public var max: Swift.Double {
+    get
+    set
+  }
+  public var hasMax: Swift.Bool {
+    get
+  }
+  public mutating func clearMax()
+  public var zeroThreshold: Swift.Double
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public struct Buckets : Swift.Sendable {
+    public var offset: Swift.Int32
+    public var bucketCounts: [Swift.UInt64]
+    public var unknownFields: SwiftProtobuf.UnknownStorage
+    public init()
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_SummaryDataPoint : Swift.Sendable {
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var startTimeUnixNano: Swift.UInt64
+  public var timeUnixNano: Swift.UInt64
+  public var count: Swift.UInt64
+  public var sum: Swift.Double
+  public var quantileValues: [PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint.ValueAtQuantile]
+  public var flags: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public struct ValueAtQuantile : Swift.Sendable {
+    public var quantile: Swift.Double
+    public var value: Swift.Double
+    public var unknownFields: SwiftProtobuf.UnknownStorage
+    public init()
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Metrics_V1_Exemplar : @unchecked Swift.Sendable {
+  public var filteredAttributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var timeUnixNano: Swift.UInt64
+  public var value: PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar.OneOf_Value?
+  public var asDouble: Swift.Double {
+    get
+    set
+  }
+  public var asInt: Swift.Int64 {
+    get
+    set
+  }
+  public var spanID: Foundation.Data
+  public var traceID: Foundation.Data
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum OneOf_Value : Swift.Equatable, Swift.Sendable {
+    case asDouble(Swift.Double)
+    case asInt(Swift.Int64)
+    public static func == (a: PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar.OneOf_Value, b: PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar.OneOf_Value) -> Swift.Bool
+  }
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_AggregationTemporality : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_DataPointFlags : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_MetricsData : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_MetricsData, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_MetricsData) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_ScopeMetrics : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ScopeMetrics, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ScopeMetrics) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Metric : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Metric, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Metric) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Gauge : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Gauge, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Gauge) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Sum : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Sum, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Sum) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Histogram : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Histogram, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Histogram) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogram : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogram, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogram) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Summary : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Summary, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Summary) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_NumberDataPoint) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_HistogramDataPoint : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_HistogramDataPoint, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_HistogramDataPoint) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint.Buckets : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint.Buckets, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_ExponentialHistogramDataPoint.Buckets) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint.ValueAtQuantile : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint.ValueAtQuantile, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_SummaryDataPoint.ValueAtQuantile) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar, rhs: PulseKit.Opentelemetry_Proto_Metrics_V1_Exemplar) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceRequest : Swift.Sendable {
+  public var resourceMetrics: [PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceResponse : Swift.Sendable {
+  public var partialSuccess: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsPartialSuccess {
+    get
+    set
+  }
+  public var hasPartialSuccess: Swift.Bool {
+    get
+  }
+  public mutating func clearPartialSuccess()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsPartialSuccess : Swift.Sendable {
+  public var rejectedDataPoints: Swift.Int64
+  public var errorMessage: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceRequest, rhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceResponse, rhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsServiceResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsPartialSuccess : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsPartialSuccess, rhs: PulseKit.Opentelemetry_Proto_Collector_Metrics_V1_ExportMetricsPartialSuccess) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum MetricsAdapter {
+  public static func toProtoResourceMetrics(metricData: [OpenTelemetrySdk.MetricData]) -> [PulseKit.Opentelemetry_Proto_Metrics_V1_ResourceMetrics]
+  public static func toProtoMetric(metricData: OpenTelemetrySdk.MetricData) -> PulseKit.Opentelemetry_Proto_Metrics_V1_Metric?
+}
+public class NetworkMonitor : PulseKit.NetworkMonitorProtocol {
+  @objc deinit
+  public init() throws
+  public func getConnection() -> PulseKit.Connection
+}
+public enum Connection {
+  case unavailable, wifi, cellular
+  public static func == (a: PulseKit.Connection, b: PulseKit.Connection) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol NetworkMonitorProtocol {
+  func getConnection() -> PulseKit.Connection
+}
+public class NetworkStatus {
+  public var networkInfo: CoreTelephony.CTTelephonyNetworkInfo {
+    get
+  }
+  public var networkMonitor: any PulseKit.NetworkMonitorProtocol {
+    get
+  }
+  convenience public init() throws
+  public init(with monitor: any PulseKit.NetworkMonitorProtocol, info: CoreTelephony.CTTelephonyNetworkInfo = CTTelephonyNetworkInfo())
+  public func status() -> (Swift.String, Swift.String?, CoreTelephony.CTCarrier?)
+  @objc deinit
+}
+public class NetworkStatusInjector {
+  public init(netstat: PulseKit.NetworkStatus)
+  public func inject(span: any OpenTelemetryApi.Span)
+  @objc deinit
+}
+public protocol NetworkStatusProtocol {
+  var networkMonitor: any PulseKit.NetworkMonitorProtocol { get }
+  func getStatus() -> (Swift.String, CoreTelephony.CTCarrier?)
+}
+public class OperatingSystemDataSource : PulseKit.IOperatingSystemDataSource {
+  public init()
+  public var description: Swift.String {
+    get
+  }
+  public var type: Swift.String {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var version: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class OSResourceProvider : PulseKit.ResourceProvider {
+  public init(source: any PulseKit.IOperatingSystemDataSource)
+  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 15.0, macOS 12, tvOS 15.0, watchOS 8.0, *)
+public class OSSignposterIntegration : OpenTelemetrySdk.SpanProcessor {
+  final public let isStartRequired: Swift.Bool
+  final public let isEndRequired: Swift.Bool
+  final public let osSignposter: os.OSSignposter
+  final public let ossignposterQueue: Dispatch.DispatchQueue
+  public init()
+  public func onStart(parentContext: OpenTelemetryApi.SpanContext?, span: any OpenTelemetrySdk.ReadableSpan)
+  public func onEnd(span: any OpenTelemetrySdk.ReadableSpan)
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  @objc deinit
+}
+public enum CompressionType {
+  case gzip
+  case deflate
+  case none
+  public static func == (a: PulseKit.CompressionType, b: PulseKit.CompressionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OtlpConfiguration {
+  public static let DefaultTimeoutInterval: Foundation.TimeInterval
+  public let headers: [(Swift.String, Swift.String)]?
+  public let timeout: Foundation.TimeInterval
+  public let compression: PulseKit.CompressionType
+  public let exportAsJson: Swift.Bool
+  public init(timeout: Foundation.TimeInterval = OtlpConfiguration.DefaultTimeoutInterval, compression: PulseKit.CompressionType = .gzip, headers: [(Swift.String, Swift.String)]? = nil, exportAsJson: Swift.Bool = true)
+}
+@available(*, deprecated, renamed: "OtlpHttpExporterBase")
+public typealias StableOtlpHTTPExporterBase = PulseKit.OtlpHttpExporterBase
+public class OtlpHttpExporterBase {
+  public init(endpoint: Foundation.URL, config: PulseKit.OtlpConfiguration = OtlpConfiguration(), httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  @available(*, deprecated, message: "Use init(endpoint:config:httpClient:envVarHeaders:) instead")
+  public init(endpoint: Foundation.URL, config: PulseKit.OtlpConfiguration = OtlpConfiguration(), useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  public func createRequest(body: any SwiftProtobuf.Message, endpoint: Foundation.URL) -> Foundation.URLRequest
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
+  @objc deinit
+}
+public func defaultOltpHttpLoggingEndpoint() -> Foundation.URL
+public class OtlpHttpLogExporter : PulseKit.OtlpHttpExporterBase, OpenTelemetrySdk.LogRecordExporter {
+  override public init(endpoint: Foundation.URL = defaultOltpHttpLoggingEndpoint(), config: PulseKit.OtlpConfiguration = OtlpConfiguration(), httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  convenience public init(endpoint: Foundation.URL = defaultOltpHttpLoggingEndpoint(), config: PulseKit.OtlpConfiguration = OtlpConfiguration(), meterProvider: any OpenTelemetryApi.MeterProvider, httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  public func export(logRecords: [OpenTelemetrySdk.ReadableLogRecord], explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.ExportResult
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.ExportResult
+  public func flush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+public func defaultOtlpHttpMetricsEndpoint() -> Foundation.URL
+@available(*, deprecated, renamed: "defaultOtlpHttpMetricsEndpoint")
+public func defaultStableOtlpHTTPMetricsEndpoint() -> Foundation.URL
+@available(*, deprecated, renamed: "OtlpHttpMetricExporter")
+public typealias StableOtlpHTTPMetricExporter = PulseKit.OtlpHttpMetricExporter
+@available(*, deprecated, renamed: "OtlpHttpMetricExporter")
+public typealias OtlpHTTPMetricExporter = PulseKit.OtlpHttpMetricExporter
+public class OtlpHttpMetricExporter : PulseKit.OtlpHttpExporterBase, OpenTelemetrySdk.MetricExporter {
+  public init(endpoint: Foundation.URL, config: PulseKit.OtlpConfiguration = OtlpConfiguration(), aggregationTemporalitySelector: OpenTelemetrySdk.AggregationTemporalitySelector = AggregationTemporality.alwaysCumulative(), defaultAggregationSelector: any OpenTelemetrySdk.DefaultAggregationSelector = AggregationSelector.instance, httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  convenience public init(endpoint: Foundation.URL, config: PulseKit.OtlpConfiguration = OtlpConfiguration(), meterProvider: any OpenTelemetryApi.MeterProvider, aggregationTemporalitySelector: OpenTelemetrySdk.AggregationTemporalitySelector = AggregationTemporality.alwaysCumulative(), defaultAggregationSelector: any OpenTelemetrySdk.DefaultAggregationSelector = AggregationSelector
+                            .instance, httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  public func export(metrics: [OpenTelemetrySdk.MetricData]) -> OpenTelemetrySdk.ExportResult
+  public func flush() -> OpenTelemetrySdk.ExportResult
+  public func shutdown() -> OpenTelemetrySdk.ExportResult
+  public func getAggregationTemporality(for instrument: OpenTelemetrySdk.InstrumentType) -> OpenTelemetrySdk.AggregationTemporality
+  public func getDefaultAggregation(for instrument: OpenTelemetrySdk.InstrumentType) -> any OpenTelemetrySdk.Aggregation
+  @objc deinit
+}
+public func defaultOltpHttpTracesEndpoint() -> Foundation.URL
+public class OtlpHttpTraceExporter : PulseKit.OtlpHttpExporterBase, OpenTelemetrySdk.SpanExporter {
+  override public init(endpoint: Foundation.URL = defaultOltpHttpTracesEndpoint(), config: PulseKit.OtlpConfiguration = OtlpConfiguration(), httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  convenience public init(endpoint: Foundation.URL, config: PulseKit.OtlpConfiguration, meterProvider: any OpenTelemetryApi.MeterProvider, httpClient: any PulseKit.HTTPClient = BaseHTTPClient(), envVarHeaders: [(Swift.String, Swift.String)]? = EnvVarHeaders.attributes)
+  public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
+  public func flush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
+  @objc deinit
+}
+public struct OtlpSpan : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Attribute : Swift.Codable {
+  public struct Value : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class PersistenceLogExporterDecorator : OpenTelemetrySdk.LogRecordExporter {
+  public init(logRecordExporter: any OpenTelemetrySdk.LogRecordExporter, storageURL: Foundation.URL, exportCondition: @escaping () -> Swift.Bool = { true }, performancePreset: PulseKit.PersistencePerformancePreset = .default) throws
+  public func export(logRecords: [OpenTelemetrySdk.ReadableLogRecord], explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.ExportResult
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+public class PersistenceMetricExporterDecorator : OpenTelemetrySdk.MetricExporter {
+  public init(metricExporter: any OpenTelemetrySdk.MetricExporter, storageURL: Foundation.URL, exportCondition: @escaping () -> Swift.Bool = { true }, performancePreset: PulseKit.PersistencePerformancePreset = .default) throws
+  public func export(metrics: [OpenTelemetrySdk.MetricData]) -> OpenTelemetrySdk.ExportResult
+  public func flush() -> OpenTelemetrySdk.ExportResult
+  public func shutdown() -> OpenTelemetrySdk.ExportResult
+  public func getAggregationTemporality(for instrument: OpenTelemetrySdk.InstrumentType) -> OpenTelemetrySdk.AggregationTemporality
+  @objc deinit
+}
+public struct PersistencePerformancePreset : Swift.Equatable {
+  public init(maxFileSize: Swift.UInt64, maxDirectorySize: Swift.UInt64, maxFileAgeForWrite: Foundation.TimeInterval, minFileAgeForRead: Foundation.TimeInterval, maxFileAgeForRead: Foundation.TimeInterval, maxObjectsInFile: Swift.Int, maxObjectSize: Swift.UInt64, synchronousWrite: Swift.Bool, initialExportDelay: Foundation.TimeInterval, defaultExportDelay: Foundation.TimeInterval, minExportDelay: Foundation.TimeInterval, maxExportDelay: Foundation.TimeInterval, exportDelayChangeRate: Swift.Double)
+  public static let `default`: PulseKit.PersistencePerformancePreset
+  public static let lowRuntimeImpact: PulseKit.PersistencePerformancePreset
+  public static let instantDataDelivery: PulseKit.PersistencePerformancePreset
+  public static func == (a: PulseKit.PersistencePerformancePreset, b: PulseKit.PersistencePerformancePreset) -> Swift.Bool
+}
+public class PersistenceSpanExporterDecorator : OpenTelemetrySdk.SpanExporter {
+  public init(spanExporter: any OpenTelemetrySdk.SpanExporter, storageURL: Foundation.URL, exportCondition: @escaping () -> Swift.Bool = { true }, performancePreset: PulseKit.PersistencePerformancePreset = .default) throws
+  public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+  public func flush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  @objc deinit
+}
+public enum Opentelemetry_Proto_Profiles_V1development_AggregationTemporality : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case unspecified
+  case delta
+  case cumulative
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Profiles_V1development_AggregationTemporality]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Profiles_V1development_AggregationTemporality]
+}
+public struct Opentelemetry_Proto_Profiles_V1development_ProfilesData : Swift.Sendable {
+  public var resourceProfiles: [PulseKit.Opentelemetry_Proto_Profiles_V1development_ResourceProfiles]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_ResourceProfiles : Swift.Sendable {
+  public var resource: PulseKit.Opentelemetry_Proto_Resource_V1_Resource {
+    get
+    set
+  }
+  public var hasResource: Swift.Bool {
+    get
+  }
+  public mutating func clearResource()
+  public var scopeProfiles: [PulseKit.Opentelemetry_Proto_Profiles_V1development_ScopeProfiles]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_ScopeProfiles : Swift.Sendable {
+  public var scope: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope {
+    get
+    set
+  }
+  public var hasScope: Swift.Bool {
+    get
+  }
+  public mutating func clearScope()
+  public var profiles: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Profile]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Profile : @unchecked Swift.Sendable {
+  public var sampleType: [PulseKit.Opentelemetry_Proto_Profiles_V1development_ValueType] {
+    get
+    set
+  }
+  public var sample: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Sample] {
+    get
+    set
+  }
+  public var mappingTable: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Mapping] {
+    get
+    set
+  }
+  public var locationTable: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Location] {
+    get
+    set
+  }
+  public var locationIndices: [Swift.Int32] {
+    get
+    set
+  }
+  public var functionTable: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Function] {
+    get
+    set
+  }
+  public var attributeTable: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue] {
+    get
+    set
+  }
+  public var attributeUnits: [PulseKit.Opentelemetry_Proto_Profiles_V1development_AttributeUnit] {
+    get
+    set
+  }
+  public var linkTable: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Link] {
+    get
+    set
+  }
+  public var stringTable: [Swift.String] {
+    get
+    set
+  }
+  public var timeNanos: Swift.Int64 {
+    get
+    set
+  }
+  public var durationNanos: Swift.Int64 {
+    get
+    set
+  }
+  public var periodType: PulseKit.Opentelemetry_Proto_Profiles_V1development_ValueType {
+    get
+    set
+  }
+  public var hasPeriodType: Swift.Bool {
+    get
+  }
+  public mutating func clearPeriodType()
+  public var period: Swift.Int64 {
+    get
+    set
+  }
+  public var commentStrindices: [Swift.Int32] {
+    get
+    set
+  }
+  public var defaultSampleTypeStrindex: Swift.Int32 {
+    get
+    set
+  }
+  public var profileID: Foundation.Data {
+    get
+    set
+  }
+  public var droppedAttributesCount: Swift.UInt32 {
+    get
+    set
+  }
+  public var originalPayloadFormat: Swift.String {
+    get
+    set
+  }
+  public var originalPayload: Foundation.Data {
+    get
+    set
+  }
+  public var attributeIndices: [Swift.Int32] {
+    get
+    set
+  }
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_AttributeUnit : Swift.Sendable {
+  public var attributeKeyStrindex: Swift.Int32
+  public var unitStrindex: Swift.Int32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Link : @unchecked Swift.Sendable {
+  public var traceID: Foundation.Data
+  public var spanID: Foundation.Data
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_ValueType : Swift.Sendable {
+  public var typeStrindex: Swift.Int32
+  public var unitStrindex: Swift.Int32
+  public var aggregationTemporality: PulseKit.Opentelemetry_Proto_Profiles_V1development_AggregationTemporality
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Sample : Swift.Sendable {
+  public var locationsStartIndex: Swift.Int32
+  public var locationsLength: Swift.Int32
+  public var value: [Swift.Int64]
+  public var attributeIndices: [Swift.Int32]
+  public var linkIndex: Swift.Int32 {
+    get
+    set
+  }
+  public var hasLinkIndex: Swift.Bool {
+    get
+  }
+  public mutating func clearLinkIndex()
+  public var timestampsUnixNano: [Swift.UInt64]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Mapping : Swift.Sendable {
+  public var memoryStart: Swift.UInt64
+  public var memoryLimit: Swift.UInt64
+  public var fileOffset: Swift.UInt64
+  public var filenameStrindex: Swift.Int32
+  public var attributeIndices: [Swift.Int32]
+  public var hasFunctions_p: Swift.Bool
+  public var hasFilenames_p: Swift.Bool
+  public var hasLineNumbers_p: Swift.Bool
+  public var hasInlineFrames_p: Swift.Bool
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Location : Swift.Sendable {
+  public var mappingIndex: Swift.Int32 {
+    get
+    set
+  }
+  public var hasMappingIndex: Swift.Bool {
+    get
+  }
+  public mutating func clearMappingIndex()
+  public var address: Swift.UInt64
+  public var line: [PulseKit.Opentelemetry_Proto_Profiles_V1development_Line]
+  public var isFolded: Swift.Bool
+  public var attributeIndices: [Swift.Int32]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Line : Swift.Sendable {
+  public var functionIndex: Swift.Int32
+  public var line: Swift.Int64
+  public var column: Swift.Int64
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Profiles_V1development_Function : Swift.Sendable {
+  public var nameStrindex: Swift.Int32
+  public var systemNameStrindex: Swift.Int32
+  public var filenameStrindex: Swift.Int32
+  public var startLine: Swift.Int64
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_AggregationTemporality : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_ProfilesData : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ProfilesData, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ProfilesData) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_ResourceProfiles : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ResourceProfiles, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ResourceProfiles) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_ScopeProfiles : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ScopeProfiles, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ScopeProfiles) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Profile : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Profile, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Profile) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_AttributeUnit : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_AttributeUnit, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_AttributeUnit) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Link : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Link, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Link) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_ValueType : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ValueType, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_ValueType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Sample : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Sample, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Sample) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Mapping : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Mapping, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Mapping) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Location : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Location, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Location) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Line : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Line, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Line) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Profiles_V1development_Function : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Function, rhs: PulseKit.Opentelemetry_Proto_Profiles_V1development_Function) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceRequest : Swift.Sendable {
+  public var resourceProfiles: [PulseKit.Opentelemetry_Proto_Profiles_V1development_ResourceProfiles]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceResponse : Swift.Sendable {
+  public var partialSuccess: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesPartialSuccess {
+    get
+    set
+  }
+  public var hasPartialSuccess: Swift.Bool {
+    get
+  }
+  public mutating func clearPartialSuccess()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesPartialSuccess : Swift.Sendable {
+  public var rejectedProfiles: Swift.Int64
+  public var errorMessage: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceRequest, rhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceResponse, rhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesServiceResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesPartialSuccess : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesPartialSuccess, rhs: PulseKit.Opentelemetry_Proto_Collector_Profiles_V1development_ExportProfilesPartialSuccess) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PulseAttributes {
+  public static let pulseType: Swift.String
+  public static let pulseName: Swift.String
+  public static let pulseSpanId: Swift.String
+  public static let screenName: Swift.String
+  public static let userId: Swift.String
+  public static let appInstallationId: Swift.String
+  public static let pulseUserPrefix: Swift.String
+  public static let pulseUserPreviousId: Swift.String
+  public static let pulseUserSessionStartEventName: Swift.String
+  public static let pulseUserSessionEndEventName: Swift.String
+  public static let startType: Swift.String
+  public static let exceptionMessage: Swift.String
+  public static let exceptionType: Swift.String
+  public static let exceptionStacktrace: Swift.String
+  public static let projectId: Swift.String
+  public static func pulseUserParameter(_ key: Swift.String) -> Swift.String
+  public enum PulseSdkNames {
+    public static let iosSwift: Swift.String
+    public static let iosRn: Swift.String
+  }
+  public enum PulseTypeValues {
+    public static let customEvent: Swift.String
+    public static let nonFatal: Swift.String
+    public static let network: Swift.String
+    public static let screenLoad: Swift.String
+    public static let appStart: Swift.String
+    public static let screenSession: Swift.String
+    public static let crash: Swift.String
+    public static let anr: Swift.String
+    public static let frozen: Swift.String
+    public static let slow: Swift.String
+    public static let touch: Swift.String
+    public static let networkChange: Swift.String
+    public static let appInstallationStart: Swift.String
+    public static let appSessionStart: Swift.String
+    public static let appSessionEnd: Swift.String
+    public static func isNetworkType(_ pulseType: Swift.String) -> Swift.Bool
+  }
+}
+public struct PulseDeviceContext {
+  public static var current: PulseKit.PulseDeviceContext {
+    get
+  }
+  public func value(for attribute: PulseKit.PulseDeviceAttributeName) -> Swift.String?
+}
+extension PulseKit.PulseDeviceAttributeName {
+  public func matches(deviceContext: PulseKit.PulseDeviceContext, value regexPattern: Swift.String) -> Swift.Bool
+}
+extension PulseKit.PulseSessionSamplingRule {
+  public func matches(deviceContext: PulseKit.PulseDeviceContext) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class Pulse {
+  public static let shared: PulseKit.Pulse
+  public var isShutdown: Swift.Bool {
+    get
+  }
+  public func initialize(endpointBaseUrl: Swift.String, projectId: Swift.String, configEndpointUrl: Swift.String? = nil, customEventCollectorUrl: Swift.String? = nil, endpointHeaders: [Swift.String : Swift.String]? = nil, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
+  public func shutdown()
+  public func trackEvent(name: Swift.String, observedTimeStampInMs: Swift.Double, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackNonFatal(name: Swift.String, observedTimeStampInMs: Swift.Int64, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackNonFatal(error: any Swift.Error, observedTimeStampInMs: Swift.Int64, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackSpan<T>(name: Swift.String, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:], action: () throws -> T) rethrows -> T
+  public func startSpan(name: Swift.String, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:]) -> any OpenTelemetryApi.Span
+  public func getOpenTelemetry() -> OpenTelemetryApi.OpenTelemetry?
+  public func getOtelOrNull() -> OpenTelemetryApi.OpenTelemetry?
+  public func getOtelOrThrow() -> OpenTelemetryApi.OpenTelemetry
+  public func isSDKInitialized() -> Swift.Bool
+  public func setUserId(_ id: Swift.String?)
+  public func setUserProperty(name: Swift.String, value: OpenTelemetryApi.AttributeValue?)
+  public func setUserProperties(_ properties: [Swift.String : OpenTelemetryApi.AttributeValue?])
+  public func setUserProperties(_ builderAction: (inout [Swift.String : OpenTelemetryApi.AttributeValue?]) -> Swift.Void)
+  @objc deinit
+}
+public struct PulseKitConfiguration {
+  public var includeScreenAttributes: Swift.Bool
+  public var includeNetworkAttributes: Swift.Bool
+  public var includeGlobalAttributes: Swift.Bool
+  public init()
+  public mutating func disableScreenAttributes()
+  public mutating func disableNetworkAttributes()
+  public mutating func disableGlobalAttributes()
+}
+final public class PulseSamplingSignalProcessors {
+  public init(deviceContext: PulseKit.PulseDeviceContext = .current, sdkConfig: PulseKit.PulseSdkConfig, currentSdkName: PulseKit.PulseSdkName, signalMatcher: any PulseKit.PulseSignalMatcher = PulseSignalsAttrMatcher(), sessionParser: any PulseKit.PulseSessionParser = PulseSessionConfigParser(), randomGenerator: (() -> Swift.Float)? = nil)
+  @_hasMissingDesignatedInitializers final public class SampledSpanExporter : OpenTelemetrySdk.SpanExporter {
+    final public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+    final public func flush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+    final public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class SampledLogExporter : OpenTelemetrySdk.LogRecordExporter {
+    final public func export(logRecords: [OpenTelemetrySdk.ReadableLogRecord], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+    final public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+    final public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class SampledMetricExporter : OpenTelemetrySdk.MetricExporter {
+    final public func export(metrics: [OpenTelemetrySdk.MetricData]) -> OpenTelemetrySdk.ExportResult
+    final public func flush() -> OpenTelemetrySdk.ExportResult
+    final public func shutdown() -> OpenTelemetrySdk.ExportResult
+    final public func getAggregationTemporality(for instrument: OpenTelemetrySdk.InstrumentType) -> OpenTelemetrySdk.AggregationTemporality
+    final public func getDefaultAggregation(for instrument: OpenTelemetrySdk.InstrumentType) -> any OpenTelemetrySdk.Aggregation
+    @objc deinit
+  }
+  final public func makeSampledSpanExporter(delegateExporter: any OpenTelemetrySdk.SpanExporter) -> PulseKit.PulseSamplingSignalProcessors.SampledSpanExporter
+  final public func makeSampledLogExporter(delegateExporter: any OpenTelemetrySdk.LogRecordExporter) -> PulseKit.PulseSamplingSignalProcessors.SampledLogExporter
+  final public func makeSampledMetricExporter(delegateExporter: any OpenTelemetrySdk.MetricExporter) -> PulseKit.PulseSamplingSignalProcessors.SampledMetricExporter
+  final public func getEnabledFeatures() -> [PulseKit.PulseFeatureName]
+  @objc deinit
+}
+final public class PulseSdkConfigCoordinator {
+  public init(storage: PulseKit.PulseSdkConfigStorage = PulseSdkConfigStorage())
+  final public func loadCurrentConfig() -> PulseKit.PulseSdkConfig?
+  final public func startBackgroundFetch(configEndpointUrl: Swift.String, endpointHeaders: [Swift.String : Swift.String], currentConfigVersion: Swift.Int?)
+  @objc deinit
+}
+public enum PulseSdkConfigConstants {
+  public static let currentSupportedConfigVersion: Swift.Int
+}
+public struct PulseApiResponse<T> : Swift.Decodable where T : Swift.Decodable {
+  public let data: T?
+  public let error: PulseKit.PulseApiError?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseApiError : Swift.Decodable {
+  public let code: Swift.String
+  public let message: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseSdkConfig : Swift.Codable, Swift.Equatable {
+  public let version: Swift.Int
+  public let description: Swift.String
+  public let sampling: PulseKit.PulseSamplingConfig
+  public let signals: PulseKit.PulseSignalConfig
+  public let interaction: PulseKit.PulseInteractionConfig
+  public let features: [PulseKit.PulseFeatureConfig]
+  public init(version: Swift.Int, description: Swift.String, sampling: PulseKit.PulseSamplingConfig, signals: PulseKit.PulseSignalConfig, interaction: PulseKit.PulseInteractionConfig, features: [PulseKit.PulseFeatureConfig])
+  public static func == (a: PulseKit.PulseSdkConfig, b: PulseKit.PulseSdkConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseSamplingConfig : Swift.Codable, Swift.Equatable {
+  public let `default`: PulseKit.PulseDefaultSamplingConfig
+  public let rules: [PulseKit.PulseSessionSamplingRule]
+  public let criticalEventPolicies: PulseKit.PulseCriticalEventPolicies?
+  public let criticalSessionPolicies: PulseKit.PulseCriticalEventPolicies?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(default: PulseKit.PulseDefaultSamplingConfig, rules: [PulseKit.PulseSessionSamplingRule], criticalEventPolicies: PulseKit.PulseCriticalEventPolicies?, criticalSessionPolicies: PulseKit.PulseCriticalEventPolicies?)
+  public static func == (a: PulseKit.PulseSamplingConfig, b: PulseKit.PulseSamplingConfig) -> Swift.Bool
+}
+public struct PulseDefaultSamplingConfig : Swift.Codable, Swift.Equatable {
+  public let sessionSampleRate: Swift.Float
+  public init(sessionSampleRate: Swift.Float)
+  public static func == (a: PulseKit.PulseDefaultSamplingConfig, b: PulseKit.PulseDefaultSamplingConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseSessionSamplingRule : Swift.Codable, Swift.Equatable {
+  public let name: PulseKit.PulseDeviceAttributeName
+  public let value: Swift.String
+  public let sdks: [PulseKit.PulseSdkName]
+  public let sessionSampleRate: Swift.Float
+  public init(name: PulseKit.PulseDeviceAttributeName, value: Swift.String, sdks: [PulseKit.PulseSdkName], sessionSampleRate: Swift.Float)
+  public static func == (a: PulseKit.PulseSessionSamplingRule, b: PulseKit.PulseSessionSamplingRule) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseCriticalEventPolicies : Swift.Codable, Swift.Equatable {
+  public let alwaysSend: [PulseKit.PulseSignalMatchCondition]
+  public init(alwaysSend: [PulseKit.PulseSignalMatchCondition])
+  public static func == (a: PulseKit.PulseCriticalEventPolicies, b: PulseKit.PulseCriticalEventPolicies) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseSignalConfig : Swift.Codable, Swift.Equatable {
+  public let scheduleDurationMs: Swift.Int64
+  public let logsCollectorUrl: Swift.String
+  public let metricCollectorUrl: Swift.String
+  public let spanCollectorUrl: Swift.String
+  public let customEventCollectorUrl: Swift.String
+  public let attributesToDrop: [PulseKit.PulseAttributesToDropEntry]
+  public let attributesToAdd: [PulseKit.PulseAttributesToAddEntry]
+  public let filters: PulseKit.PulseSignalFilter
+  public init(from decoder: any Swift.Decoder) throws
+  public init(scheduleDurationMs: Swift.Int64, logsCollectorUrl: Swift.String, metricCollectorUrl: Swift.String, spanCollectorUrl: Swift.String, customEventCollectorUrl: Swift.String, attributesToDrop: [PulseKit.PulseAttributesToDropEntry], attributesToAdd: [PulseKit.PulseAttributesToAddEntry], filters: PulseKit.PulseSignalFilter)
+  public static func == (a: PulseKit.PulseSignalConfig, b: PulseKit.PulseSignalConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct PulseSignalFilter : Swift.Codable, Swift.Equatable {
+  public let mode: PulseKit.PulseSignalFilterMode
+  public let values: [PulseKit.PulseSignalMatchCondition]
+  public init(mode: PulseKit.PulseSignalFilterMode, values: [PulseKit.PulseSignalMatchCondition])
+  public static func == (a: PulseKit.PulseSignalFilter, b: PulseKit.PulseSignalFilter) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseSignalMatchCondition : Swift.Codable, Swift.Equatable {
+  public let name: Swift.String
+  public let props: [PulseKit.PulseProp]
+  public let scopes: [PulseKit.PulseSignalScope]
+  public let sdks: [PulseKit.PulseSdkName]
+  public init(name: Swift.String, props: [PulseKit.PulseProp], scopes: [PulseKit.PulseSignalScope], sdks: [PulseKit.PulseSdkName])
+  public static let allMatchLogCondition: PulseKit.PulseSignalMatchCondition
+  public static func customEventLogCondition(pulseTypeKey: Swift.String = "pulse.type", customEventValue: Swift.String = "custom_event") -> PulseKit.PulseSignalMatchCondition
+  public init(from decoder: any Swift.Decoder) throws
+  public static func == (a: PulseKit.PulseSignalMatchCondition, b: PulseKit.PulseSignalMatchCondition) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct PulseProp : Swift.Codable, Swift.Equatable {
+  public let name: Swift.String
+  public let value: Swift.String?
+  public init(name: Swift.String, value: Swift.String?)
+  public static func == (a: PulseKit.PulseProp, b: PulseKit.PulseProp) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseAttributesToAddEntry : Swift.Codable, Swift.Equatable {
+  public let values: [PulseKit.PulseAttributeValue]
+  public let condition: PulseKit.PulseSignalMatchCondition
+  public static func == (a: PulseKit.PulseAttributesToAddEntry, b: PulseKit.PulseAttributesToAddEntry) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseAttributesToDropEntry : Swift.Codable, Swift.Equatable {
+  public let values: [Swift.String]
+  public let condition: PulseKit.PulseSignalMatchCondition
+  public static func == (a: PulseKit.PulseAttributesToDropEntry, b: PulseKit.PulseAttributesToDropEntry) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseAttributeValue : Swift.Codable, Swift.Equatable {
+  public let name: Swift.String
+  public let value: Swift.String
+  public let type: PulseKit.PulseAttributeType
+  public static func == (a: PulseKit.PulseAttributeValue, b: PulseKit.PulseAttributeValue) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseInteractionConfig : Swift.Codable, Swift.Equatable {
+  public let collectorUrl: Swift.String
+  public let configUrl: Swift.String
+  public let beforeInitQueueSize: Swift.Int
+  public static func == (a: PulseKit.PulseInteractionConfig, b: PulseKit.PulseInteractionConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseFeatureConfig : Swift.Codable, Swift.Equatable {
+  public let featureName: PulseKit.PulseFeatureName
+  public let sessionSampleRate: Swift.Float
+  public let sdks: [PulseKit.PulseSdkName]
+  public static func == (a: PulseKit.PulseFeatureConfig, b: PulseKit.PulseFeatureConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum PulseSignalScope : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case logs
+  case traces
+  case metrics
+  case baggage
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PulseKit.PulseSignalScope]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PulseKit.PulseSignalScope] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PulseSdkName : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case pulse_android_java
+  case pulse_android_rn
+  case pulse_ios_swift
+  case pulse_ios_rn
+  case unknown
+  public static func from(telemetrySdkName: Swift.String?) -> PulseKit.PulseSdkName
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PulseKit.PulseSdkName]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PulseKit.PulseSdkName] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case java_crash
+  case js_crash
+  case cpp_crash
+  case java_anr
+  case cpp_anr
+  case interaction
+  case network_change
+  case network_instrumentation
+  case screen_session
+  case custom_events
+  case rn_screen_load
+  case rn_screen_interactive
+  case ios_crash
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PulseKit.PulseFeatureName]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PulseKit.PulseFeatureName] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PulseDeviceAttributeName : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case os_version
+  case app_version
+  case country
+  case state
+  case platform
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PulseKit.PulseDeviceAttributeName]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PulseKit.PulseDeviceAttributeName] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PulseSignalFilterMode : Swift.String, Swift.Codable {
+  case blacklist
+  case whitelist
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PulseAttributeType : Swift.String, Swift.Codable {
+  case string
+  case boolean
+  case long
+  case double
+  case string_array
+  case boolean_array
+  case long_array
+  case double_array
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class PulseSdkConfigRestProvider {
+  public init(urlProvider: @escaping () -> Foundation.URL?, urlSession: Foundation.URLSession = .shared, headers: [Swift.String : Swift.String] = [:])
+  final public func provide() async -> PulseKit.PulseSdkConfig?
+  @objc deinit
+}
+final public class PulseSdkConfigStorage {
+  public static let suiteName: Swift.String
+  public static let configKey: Swift.String
+  public init(suiteName: Swift.String? = PulseSdkConfigStorage.suiteName)
+  final public func load() -> PulseKit.PulseSdkConfig?
+  final public func save(_ config: PulseKit.PulseSdkConfig)
+  final public func saveSync(_ config: PulseKit.PulseSdkConfig)
+  @objc deinit
+}
+public protocol PulseSessionParser {
+  func parses(deviceContext: PulseKit.PulseDeviceContext, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName) -> Swift.Float
+}
+public struct PulseSessionConfigParser : PulseKit.PulseSessionParser {
+  public init()
+  public func parses(deviceContext: PulseKit.PulseDeviceContext, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName) -> Swift.Float
+}
+public struct AlwaysOnSessionParser : PulseKit.PulseSessionParser {
+  public init()
+  public func parses(deviceContext: PulseKit.PulseDeviceContext, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName) -> Swift.Float
+}
+public struct AlwaysOffSessionParser : PulseKit.PulseSessionParser {
+  public init()
+  public func parses(deviceContext: PulseKit.PulseDeviceContext, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName) -> Swift.Float
+}
+final public class PulseSessionSamplingDecision {
+  final public var shouldSampleThisSession: Swift.Bool {
+    get
+  }
+  public init(deviceContext: PulseKit.PulseDeviceContext = .current, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName, parser: any PulseKit.PulseSessionParser = PulseSessionConfigParser(), randomGenerator: (() -> Swift.Float)? = nil)
+  @objc deinit
+}
+public protocol PulseSignalMatcher {
+  func matches(scope: PulseKit.PulseSignalScope, name: Swift.String?, props: [Swift.String : Any?], condition: PulseKit.PulseSignalMatchCondition, sdkName: PulseKit.PulseSdkName) -> Swift.Bool
+}
+public struct PulseSignalsAttrMatcher : PulseKit.PulseSignalMatcher {
+  public init()
+  public func matches(scope: PulseKit.PulseSignalScope, name: Swift.String?, props: [Swift.String : Any?], condition: PulseKit.PulseSignalMatchCondition, sdkName: PulseKit.PulseSdkName) -> Swift.Bool
+}
+final public class PulseSignalSelectExporter {
+  public init(currentSdkName: PulseKit.PulseSdkName, signalMatcher: any PulseKit.PulseSignalMatcher = PulseSignalsAttrMatcher())
+  @_hasMissingDesignatedInitializers final public class SelectedLogExporter : OpenTelemetrySdk.LogRecordExporter {
+    final public func export(logRecords: [OpenTelemetrySdk.ReadableLogRecord], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+    final public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+    final public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class SelectedSpanExporter : OpenTelemetrySdk.SpanExporter {
+    final public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+    final public func flush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
+    final public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+    @objc deinit
+  }
+  final public func makeSelectedLogExporter(logMap: [(PulseKit.PulseSignalMatchCondition, any OpenTelemetrySdk.LogRecordExporter)]) -> PulseKit.PulseSignalSelectExporter.SelectedLogExporter
+  final public func makeSelectedSpanExporter(spanMap: [(PulseKit.PulseSignalMatchCondition, any OpenTelemetrySdk.SpanExporter)]) -> PulseKit.PulseSignalSelectExporter.SelectedSpanExporter
+  @objc deinit
+}
+public struct Opentelemetry_Proto_Resource_V1_Resource : Swift.Sendable {
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+  public var droppedAttributesCount: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Resource_V1_Resource : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Resource_V1_Resource, rhs: PulseKit.Opentelemetry_Proto_Resource_V1_Resource) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ResourceAdapter {
+  public static func toProtoResource(resource: OpenTelemetrySdk.Resource) -> PulseKit.Opentelemetry_Proto_Resource_V1_Resource
+}
+@_hasMissingDesignatedInitializers public class ResourceProvider {
+  public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+    get
+  }
+  public func create() -> OpenTelemetrySdk.Resource
+  @objc deinit
+}
+public struct Session : Swift.Equatable {
+  public let id: Swift.String
+  public let expireTime: Foundation.Date
+  public let previousId: Swift.String?
+  public let startTime: Foundation.Date
+  public let sessionTimeout: Foundation.TimeInterval
+  public init(id: Swift.String, expireTime: Foundation.Date, previousId: Swift.String? = nil, startTime: Foundation.Date = Date(), sessionTimeout: Foundation.TimeInterval = SessionConfig.default.sessionTimeout)
+  public static func == (lhs: PulseKit.Session, rhs: PulseKit.Session) -> Swift.Bool
+  public func isExpired() -> Swift.Bool
+  public var endTime: Foundation.Date? {
+    get
+  }
+  public var duration: Foundation.TimeInterval? {
+    get
+  }
+}
+public struct SessionConfig {
+  public let sessionTimeout: Foundation.TimeInterval
+  public init(sessionTimeout: Foundation.TimeInterval = 30 * 60)
+  public static let `default`: PulseKit.SessionConfig
+}
+public class SessionConfigBuilder {
+  public var sessionTimeout: Swift.Double {
+    get
+  }
+  public init()
+  public func with(sessionTimeout: Foundation.TimeInterval) -> Self
+  public func build() -> PulseKit.SessionConfig
+  @objc deinit
+}
+extension PulseKit.SessionConfig {
+  public static func builder() -> PulseKit.SessionConfigBuilder
+}
+@_hasMissingDesignatedInitializers public class SessionConstants {
+  public static let sessionStartEvent: Swift.String
+  public static let sessionEndEvent: Swift.String
+  public static let id: Swift.String
+  public static let previousId: Swift.String
+  public static let startTime: Swift.String
+  public static let endTime: Swift.String
+  public static let duration: Swift.String
+  public static let sessionEventNotification: Swift.String
+  @objc deinit
+}
+public enum SessionEventType {
+  case start
+  case end
+  public static func == (a: PulseKit.SessionEventType, b: PulseKit.SessionEventType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SessionEvent {
+  public let session: PulseKit.Session
+  public let eventType: PulseKit.SessionEventType
+}
+public class SessionEventInstrumentation {
+  public init()
+  @objc deinit
+}
+public class SessionLogRecordProcessor : OpenTelemetrySdk.LogRecordProcessor {
+  public init(nextProcessor: any OpenTelemetrySdk.LogRecordProcessor, sessionManager: PulseKit.SessionManager? = nil)
+  public func onEmit(logRecord: OpenTelemetrySdk.ReadableLogRecord)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+public class SessionManager {
+  public init(configuration: PulseKit.SessionConfig = .default)
+  @discardableResult
+  public func getSession() -> PulseKit.Session
+  public func peekSession() -> PulseKit.Session?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SessionManagerProvider {
+  public static func register(sessionManager: PulseKit.SessionManager)
+  public static func getInstance() -> PulseKit.SessionManager
+  @objc deinit
+}
+public struct SessionsInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+public class SessionSpanProcessor : OpenTelemetrySdk.SpanProcessor {
+  public var isStartRequired: Swift.Bool
+  public var isEndRequired: Swift.Bool
+  public init(sessionManager: PulseKit.SessionManager? = nil)
+  public func onStart(parentContext: OpenTelemetryApi.SpanContext?, span: any OpenTelemetrySdk.ReadableSpan)
+  public func onEnd(span: any OpenTelemetrySdk.ReadableSpan)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  public func forceFlush(timeout: Foundation.TimeInterval?)
+  @objc deinit
+}
+public struct SignPostInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+@available(macOS 10.14, iOS 12.0, tvOS 12.0, *)
+public class SignPostIntegration : OpenTelemetrySdk.SpanProcessor {
+  final public let isStartRequired: Swift.Bool
+  final public let isEndRequired: Swift.Bool
+  final public let osLog: os.OSLog
+  public init()
+  public func onStart(parentContext: OpenTelemetryApi.SpanContext?, span: any OpenTelemetrySdk.ReadableSpan)
+  public func onEnd(span: any OpenTelemetrySdk.ReadableSpan)
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  @objc deinit
+}
+public enum SpanAdapter {
+  public static func toProtoResourceSpans(spanDataList: [OpenTelemetrySdk.SpanData]) -> [PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans]
+  public static func toProtoSpan(spanData: OpenTelemetrySdk.SpanData) -> PulseKit.Opentelemetry_Proto_Trace_V1_Span
+  public static func toProtoSpanKind(kind: OpenTelemetryApi.SpanKind) -> PulseKit.Opentelemetry_Proto_Trace_V1_Span.SpanKind
+  public static func toProtoSpanEvent(event: OpenTelemetrySdk.SpanData.Event) -> PulseKit.Opentelemetry_Proto_Trace_V1_Span.Event
+  public static func toProtoSpanLink(link: OpenTelemetrySdk.SpanData.Link) -> PulseKit.Opentelemetry_Proto_Trace_V1_Span.Link
+  public static func toStatusProto(status: OpenTelemetryApi.Status) -> PulseKit.Opentelemetry_Proto_Trace_V1_Status
+}
+public class TelemetryDataSource : PulseKit.ITelemetryDataSource {
+  public init()
+  public var language: Swift.String {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var version: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TelemetryResourceProvider : PulseKit.ResourceProvider {
+  public init(source: any PulseKit.ITelemetryDataSource)
+  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+    get
+  }
+  @objc deinit
+}
+public enum Opentelemetry_Proto_Trace_V1_SpanFlags : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
+  case doNotUse
+  case traceFlagsMask
+  case contextHasIsRemoteMask
+  case contextIsRemoteMask
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static let allCases: [PulseKit.Opentelemetry_Proto_Trace_V1_SpanFlags]
+  public typealias AllCases = [PulseKit.Opentelemetry_Proto_Trace_V1_SpanFlags]
+}
+public struct Opentelemetry_Proto_Trace_V1_TracesData : Swift.Sendable {
+  public var resourceSpans: [PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Trace_V1_ResourceSpans : Swift.Sendable {
+  public var resource: PulseKit.Opentelemetry_Proto_Resource_V1_Resource {
+    get
+    set
+  }
+  public var hasResource: Swift.Bool {
+    get
+  }
+  public mutating func clearResource()
+  public var scopeSpans: [PulseKit.Opentelemetry_Proto_Trace_V1_ScopeSpans]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Trace_V1_ScopeSpans : Swift.Sendable {
+  public var scope: PulseKit.Opentelemetry_Proto_Common_V1_InstrumentationScope {
+    get
+    set
+  }
+  public var hasScope: Swift.Bool {
+    get
+  }
+  public mutating func clearScope()
+  public var spans: [PulseKit.Opentelemetry_Proto_Trace_V1_Span]
+  public var schemaURL: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Trace_V1_Span : @unchecked Swift.Sendable {
+  public var traceID: Foundation.Data {
+    get
+    set
+  }
+  public var spanID: Foundation.Data {
+    get
+    set
+  }
+  public var traceState: Swift.String {
+    get
+    set
+  }
+  public var parentSpanID: Foundation.Data {
+    get
+    set
+  }
+  public var flags: Swift.UInt32 {
+    get
+    set
+  }
+  public var name: Swift.String {
+    get
+    set
+  }
+  public var kind: PulseKit.Opentelemetry_Proto_Trace_V1_Span.SpanKind {
+    get
+    set
+  }
+  public var startTimeUnixNano: Swift.UInt64 {
+    get
+    set
+  }
+  public var endTimeUnixNano: Swift.UInt64 {
+    get
+    set
+  }
+  public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue] {
+    get
+    set
+  }
+  public var droppedAttributesCount: Swift.UInt32 {
+    get
+    set
+  }
+  public var events: [PulseKit.Opentelemetry_Proto_Trace_V1_Span.Event] {
+    get
+    set
+  }
+  public var droppedEventsCount: Swift.UInt32 {
+    get
+    set
+  }
+  public var links: [PulseKit.Opentelemetry_Proto_Trace_V1_Span.Link] {
+    get
+    set
+  }
+  public var droppedLinksCount: Swift.UInt32 {
+    get
+    set
+  }
+  public var status: PulseKit.Opentelemetry_Proto_Trace_V1_Status {
+    get
+    set
+  }
+  public var hasStatus: Swift.Bool {
+    get
+  }
+  public mutating func clearStatus()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum SpanKind : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
+    case unspecified
+    case `internal`
+    case server
+    case client
+    case producer
+    case consumer
+    case UNRECOGNIZED(Swift.Int)
+    public init()
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public static let allCases: [PulseKit.Opentelemetry_Proto_Trace_V1_Span.SpanKind]
+    public typealias AllCases = [PulseKit.Opentelemetry_Proto_Trace_V1_Span.SpanKind]
+  }
+  public struct Event : Swift.Sendable {
+    public var timeUnixNano: Swift.UInt64
+    public var name: Swift.String
+    public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+    public var droppedAttributesCount: Swift.UInt32
+    public var unknownFields: SwiftProtobuf.UnknownStorage
+    public init()
+  }
+  public struct Link : @unchecked Swift.Sendable {
+    public var traceID: Foundation.Data
+    public var spanID: Foundation.Data
+    public var traceState: Swift.String
+    public var attributes: [PulseKit.Opentelemetry_Proto_Common_V1_KeyValue]
+    public var droppedAttributesCount: Swift.UInt32
+    public var flags: Swift.UInt32
+    public var unknownFields: SwiftProtobuf.UnknownStorage
+    public init()
+  }
+  public init()
+}
+public struct Opentelemetry_Proto_Trace_V1_Status : Swift.Sendable {
+  public var message: Swift.String
+  public var code: PulseKit.Opentelemetry_Proto_Trace_V1_Status.StatusCode
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum StatusCode : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
+    case unset
+    case ok
+    case error
+    case UNRECOGNIZED(Swift.Int)
+    public init()
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public static let allCases: [PulseKit.Opentelemetry_Proto_Trace_V1_Status.StatusCode]
+    public typealias AllCases = [PulseKit.Opentelemetry_Proto_Trace_V1_Status.StatusCode]
+  }
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_SpanFlags : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_TracesData : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_TracesData, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_TracesData) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_ScopeSpans : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_ScopeSpans, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_ScopeSpans) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Span : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Span.SpanKind : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Span.Event : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span.Event, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span.Event) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Span.Link : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span.Link, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_Span.Link) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Status : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Trace_V1_Status, rhs: PulseKit.Opentelemetry_Proto_Trace_V1_Status) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Trace_V1_Status.StatusCode : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+public struct Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceRequest : Swift.Sendable {
+  public var resourceSpans: [PulseKit.Opentelemetry_Proto_Trace_V1_ResourceSpans]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceResponse : Swift.Sendable {
+  public var partialSuccess: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSuccess {
+    get
+    set
+  }
+  public var hasPartialSuccess: Swift.Bool {
+    get
+  }
+  public mutating func clearPartialSuccess()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSuccess : Swift.Sendable {
+  public var rejectedSpans: Swift.Int64
+  public var errorMessage: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceRequest, rhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceResponse, rhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTraceServiceResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSuccess : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSuccess, rhs: PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSuccess) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class URLSessionInstrumentation {
+  public var configuration: PulseKit.URLSessionInstrumentationConfiguration {
+    get
+    set
+  }
+  public var startedRequestSpans: [any OpenTelemetryApi.Span] {
+    get
+  }
+  public init(configuration: PulseKit.URLSessionInstrumentationConfiguration)
+  @objc deinit
+}
+public struct URLSessionInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public var shouldInstrument: ((Foundation.URLRequest) -> Swift.Bool)? {
+    get
+  }
+  public init(enabled: Swift.Bool = true, shouldInstrument: ((Foundation.URLRequest) -> Swift.Bool)? = nil)
+  public mutating func enabled(_ value: Swift.Bool)
+  public mutating func setShouldInstrument(_ handler: @escaping (Foundation.URLRequest) -> Swift.Bool)
+  public mutating func excludeOtlpEndpoints(baseUrl: Swift.String)
+}
+public typealias DataOrFile = Any
+public typealias SessionTaskId = Swift.String
+public typealias HTTPStatus = Swift.Int
+public struct URLSessionInstrumentationConfiguration {
+  public init(shouldRecordPayload: ((Foundation.URLSession) -> Swift.Bool?)? = nil, shouldInstrument: ((Foundation.URLRequest) -> Swift.Bool?)? = nil, nameSpan: ((Foundation.URLRequest) -> Swift.String?)? = nil, spanCustomization: ((Foundation.URLRequest, any OpenTelemetryApi.SpanBuilder) -> Swift.Void)? = nil, shouldInjectTracingHeaders: ((Foundation.URLRequest) -> Swift.Bool?)? = nil, injectCustomHeaders: ((inout Foundation.URLRequest, (any OpenTelemetryApi.Span)?) -> Swift.Void)? = nil, createdRequest: ((Foundation.URLRequest, any OpenTelemetryApi.Span) -> Swift.Void)? = nil, receivedResponse: ((Foundation.URLResponse, Any?, any OpenTelemetryApi.Span) -> Swift.Void)? = nil, receivedError: ((any Swift.Error, Any?, PulseKit.HTTPStatus, any OpenTelemetryApi.Span) -> Swift.Void)? = nil, delegateClassesToInstrument: [Swift.AnyClass]? = nil, baggageProvider: ((inout Foundation.URLRequest, (any OpenTelemetryApi.Span)?) -> (any OpenTelemetryApi.Baggage)?)? = nil, tracer: (any OpenTelemetryApi.Tracer)? = nil, ignoredClassPrefixes: [Swift.String]? = nil)
+  public var tracer: any OpenTelemetryApi.Tracer
+  public var shouldInstrument: ((Foundation.URLRequest) -> Swift.Bool?)?
+  public var shouldRecordPayload: ((Foundation.URLSession) -> Swift.Bool?)?
+  public var shouldInjectTracingHeaders: ((Foundation.URLRequest) -> Swift.Bool?)?
+  public var injectCustomHeaders: ((inout Foundation.URLRequest, (any OpenTelemetryApi.Span)?) -> Swift.Void)?
+  public var nameSpan: ((Foundation.URLRequest) -> Swift.String?)?
+  public var spanCustomization: ((Foundation.URLRequest, any OpenTelemetryApi.SpanBuilder) -> Swift.Void)?
+  public var createdRequest: ((Foundation.URLRequest, any OpenTelemetryApi.Span) -> Swift.Void)?
+  public var receivedResponse: ((Foundation.URLResponse, Any?, any OpenTelemetryApi.Span) -> Swift.Void)?
+  public var receivedError: ((any Swift.Error, Any?, PulseKit.HTTPStatus, any OpenTelemetryApi.Span) -> Swift.Void)?
+  public var delegateClassesToInstrument: [Swift.AnyClass]?
+  public let baggageProvider: ((inout Foundation.URLRequest, (any OpenTelemetryApi.Span)?) -> (any OpenTelemetryApi.Baggage)?)?
+  public let ignoredClassPrefixes: [Swift.String]?
+}
+extension PulseKit.ExporterMetrics.TransporterType : Swift.Equatable {}
+extension PulseKit.ExporterMetrics.TransporterType : Swift.Hashable {}
+extension PulseKit.ExporterMetrics.TransporterType : Swift.RawRepresentable {}
+extension PulseKit.Connection : Swift.Equatable {}
+extension PulseKit.Connection : Swift.Hashable {}
+extension PulseKit.CompressionType : Swift.Equatable {}
+extension PulseKit.CompressionType : Swift.Hashable {}
+extension PulseKit.PulseDeviceAttributeName : Swift.Equatable {}
+extension PulseKit.PulseDeviceAttributeName : Swift.Hashable {}
+extension PulseKit.PulseDeviceAttributeName : Swift.RawRepresentable {}
+extension PulseKit.PulseSignalScope : Swift.Equatable {}
+extension PulseKit.PulseSignalScope : Swift.Hashable {}
+extension PulseKit.PulseSignalScope : Swift.RawRepresentable {}
+extension PulseKit.PulseSdkName : Swift.Equatable {}
+extension PulseKit.PulseSdkName : Swift.Hashable {}
+extension PulseKit.PulseSdkName : Swift.RawRepresentable {}
+extension PulseKit.PulseFeatureName : Swift.Equatable {}
+extension PulseKit.PulseFeatureName : Swift.Hashable {}
+extension PulseKit.PulseFeatureName : Swift.RawRepresentable {}
+extension PulseKit.PulseSignalFilterMode : Swift.Equatable {}
+extension PulseKit.PulseSignalFilterMode : Swift.Hashable {}
+extension PulseKit.PulseSignalFilterMode : Swift.RawRepresentable {}
+extension PulseKit.PulseAttributeType : Swift.Equatable {}
+extension PulseKit.PulseAttributeType : Swift.Hashable {}
+extension PulseKit.PulseAttributeType : Swift.RawRepresentable {}
+extension PulseKit.SessionEventType : Swift.Equatable {}
+extension PulseKit.SessionEventType : Swift.Hashable {}

@@ -1,0 +1,11 @@
+framework module PulseKit {
+  umbrella header "PulseKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module PulseKit.Swift {
+  header "PulseKit-Swift.h"
+  requires objc
+}
