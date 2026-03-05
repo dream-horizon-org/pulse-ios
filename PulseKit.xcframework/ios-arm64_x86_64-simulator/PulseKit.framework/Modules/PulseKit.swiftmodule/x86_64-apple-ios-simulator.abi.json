@@ -91129,45 +91129,17 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
-      "kind": "StringLiteral",
-      "offset": 364,
-      "length": 12,
-      "value": "\"pulse.type\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
-      "kind": "StringLiteral",
-      "offset": 417,
-      "length": 15,
-      "value": "\"pulse.span.id\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
-      "kind": "StringLiteral",
-      "offset": 476,
-      "length": 9,
-      "value": "\"network\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
       "kind": "BooleanLiteral",
-      "offset": 852,
+      "offset": 691,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
       "kind": "BooleanLiteral",
-      "offset": 887,
+      "offset": 726,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/InteractionAttributesSpanAppender.swift",
-      "kind": "Array",
-      "offset": 1136,
-      "length": 76,
-      "value": "[\"screen_load\", \"app_start\", \"screen_session\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Interaction\/Models\/InteractionAttrsEntry.swift",
@@ -93874,14 +93846,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/NetworkAttributesSpanProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 248,
+      "offset": 247,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/NetworkAttributesSpanProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 283,
+      "offset": 282,
       "length": 5,
       "value": "false"
     },
@@ -93944,21 +93916,21 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/logs\/OtlpHttpLogExporter.swift",
       "kind": "Array",
-      "offset": 555,
+      "offset": 454,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/metric\/OtlpHttpMetricExporter.swift",
       "kind": "Array",
-      "offset": 1122,
+      "offset": 1021,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/trace\/OtlpHttpTraceExporter.swift",
       "kind": "Array",
-      "offset": 539,
+      "offset": 438,
       "length": 2,
       "value": "[]"
     },
@@ -94224,7 +94196,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PersistenceUtils.swift",
       "kind": "StringLiteral",
-      "offset": 269,
+      "offset": 200,
       "length": 23,
       "value": "\"com.pulse.persistence\""
     },
@@ -95918,140 +95890,140 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 265,
+      "offset": 168,
       "length": 19,
       "value": "\"com.pulse.ios.sdk\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 325,
+      "offset": 228,
       "length": 7,
       "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 490,
+      "offset": 393,
       "length": 34,
       "value": "\"com.pulse.ios.sdk.initialization\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 559,
+      "offset": 462,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 595,
+      "offset": 498,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 1543,
+      "offset": 1446,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2011,
+      "offset": 1914,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2663,
+      "offset": 2566,
       "length": 35,
       "value": "\"com.pulse.ios.sdk.sampling.config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 3113,
+      "offset": 3016,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3424,
+      "offset": 3327,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3723,
+      "offset": 3626,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 22250,
+      "offset": 22153,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 23013,
+      "offset": 22916,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 23785,
+      "offset": 23688,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 25030,
+      "offset": 24933,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 25419,
+      "offset": 25322,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27186,
+      "offset": 27089,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27223,
+      "offset": 27126,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27269,
+      "offset": 27172,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 27318,
+      "offset": 27221,
       "length": 2,
       "value": "30"
     },
