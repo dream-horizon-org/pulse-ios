@@ -13,14 +13,13 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (github.event.pull_request.merged == true &&
        startsWith(github.event.pull_request.head.ref, 'release/'))
-    runs-on: macos-latest
+    runs-on: macos-15
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract version from podspec
         run: |
@@ -28,9 +27,31 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "::notice::Publishing version: $VERSION"
 
+      - name: Create zip and validate checksum
+        run: |
+          if [ ! -d PulseKit.xcframework ]; then
+            echo "::error::PulseKit.xcframework directory not found in repo."
+            exit 1
+          fi
+
+          zip -r -q PulseKit.xcframework.zip PulseKit.xcframework
+          ACTUAL_CHECKSUM=$(swift package compute-checksum PulseKit.xcframework.zip)
+
+          EXPECTED_CHECKSUM=$(grep 'let checksum' Package.swift | sed 's/.*"\(.*\)"/\1/')
+
+          echo "::notice::Expected checksum: $EXPECTED_CHECKSUM"
+          echo "::notice::Actual checksum:   $ACTUAL_CHECKSUM"
+
+          if [ "$ACTUAL_CHECKSUM" != "$EXPECTED_CHECKSUM" ]; then
+            echo "::error::Checksum mismatch! The XCFramework does not match the checksum in Package.swift."
+            exit 1
+          fi
+
+          echo "::notice::Checksum verified successfully"
+
       - name: Check publish status
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
         run: |
           TAG_EXISTS="false"
           RELEASE_EXISTS="false"
@@ -67,34 +88,30 @@ jobs:
       - name: Create GitHub Release with zip
         if: env.RELEASE_EXISTS == 'false'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
         run: |
-          if [ ! -f PulseKit.xcframework.zip ]; then
-            echo "::error::PulseKit.xcframework.zip not found in repo."
-            exit 1
-          fi
-
           gh release create "$VERSION" \
             PulseKit.xcframework.zip \
             --title "PulseKit v${VERSION}" \
-            --notes "$(cat <<EOF
-          ## PulseKit v${VERSION}
+            --notes "$(cat <<'RELEASE_EOF'
+          ## Installation
 
           ### CocoaPods
-          \`\`\`ruby
-          pod 'PulseKit', '${VERSION}'
-          \`\`\`
+          ```ruby
+          pod 'PulseKit'
+          ```
 
           ### Swift Package Manager
-          \`\`\`
-          https://github.com/${{ github.repository }}.git
-          \`\`\`
+          Add the package URL in Xcode:
+          ```
+          https://github.com/dream-horizon-org/pulse-ios.git
+          ```
 
           ### Requirements
           - iOS 15.1+
           - Swift 5.10+
-          - Dynamic framework — use \`use_frameworks!\` in Podfile
-          EOF
+          - Dynamic framework — use `use_frameworks!` in Podfile
+          RELEASE_EOF
           )"
           echo "::notice::Created GitHub Release $VERSION with zip"
 
@@ -103,7 +120,7 @@ jobs:
 
       - name: Setup CocoaPods trunk authentication
         run: |
-          cat <<EOF > ~/.netrc
+          cat > ~/.netrc <<EOF
           machine trunk.cocoapods.org
             login ${{ secrets.COCOAPODS_TRUNK_EMAIL }}
             password ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
@@ -118,18 +135,6 @@ jobs:
             echo "::notice::Publishing PulseKit $VERSION to CocoaPods trunk..."
             pod trunk push PulseKit.podspec --allow-warnings
             echo "::notice::Successfully published to CocoaPods trunk"
-          fi
-
-      - name: Clean up zip from repo
-        run: |
-          rm -f PulseKit.xcframework.zip
-          git add -A
-          if git diff --cached --quiet; then
-            echo "::notice::No zip to clean up"
-          else
-            git commit -m "chore: clean up release zip after v${VERSION}"
-            git push origin main
-            echo "::notice::Cleaned up zip from repo"
           fi
 
       - name: Summary
