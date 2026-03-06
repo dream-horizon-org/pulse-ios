@@ -5403,7 +5403,10 @@
         "name": "KSCrash",
         "printedName": "KSCrash",
         "declKind": "Import",
-        "moduleName": "PulseKit"
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -90689,112 +90692,112 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 390,
+      "offset": 453,
       "length": 14,
       "value": "\"device.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 577,
+      "offset": 640,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 582,
+      "offset": 645,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 643,
+      "offset": 706,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "Array",
-      "offset": 777,
+      "offset": 840,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 832,
+      "offset": 895,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1399,
+      "offset": 1462,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1467,
+      "offset": 1530,
       "length": 7,
       "value": "\"0.0.1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 9980,
+      "offset": 10043,
       "length": 19,
       "value": "\"exception.message\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10031,
+      "offset": 10094,
       "length": 16,
       "value": "\"exception.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10085,
+      "offset": 10148,
       "length": 22,
       "value": "\"exception.stacktrace\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10134,
+      "offset": 10197,
       "length": 11,
       "value": "\"thread.id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10174,
+      "offset": 10237,
       "length": 13,
       "value": "\"thread.name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10248,
+      "offset": 10311,
       "length": 8,
       "value": "\"report\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10287,
+      "offset": 10350,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse-ios-sdk\/pulse-ios-sdk\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10324,
+      "offset": 10387,
       "length": 6,
       "value": "\"user\""
     },

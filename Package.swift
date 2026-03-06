@@ -2,8 +2,8 @@
 
 import PackageDescription
 
-let version = "0.0.1-beta.3"
-let checksum = "12fd4b1ab1eeb89737556b7fb969b696136923c3ad00e970f7fbcba3df710700"
+let version = "0.0.1-beta.4"
+let checksum = "8a7b5e6f57e9d98155ad9732383083e325707fad2d0caf93d4a30fb232807d33"
 
 let package = Package(
     name: "PulseKit",

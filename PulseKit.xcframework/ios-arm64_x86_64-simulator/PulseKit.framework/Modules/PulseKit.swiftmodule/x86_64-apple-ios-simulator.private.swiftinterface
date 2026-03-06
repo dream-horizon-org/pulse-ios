@@ -8,7 +8,6 @@ import CoreLocation
 import CoreTelephony
 import Darwin
 import Foundation
-import KSCrash
 import Network
 import ObjectiveC
 import OpenTelemetryApi
