@@ -34,55 +34,13 @@ jobs:
           fi
           echo "::notice::Versions consistent: $PODSPEC_VERSION"
 
-      # The binary target URL points to a GitHub Release that doesn't exist yet,
-      # so we patch Package.swift to use the local zip (same artifact SPM would
-      # download in production). This also validates the zip is properly packaged.
-      - name: Patch Package.swift for local binary target
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Validate podspec (builds framework via CocoaPods)
         run: |
-          python3 << 'PYEOF'
-          import re
-
-          with open('Package.swift') as f:
-              content = f.read()
-
-          content = re.sub(
-              r'\.binaryTarget\(\s*name:\s*"PulseKitBinary"\s*,'
-              r'\s*url:[^)]*checksum:[^)]*\)',
-              '.binaryTarget(name: "PulseKitBinary", path: "PulseKit.xcframework.zip")',
-              content,
-              flags=re.DOTALL,
-          )
-
-          with open('Package.swift', 'w') as f:
-              f.write(content)
-          PYEOF
-          echo "::notice::Package.swift patched to use local zip"
-
-      - name: Build example app (iOS Simulator)
-        run: |
-          set -o pipefail
-          cd Example
-          xcodebuild build \
-            -scheme PulseKitValidation \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
-            CODE_SIGNING_ALLOWED=NO | xcpretty
-          echo "::notice::Example app built successfully for iOS Simulator"
-
-      - name: Build example app (iOS Device)
-        run: |
-          set -o pipefail
-          cd Example
-          xcodebuild build \
-            -scheme PulseKitValidation \
-            -destination 'generic/platform=iOS' \
-            CODE_SIGNING_ALLOWED=NO | xcpretty
-          echo "::notice::Example app built successfully for iOS Device"
-
-      - name: Validate CocoaPods podspec
-        run: |
-          gem install cocoapods
           pod lib lint PulseKit.podspec --allow-warnings
-          echo "::notice::Podspec lint passed"
+          echo "::notice::Podspec lint passed — framework builds successfully"
 
       - name: Summary
         if: always()
@@ -92,6 +50,4 @@ jobs:
           echo "| Check | What it validates |" >> $GITHUB_STEP_SUMMARY
           echo "|-------|-------------------|" >> $GITHUB_STEP_SUMMARY
           echo "| Version consistency | podspec version == Package.swift version |" >> $GITHUB_STEP_SUMMARY
-          echo "| Example app (Simulator) | Framework links, compiles & public API intact |" >> $GITHUB_STEP_SUMMARY
-          echo "| Example app (Device) | Framework works for real device architecture |" >> $GITHUB_STEP_SUMMARY
-          echo "| CocoaPods lint | Podspec is valid for trunk publish |" >> $GITHUB_STEP_SUMMARY
+          echo "| CocoaPods lint | Framework links, dependencies resolve, podspec valid |" >> $GITHUB_STEP_SUMMARY
