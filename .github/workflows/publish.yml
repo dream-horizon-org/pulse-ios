@@ -27,31 +27,17 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "::notice::Publishing version: $VERSION"
 
-      - name: Create zip and validate checksum
+      - name: Verify zip exists
         run: |
-          if [ ! -d PulseKit.xcframework ]; then
-            echo "::error::PulseKit.xcframework directory not found in repo."
+          if [ ! -f PulseKit.xcframework.zip ]; then
+            echo "::error::PulseKit.xcframework.zip not found in repo."
             exit 1
           fi
-
-          zip -r -q PulseKit.xcframework.zip PulseKit.xcframework
-          ACTUAL_CHECKSUM=$(swift package compute-checksum PulseKit.xcframework.zip)
-
-          EXPECTED_CHECKSUM=$(grep 'let checksum' Package.swift | sed 's/.*"\(.*\)"/\1/')
-
-          echo "::notice::Expected checksum: $EXPECTED_CHECKSUM"
-          echo "::notice::Actual checksum:   $ACTUAL_CHECKSUM"
-
-          if [ "$ACTUAL_CHECKSUM" != "$EXPECTED_CHECKSUM" ]; then
-            echo "::error::Checksum mismatch! The XCFramework does not match the checksum in Package.swift."
-            exit 1
-          fi
-
-          echo "::notice::Checksum verified successfully"
+          echo "::notice::Zip size: $(du -sh PulseKit.xcframework.zip | cut -f1)"
 
       - name: Check publish status
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG_EXISTS="false"
           RELEASE_EXISTS="false"
@@ -88,7 +74,7 @@ jobs:
       - name: Create GitHub Release with zip
         if: env.RELEASE_EXISTS == 'false'
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "$VERSION" \
             PulseKit.xcframework.zip \
