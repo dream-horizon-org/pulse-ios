@@ -34,10 +34,10 @@ jobs:
           fi
           echo "::notice::Versions consistent: $PODSPEC_VERSION"
 
-      # The binary target URL points to a GitHub Release that doesn't exist yet,
-      # so we patch Package.swift to use the local zip (same artifact SPM would
-      # download in production). This also validates the zip is properly packaged.
-      - name: Patch Package.swift for local binary target
+      # Patch Package.swift for local validation:
+      # 1. Use local zip instead of remote URL (the GitHub Release doesn't exist yet)
+      # 2. Inject a PulseKitValidation target that exercises the public API
+      - name: Patch Package.swift for validation
         run: |
           python3 << 'PYEOF'
           import re
@@ -53,15 +53,37 @@ jobs:
               flags=re.DOTALL,
           )
 
+          content = content.replace(
+              '.library(name: "PulseKit", targets: ["PulseKitWrapper"])\n    ],',
+              '.library(name: "PulseKit", targets: ["PulseKitWrapper"]),\n'
+              '        .library(name: "PulseKitValidation", targets: ["PulseKitValidation"])\n    ],',
+          )
+
+          content = content.replace(
+              '            path: "Sources/PulseKitWrapper"\n        ),\n    ]\n)',
+              '            path: "Sources/PulseKitWrapper"\n        ),\n'
+              '        .target(\n'
+              '            name: "PulseKitValidation",\n'
+              '            dependencies: [\n'
+              '                "PulseKitWrapper",\n'
+              '                .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core"),\n'
+              '            ],\n'
+              '            path: "Example/Sources"\n'
+              '        ),\n    ]\n)',
+          )
+
           with open('Package.swift', 'w') as f:
               f.write(content)
           PYEOF
-          echo "::notice::Package.swift patched to use local zip"
+
+          echo "::group::Patched Package.swift"
+          cat Package.swift
+          echo "::endgroup::"
+          echo "::notice::Package.swift patched for validation"
 
       - name: Build example app (iOS Simulator)
         run: |
           set -o pipefail
-          cd Example
           xcodebuild build \
             -scheme PulseKitValidation \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
@@ -71,7 +93,6 @@ jobs:
       - name: Build example app (iOS Device)
         run: |
           set -o pipefail
-          cd Example
           xcodebuild build \
             -scheme PulseKitValidation \
             -destination 'generic/platform=iOS' \
