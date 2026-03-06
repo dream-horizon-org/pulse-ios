@@ -47,7 +47,7 @@ jobs:
 
           content = re.sub(
               r'\.binaryTarget\(\s*name:\s*"PulseKitBinary"\s*,'
-              r'\s*url:[^)]*checksum:[^)]*\)',
+              r'\s*url:.*?checksum:.*?\)',
               '.binaryTarget(name: "PulseKitBinary", path: "PulseKit.xcframework.zip")',
               content,
               flags=re.DOTALL,
