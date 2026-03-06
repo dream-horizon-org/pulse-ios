@@ -1,0 +1,97 @@
+name: Validate Release PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Framework Compatibility
+    if: startsWith(github.head_ref, 'release/')
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version
+        run: |
+          VERSION=$(grep "spec.version" PulseKit.podspec | head -1 | sed "s/.*\"\(.*\)\"/\1/")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "::notice::Validating version: $VERSION"
+
+      - name: Validate version consistency
+        run: |
+          PODSPEC_VERSION=$(grep "spec.version" PulseKit.podspec | head -1 | sed "s/.*\"\(.*\)\"/\1/")
+          SPM_VERSION=$(grep 'let version' Package.swift | head -1 | sed 's/.*"\(.*\)"/\1/')
+
+          echo "Podspec version:       $PODSPEC_VERSION"
+          echo "Package.swift version: $SPM_VERSION"
+
+          if [ "$PODSPEC_VERSION" != "$SPM_VERSION" ]; then
+            echo "::error::Version mismatch — podspec: $PODSPEC_VERSION, Package.swift: $SPM_VERSION"
+            exit 1
+          fi
+          echo "::notice::Versions consistent: $PODSPEC_VERSION"
+
+      # The binary target URL points to a GitHub Release that doesn't exist yet,
+      # so we patch Package.swift to use the local zip (same artifact SPM would
+      # download in production). This also validates the zip is properly packaged.
+      - name: Patch Package.swift for local binary target
+        run: |
+          python3 << 'PYEOF'
+          import re
+
+          with open('Package.swift') as f:
+              content = f.read()
+
+          content = re.sub(
+              r'\.binaryTarget\(\s*name:\s*"PulseKitBinary"\s*,'
+              r'\s*url:[^)]*checksum:[^)]*\)',
+              '.binaryTarget(name: "PulseKitBinary", path: "PulseKit.xcframework.zip")',
+              content,
+              flags=re.DOTALL,
+          )
+
+          with open('Package.swift', 'w') as f:
+              f.write(content)
+          PYEOF
+          echo "::notice::Package.swift patched to use local zip"
+
+      - name: Build example app (iOS Simulator)
+        run: |
+          set -o pipefail
+          cd Example
+          xcodebuild build \
+            -scheme PulseKitValidation \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
+          echo "::notice::Example app built successfully for iOS Simulator"
+
+      - name: Build example app (iOS Device)
+        run: |
+          set -o pipefail
+          cd Example
+          xcodebuild build \
+            -scheme PulseKitValidation \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
+          echo "::notice::Example app built successfully for iOS Device"
+
+      - name: Validate CocoaPods podspec
+        run: |
+          gem install cocoapods
+          pod lib lint PulseKit.podspec --allow-warnings
+          echo "::notice::Podspec lint passed"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Release PR Validation — v$VERSION" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | What it validates |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------------------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version consistency | podspec version == Package.swift version |" >> $GITHUB_STEP_SUMMARY
+          echo "| Example app (Simulator) | Framework links, compiles & public API intact |" >> $GITHUB_STEP_SUMMARY
+          echo "| Example app (Device) | Framework works for real device architecture |" >> $GITHUB_STEP_SUMMARY
+          echo "| CocoaPods lint | Podspec is valid for trunk publish |" >> $GITHUB_STEP_SUMMARY
