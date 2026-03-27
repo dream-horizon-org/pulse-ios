@@ -17,6 +17,7 @@ let package = Package(
         .package(url: "https://github.com/open-telemetry/opentelemetry-swift-core.git", from: "2.2.0"),
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.0"),
         .package(url: "https://github.com/kstenerud/KSCrash.git", from: "2.5.0"),
+        .package(url: "https://github.com/SDWebImage/libwebp-Xcode.git", from: "1.5.0"),
     ],
     targets: [
         .binaryTarget(
