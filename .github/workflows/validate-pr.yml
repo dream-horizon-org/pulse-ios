@@ -31,40 +31,15 @@ jobs:
           fi
           echo "::notice::Branch and podspec version agree: $PODSPEC_VERSION"
 
-      # Optional: legacy Package.swift used `let version = "…"`. Generated manifests from pulse-ios-sdk may omit it.
-      - name: Optional Package.swift version line
-        run: |
-          if grep -q 'let version' Package.swift 2>/dev/null; then
-            SPM_VERSION=$(grep 'let version' Package.swift | head -1 | sed 's/.*"\([^"]*\)".*/\1/')
-            PODSPEC_VERSION=$(grep "spec.version" PulseKit.podspec | head -1 | sed "s/.*\"\(.*\)\"/\1/")
-            echo "Package.swift let version: $SPM_VERSION"
-            if [ "$PODSPEC_VERSION" != "$SPM_VERSION" ]; then
-              echo "::error::Package.swift let version ($SPM_VERSION) != podspec ($PODSPEC_VERSION)"
-              exit 1
-            fi
-            echo "::notice::let version matches podspec"
-          else
-            echo "::notice::No let version in Package.swift — using branch/podspec check only (expected for generated manifests)"
-          fi
-
-      # Patch for CI: inject a small target that imports PulseKit (public API smoke test).
-      # Supports path-only .binaryTarget layout from Scripts/release/sync-release-distribution.rb (any number of peers).
-      - name: Patch Package.swift for validation
+      # Ship Package.swift only exposes the PulseKit library. CI temporarily adds a second target + product
+      # so Xcode generates scheme PulseKitValidation and xcodebuild can compile/link Example/Sources against PulseKit (SPM smoke test).
+      - name: Inject SPM validation target (CI-only edit)
         run: |
           python3 << 'PYEOF'
-          import re
           from pathlib import Path
 
           path = Path("Package.swift")
           content = path.read_text()
-
-          # If PulseKitBinary still points at a URL (pre-release GitHub asset), use local xcframework.
-          content = re.sub(
-              r'\.binaryTarget\(\s*name:\s*"PulseKitBinary"\s*,\s*url:\s*[^\)]+\)',
-              '.binaryTarget(name: "PulseKitBinary", path: "PulseKit.xcframework")',
-              content,
-              flags=re.DOTALL,
-          )
 
           if 'name: "PulseKitValidation"' in content:
               path.write_text(content)
@@ -104,12 +79,9 @@ jobs:
           print("\n".join(path.read_text().splitlines()[-35:]))
           PYEOF
 
-          echo "::notice::Package.swift patched for validation"
+          echo "::notice::Package.swift updated for SPM smoke build"
 
-      - name: Swift package resolve (sanity)
-        run: swift package resolve
-
-      - name: Build example app (iOS Simulator)
+      - name: Build SPM validation target (iOS Simulator)
         run: |
           set -o pipefail
           if command -v xcpretty >/dev/null 2>&1; then
@@ -123,9 +95,9 @@ jobs:
               -destination 'platform=iOS Simulator,name=iPhone 16' \
               CODE_SIGNING_ALLOWED=NO
           fi
-          echo "::notice::Example app built successfully for iOS Simulator"
+          echo "::notice::PulseKitValidation built for iOS Simulator"
 
-      - name: Build example app (iOS Device)
+      - name: Build SPM validation target (iOS Device)
         run: |
           set -o pipefail
           if command -v xcpretty >/dev/null 2>&1; then
@@ -139,7 +111,7 @@ jobs:
               -destination 'generic/platform=iOS' \
               CODE_SIGNING_ALLOWED=NO
           fi
-          echo "::notice::Example app built successfully for iOS Device"
+          echo "::notice::PulseKitValidation built for iOS Device"
 
       - name: Install CocoaPods
         run: gem install cocoapods
@@ -157,7 +129,6 @@ jobs:
           echo "| Check | What it validates |" >> $GITHUB_STEP_SUMMARY
           echo "|-------|-------------------|" >> $GITHUB_STEP_SUMMARY
           echo "| Branch vs podspec | \`release/<version>\` matches \`spec.version\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Optional \`let version\` | If present in Package.swift, matches podspec |" >> $GITHUB_STEP_SUMMARY
-          echo "| Example app (Simulator) | Framework links, compiles & public API intact |" >> $GITHUB_STEP_SUMMARY
-          echo "| Example app (Device) | Same for device slice |" >> $GITHUB_STEP_SUMMARY
+          echo "| SPM smoke build (Simulator) | Injected \`PulseKitValidation\` target links & compiles |" >> $GITHUB_STEP_SUMMARY
+          echo "| SPM smoke build (Device) | Same for device slice |" >> $GITHUB_STEP_SUMMARY
           echo "| CocoaPods lint | Podspec valid for trunk |" >> $GITHUB_STEP_SUMMARY

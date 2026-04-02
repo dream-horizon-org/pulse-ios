@@ -2,8 +2,6 @@
 
 import PackageDescription
 
-let version = "0.0.1-beta.5"
-
 let package = Package(
     name: "PulseKit",
     platforms: [
