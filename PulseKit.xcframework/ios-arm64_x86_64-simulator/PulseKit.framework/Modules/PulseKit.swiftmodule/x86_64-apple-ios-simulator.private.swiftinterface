@@ -2,10 +2,13 @@
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target x86_64-apple-ios15.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Accelerate
 import Combine
 import Compression
+import CoreGraphics
 import CoreLocation
 import CoreTelephony
+import CryptoKit
 import Darwin
 import Foundation
 import Network
@@ -13,15 +16,25 @@ import ObjectiveC
 import OpenTelemetryApi
 import OpenTelemetrySdk
 @_exported import PulseKit
+import QuartzCore
 import Security
 import Swift
 import SwiftProtobuf
+import SwiftUI
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 import os.log
 import os
+public struct AnyCodable : Swift.Codable, Swift.Equatable {
+  public let value: Any
+  public init(_ value: Any)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (lhs: PulseKit.AnyCodable, rhs: PulseKit.AnyCodable) -> Swift.Bool
+}
 public struct ApiResponse<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
   public let data: T
   public let error: Swift.String?
@@ -52,6 +65,64 @@ public class ApplicationDataSource : PulseKit.IApplicationDataSource {
   }
   @objc deinit
 }
+final public class AppLifecycleInstrumentation : PulseKit.AppStateListener {
+  public static let eventName: Swift.String
+  public static let appStateAttributeKey: Swift.String
+  public init(logger: any OpenTelemetryApi.Logger)
+  final public func appCreated()
+  final public func appForegrounded()
+  final public func appBackgrounded()
+  final public func uninstall()
+  @objc deinit
+}
+public struct AppLifecycleInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+public struct AppStartupInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
+public enum AppState : Swift.String {
+  case created
+  case foreground
+  case background
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol AppStateListener : AnyObject {
+  func appCreated()
+  func appForegrounded()
+  func appBackgrounded()
+}
+extension PulseKit.AppStateListener {
+  public func appCreated()
+  public func appForegrounded()
+  public func appBackgrounded()
+}
+@_hasMissingDesignatedInitializers final public class AppStateWatcher {
+  public static let shared: PulseKit.AppStateWatcher
+  final public var currentState: PulseKit.AppState {
+    get
+  }
+  final public func registerListener(_ listener: any PulseKit.AppStateListener)
+  final public func removeListener(_ listener: any PulseKit.AppStateListener)
+  final public func start()
+  final public func stop()
+  @objc deinit
+}
+public typealias BeforeSendLogCallback = (OpenTelemetrySdk.ReadableLogRecord) -> OpenTelemetrySdk.ReadableLogRecord?
+public typealias BeforeSendMetricCallback = (OpenTelemetrySdk.MetricData) -> OpenTelemetrySdk.MetricData?
+public typealias BeforeSendSpanCallback = (OpenTelemetrySdk.SpanData) -> OpenTelemetrySdk.SpanData?
 public struct Opentelemetry_Proto_Common_V1_AnyValue : @unchecked Swift.Sendable {
   public var value: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value?
   public var stringValue: Swift.String {
@@ -292,6 +363,11 @@ public struct InstrumentationConfiguration {
   public mutating func interaction(_ configure: (inout PulseKit.InteractionInstrumentationConfig) -> Swift.Void)
   public mutating func location(_ configure: (inout PulseKit.LocationInstrumentationConfig) -> Swift.Void)
   public mutating func crash(_ configure: (inout PulseKit.CrashInstrumentationConfig) -> Swift.Void)
+  public mutating func appLifecycle(_ configure: (inout PulseKit.AppLifecycleInstrumentationConfig) -> Swift.Void)
+  public mutating func screenLifecycle(_ configure: (inout PulseKit.ScreenLifecycleInstrumentationConfig) -> Swift.Void)
+  public mutating func appStartup(_ configure: (inout PulseKit.AppStartupInstrumentationConfig) -> Swift.Void)
+  public mutating func uiKitTap(_ configure: (inout PulseKit.UIKitTapInstrumentationConfig) -> Swift.Void)
+  public mutating func sessionReplay(_ configure: (inout PulseKit.SessionReplayInstrumentationConfig) -> Swift.Void)
 }
 public struct Interaction : Swift.Equatable {
   public let id: Swift.String
@@ -343,7 +419,7 @@ public protocol InteractionConfigFetcher {
   func getConfigs() async throws -> [PulseKit.InteractionConfig]?
 }
 public class InteractionConfigMockFetcher : PulseKit.InteractionConfigFetcher {
-  public init()
+  public init(customConfigs: [PulseKit.InteractionConfig]? = nil)
   public func getConfigs() async throws -> [PulseKit.InteractionConfig]?
   @objc deinit
 }
@@ -682,6 +758,26 @@ extension PulseKit.Opentelemetry_Proto_Collector_Logs_V1_ExportLogsPartialSucces
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct MeteredSessionConfig {
+  public init()
+}
+public class MeteredSessionLogProcessor : OpenTelemetrySdk.LogRecordProcessor {
+  public init(nextProcessor: any OpenTelemetrySdk.LogRecordProcessor, meteredManager: PulseKit.SessionManager)
+  public func onEmit(logRecord: OpenTelemetrySdk.ReadableLogRecord)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.ExportResult
+  @objc deinit
+}
+public class MeteredSessionSpanProcessor : OpenTelemetrySdk.SpanProcessor {
+  public var isStartRequired: Swift.Bool
+  public var isEndRequired: Swift.Bool
+  public init(meteredManager: PulseKit.SessionManager)
+  public func onStart(parentContext: OpenTelemetryApi.SpanContext?, span: any OpenTelemetrySdk.ReadableSpan)
+  public func onEnd(span: any OpenTelemetrySdk.ReadableSpan)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  public func forceFlush(timeout: Foundation.TimeInterval?)
+  @objc deinit
 }
 public enum Opentelemetry_Proto_Metrics_V1_AggregationTemporality : SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Swift.Int
@@ -1766,6 +1862,7 @@ public enum PulseAttributes {
   public static let pulseName: Swift.String
   public static let pulseSpanId: Swift.String
   public static let screenName: Swift.String
+  public static let lastScreenName: Swift.String
   public static let userId: Swift.String
   public static let appInstallationId: Swift.String
   public static let pulseUserPrefix: Swift.String
@@ -1773,9 +1870,12 @@ public enum PulseAttributes {
   public static let pulseUserSessionStartEventName: Swift.String
   public static let pulseUserSessionEndEventName: Swift.String
   public static let startType: Swift.String
+  public static let viewControllerName: Swift.String
   public static let exceptionMessage: Swift.String
   public static let exceptionType: Swift.String
   public static let exceptionStacktrace: Swift.String
+  public static let graphqlOperationName: Swift.String
+  public static let graphqlOperationType: Swift.String
   public static let projectId: Swift.String
   public static func pulseUserParameter(_ key: Swift.String) -> Swift.String
   public enum PulseSdkNames {
@@ -1794,11 +1894,23 @@ public enum PulseAttributes {
     public static let frozen: Swift.String
     public static let slow: Swift.String
     public static let touch: Swift.String
+    public static let appClick: Swift.String
     public static let networkChange: Swift.String
     public static let appInstallationStart: Swift.String
     public static let appSessionStart: Swift.String
     public static let appSessionEnd: Swift.String
+    public static let sessionReplay: Swift.String
     public static func isNetworkType(_ pulseType: Swift.String) -> Swift.Bool
+  }
+}
+public enum PulseDataCollectionConsent {
+  case pending
+  case allowed
+  case denied
+  public static func == (a: PulseKit.PulseDataCollectionConsent, b: PulseKit.PulseDataCollectionConsent) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
   }
 }
 public struct PulseDeviceContext {
@@ -1818,7 +1930,8 @@ extension PulseKit.PulseSessionSamplingRule {
   public var isShutdown: Swift.Bool {
     get
   }
-  public func initialize(endpointBaseUrl: Swift.String, projectId: Swift.String, configEndpointUrl: Swift.String? = nil, customEventCollectorUrl: Swift.String? = nil, endpointHeaders: [Swift.String : Swift.String]? = nil, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
+  public func initialize(endpointBaseUrl: Swift.String, apiKey: Swift.String, configEndpointUrl: Swift.String? = nil, customEventCollectorUrl: Swift.String? = nil, endpointHeaders: [Swift.String : Swift.String]? = nil, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, dataCollectionState: PulseKit.PulseDataCollectionConsent = .allowed, beforeSendSpan: PulseKit.BeforeSendSpanCallback? = nil, beforeSendLog: PulseKit.BeforeSendLogCallback? = nil, beforeSendMetric: PulseKit.BeforeSendMetricCallback? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
+  public func setDataCollectionState(_ newState: PulseKit.PulseDataCollectionConsent)
   public func shutdown()
   public func trackEvent(name: Swift.String, observedTimeStampInMs: Swift.Double, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
   public func trackNonFatal(name: Swift.String, observedTimeStampInMs: Swift.Int64, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
@@ -2013,9 +2126,11 @@ public struct PulseFeatureConfig : Swift.Codable, Swift.Equatable {
   public let featureName: PulseKit.PulseFeatureName
   public let sessionSampleRate: Swift.Float
   public let sdks: [PulseKit.PulseSdkName]
-  public static func == (a: PulseKit.PulseFeatureConfig, b: PulseKit.PulseFeatureConfig) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
+  public let config: [Swift.String : PulseKit.AnyCodable]?
+  public init(featureName: PulseKit.PulseFeatureName, sessionSampleRate: Swift.Float, sdks: [PulseKit.PulseSdkName], config: [Swift.String : PulseKit.AnyCodable]? = nil)
   public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: PulseKit.PulseFeatureConfig, b: PulseKit.PulseFeatureConfig) -> Swift.Bool
 }
 public enum PulseSignalScope : Swift.String, Swift.Codable, Swift.CaseIterable {
   case logs
@@ -2064,6 +2179,7 @@ public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
   case rn_screen_load
   case rn_screen_interactive
   case ios_crash
+  case session_replay
   case unknown
   public init?(rawValue: Swift.String)
   public typealias AllCases = [PulseKit.PulseFeatureName]
@@ -2203,13 +2319,20 @@ public enum ResourceAdapter {
   public func create() -> OpenTelemetrySdk.Resource
   @objc deinit
 }
+public struct ScreenLifecycleInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+}
 public struct Session : Swift.Equatable {
   public let id: Swift.String
   public let expireTime: Foundation.Date
   public let previousId: Swift.String?
   public let startTime: Foundation.Date
   public let sessionTimeout: Foundation.TimeInterval
-  public init(id: Swift.String, expireTime: Foundation.Date, previousId: Swift.String? = nil, startTime: Foundation.Date = Date(), sessionTimeout: Foundation.TimeInterval = SessionConfig.default.sessionTimeout)
+  public init(id: Swift.String, expireTime: Foundation.Date, previousId: Swift.String? = nil, startTime: Foundation.Date = Date(), sessionTimeout: Foundation.TimeInterval = SessionConfig.default.maxLifetime ?? SessionConfigDefaults.maxLifetime)
   public static func == (lhs: PulseKit.Session, rhs: PulseKit.Session) -> Swift.Bool
   public func isExpired() -> Swift.Bool
   public var endTime: Foundation.Date? {
@@ -2219,17 +2342,34 @@ public struct Session : Swift.Equatable {
     get
   }
 }
+public struct SessionConfigDefaults {
+  public static let backgroundInactivityTimeout: Swift.Double
+  public static let maxLifetime: Swift.Double
+  public static let shouldPersist: Swift.Bool
+}
 public struct SessionConfig {
-  public let sessionTimeout: Foundation.TimeInterval
-  public init(sessionTimeout: Foundation.TimeInterval = 30 * 60)
+  public let backgroundInactivityTimeout: Foundation.TimeInterval?
+  public let maxLifetime: Foundation.TimeInterval?
+  public let shouldPersist: Swift.Bool
+  public let startEventName: Swift.String?
+  public let endEventName: Swift.String?
+  public init(backgroundInactivityTimeout: Foundation.TimeInterval? = SessionConfigDefaults.backgroundInactivityTimeout, maxLifetime: Foundation.TimeInterval? = SessionConfigDefaults.maxLifetime, shouldPersist: Swift.Bool = SessionConfigDefaults.shouldPersist, startEventName: Swift.String? = SessionConstants.sessionStartEvent, endEventName: Swift.String? = SessionConstants.sessionEndEvent)
   public static let `default`: PulseKit.SessionConfig
 }
 public class SessionConfigBuilder {
-  public var sessionTimeout: Swift.Double {
+  public var backgroundInactivityTimeout: Foundation.TimeInterval? {
+    get
+  }
+  public var maxLifetime: Foundation.TimeInterval? {
+    get
+  }
+  public var shouldPersist: Swift.Bool {
     get
   }
   public init()
-  public func with(sessionTimeout: Foundation.TimeInterval) -> Self
+  public func with(backgroundInactivityTimeout: Foundation.TimeInterval?) -> Self
+  public func with(maxLifetime: Foundation.TimeInterval?) -> Self
+  public func with(shouldPersist: Swift.Bool) -> Self
   public func build() -> PulseKit.SessionConfig
   @objc deinit
 }
@@ -2241,10 +2381,12 @@ extension PulseKit.SessionConfig {
   public static let sessionEndEvent: Swift.String
   public static let id: Swift.String
   public static let previousId: Swift.String
+  public static let meteredId: Swift.String
   public static let startTime: Swift.String
   public static let endTime: Swift.String
   public static let duration: Swift.String
   public static let sessionEventNotification: Swift.String
+  public static let meteredSessionIdHeader: Swift.String
   @objc deinit
 }
 public enum SessionEventType {
@@ -2259,6 +2401,9 @@ public enum SessionEventType {
 public struct SessionEvent {
   public let session: PulseKit.Session
   public let eventType: PulseKit.SessionEventType
+  public let eventName: Swift.String
+  public let endTimestamp: Foundation.Date?
+  public init(session: PulseKit.Session, eventType: PulseKit.SessionEventType, eventName: Swift.String, endTimestamp: Foundation.Date? = nil)
 }
 public class SessionEventInstrumentation {
   public init()
@@ -2273,22 +2418,186 @@ public class SessionLogRecordProcessor : OpenTelemetrySdk.LogRecordProcessor {
 }
 public class SessionManager {
   public init(configuration: PulseKit.SessionConfig = .default)
+  @objc deinit
   @discardableResult
   public func getSession() -> PulseKit.Session
   public func peekSession() -> PulseKit.Session?
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class SessionManagerProvider {
   public static func register(sessionManager: PulseKit.SessionManager)
   public static func getInstance() -> PulseKit.SessionManager
   @objc deinit
 }
+@_hasMissingDesignatedInitializers final public class SessionReplayCompressor {
+  public static func compress(image: UIKit.UIImage, quality: CoreFoundation.CGFloat) -> (data: Foundation.Data, format: PulseKit.SessionReplayFrame.ImageFormat)?
+  @objc deinit
+}
+public class SessionReplayExporter {
+  public init?(endpointBaseUrl: Swift.String, headers: [Swift.String : Swift.String], projectId: Swift.String, userIdProvider: @escaping () -> Swift.String? = { nil })
+  @objc deinit
+}
+public class SessionReplayInstrumentation {
+  public static func getInstance() -> PulseKit.SessionReplayInstrumentation?
+  public init(config: PulseKit.SessionReplayConfig, exporter: PulseKit.SessionReplayExporter? = nil, isSessionReplayCaptureAllowed: @escaping () -> Swift.Bool = { true })
+  public func install(shouldStartActive: Swift.Bool)
+  public func pauseForConsent()
+  public func resumeAfterConsent()
+  public func flushForShutdown()
+  public func uninstall()
+  public var recorderInstance: PulseKit.SessionReplayRecorder? {
+    get
+  }
+  @objc deinit
+}
+public struct SessionReplayInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public var config: PulseKit.SessionReplayConfig {
+    get
+  }
+  public init(enabled: Swift.Bool = false, config: PulseKit.SessionReplayConfig = SessionReplayConfig())
+  public mutating func enabled(_ value: Swift.Bool)
+  public mutating func configure(_ configure: (inout PulseKit.SessionReplayConfig) -> Swift.Void)
+}
+public enum TextAndInputPrivacy {
+  case maskAll
+  case maskAllInputs
+  case maskSensitiveInputs
+  public static func == (a: PulseKit.TextAndInputPrivacy, b: PulseKit.TextAndInputPrivacy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ImagePrivacy {
+  case maskAll
+  case maskNone
+  public static func == (a: PulseKit.ImagePrivacy, b: PulseKit.ImagePrivacy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SessionReplayConfig {
+  public var captureIntervalMs: Swift.Int
+  public var compressionQuality: CoreFoundation.CGFloat
+  public var textAndInputPrivacy: PulseKit.TextAndInputPrivacy
+  public var imagePrivacy: PulseKit.ImagePrivacy
+  @available(*, deprecated, message: "Use textAndInputPrivacy instead")
+  public var maskAllTextInputs: Swift.Bool {
+    get
+    set
+  }
+  @available(*, deprecated, message: "Use imagePrivacy instead")
+  public var maskAllImages: Swift.Bool {
+    get
+    set
+  }
+  public var screenshotScale: CoreFoundation.CGFloat
+  public var flushIntervalSeconds: Swift.Double
+  public var flushAt: Swift.Int
+  public var maxBatchSize: Swift.Int
+  public var replayEndpointBaseUrl: Swift.String?
+  public var maskViewClasses: Swift.Set<Swift.String>
+  public var unmaskViewClasses: Swift.Set<Swift.String>
+  public var effectiveCaptureIntervalMs: Swift.Int {
+    get
+  }
+  public var effectiveCompressionQuality: CoreFoundation.CGFloat {
+    get
+  }
+  public var effectiveScreenshotScale: CoreFoundation.CGFloat {
+    get
+  }
+  public var effectiveFlushIntervalSeconds: Foundation.TimeInterval {
+    get
+  }
+  public var effectiveFlushAt: Swift.Int {
+    get
+  }
+  public var effectiveMaxBatchSize: Swift.Int {
+    get
+  }
+  public init(captureIntervalMs: Swift.Int = 1000, compressionQuality: CoreFoundation.CGFloat = 0.3, textAndInputPrivacy: PulseKit.TextAndInputPrivacy = .maskAll, imagePrivacy: PulseKit.ImagePrivacy = .maskAll, screenshotScale: CoreFoundation.CGFloat = 1.0, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil, maskViewClasses: Swift.Set<Swift.String> = [], unmaskViewClasses: Swift.Set<Swift.String> = [])
+  @available(*, deprecated, message: "Use init with textAndInputPrivacy and imagePrivacy instead")
+  public init(captureIntervalMs: Swift.Int = 1000, compressionQuality: CoreFoundation.CGFloat = 0.3, maskAllTextInputs: Swift.Bool = true, maskAllImages: Swift.Bool = true, screenshotScale: CoreFoundation.CGFloat = 1.0, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil)
+  public mutating func addMaskViewClass(_ className: Swift.String)
+  public mutating func addUnmaskViewClass(_ className: Swift.String)
+}
+public struct SessionReplayFrame {
+  public enum ImageFormat : Swift.String {
+    case webp
+    case jpeg
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let timestamp: Foundation.Date
+  public let sessionId: Swift.String
+  public let screenName: Swift.String
+  public let imageData: Foundation.Data
+  public let format: PulseKit.SessionReplayFrame.ImageFormat
+  public let width: Swift.Int
+  public let height: Swift.Int
+  public init(timestamp: Foundation.Date, sessionId: Swift.String, screenName: Swift.String, imageData: Foundation.Data, format: PulseKit.SessionReplayFrame.ImageFormat, width: Swift.Int, height: Swift.Int)
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func pulseReplayMask()
+  @_Concurrency.MainActor @preconcurrency public func pulseReplayUnmask()
+}
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+@_Concurrency.MainActor @preconcurrency public struct PulseReplayMaskModifier : SwiftUICore.ViewModifier {
+  @_Concurrency.MainActor @preconcurrency public init(shouldMask: Swift.Bool = true)
+  @_Concurrency.MainActor @preconcurrency public func body(content: PulseKit.PulseReplayMaskModifier.Content) -> some SwiftUICore.View
+  
+  @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s8PulseKit0A18ReplayMaskModifierV4body7contentQr7SwiftUI05_ViewE8_ContentVyACG_tF", 0) __
+}
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func pulseReplayMask() -> some SwiftUICore.View
+  
+  @_Concurrency.MainActor @preconcurrency public func pulseReplayUnmask() -> some SwiftUICore.View
+  
+  @available(*, deprecated, message: "Use pulseReplayMask() or pulseReplayUnmask() instead")
+  @_Concurrency.MainActor @preconcurrency public func pulseReplayMask(isEnabled: Swift.Bool) -> some SwiftUICore.View
+  
+}
+public class SessionReplayRecorder {
+  public init(config: PulseKit.SessionReplayConfig, exporter: PulseKit.SessionReplayExporter? = nil, isSessionReplayCaptureAllowed: @escaping () -> Swift.Bool = { true }, deferSendCachedEventsUntilAllowed: Swift.Bool = false)
+  @objc deinit
+  public var isRecording: Swift.Bool {
+    get
+  }
+  public func start(resetState: Swift.Bool = true)
+  public func resume()
+  public func tearDown()
+  public func pauseCapturing()
+  public func resumeAfterConsentGrant()
+  public func flushPersisting()
+  public func stop()
+}
 public struct SessionsInstrumentationConfig {
   public var enabled: Swift.Bool {
     get
   }
+  public var maxLifetime: Foundation.TimeInterval? {
+    get
+  }
+  public var backgroundInactivityTimeout: Foundation.TimeInterval? {
+    get
+  }
+  public var shouldPersist: Swift.Bool {
+    get
+  }
   public init(enabled: Swift.Bool = true)
   public mutating func enabled(_ value: Swift.Bool)
+  public mutating func maxLifetime(_ value: Foundation.TimeInterval?)
+  public mutating func backgroundInactivityTimeout(_ value: Foundation.TimeInterval?)
+  public mutating func shouldPersist(_ value: Swift.Bool)
 }
 public class SessionSpanProcessor : OpenTelemetrySdk.SpanProcessor {
   public var isStartRequired: Swift.Bool
@@ -2654,6 +2963,17 @@ extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSucc
     get
   }
 }
+public struct UIKitTapInstrumentationConfig {
+  public var enabled: Swift.Bool {
+    get
+  }
+  public var captureContext: Swift.Bool {
+    get
+  }
+  public init(enabled: Swift.Bool = true, captureContext: Swift.Bool = true)
+  public mutating func enabled(_ value: Swift.Bool)
+  public mutating func captureContext(_ value: Swift.Bool)
+}
 public class URLSessionInstrumentation {
   public var configuration: PulseKit.URLSessionInstrumentationConfiguration {
     get
@@ -2696,6 +3016,9 @@ public struct URLSessionInstrumentationConfiguration {
   public let baggageProvider: ((inout Foundation.URLRequest, (any OpenTelemetryApi.Span)?) -> (any OpenTelemetryApi.Baggage)?)?
   public let ignoredClassPrefixes: [Swift.String]?
 }
+extension PulseKit.AppState : Swift.Equatable {}
+extension PulseKit.AppState : Swift.Hashable {}
+extension PulseKit.AppState : Swift.RawRepresentable {}
 extension PulseKit.ExporterMetrics.TransporterType : Swift.Equatable {}
 extension PulseKit.ExporterMetrics.TransporterType : Swift.Hashable {}
 extension PulseKit.ExporterMetrics.TransporterType : Swift.RawRepresentable {}
@@ -2703,6 +3026,8 @@ extension PulseKit.Connection : Swift.Equatable {}
 extension PulseKit.Connection : Swift.Hashable {}
 extension PulseKit.CompressionType : Swift.Equatable {}
 extension PulseKit.CompressionType : Swift.Hashable {}
+extension PulseKit.PulseDataCollectionConsent : Swift.Equatable {}
+extension PulseKit.PulseDataCollectionConsent : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Equatable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.RawRepresentable {}
@@ -2723,3 +3048,12 @@ extension PulseKit.PulseAttributeType : Swift.Hashable {}
 extension PulseKit.PulseAttributeType : Swift.RawRepresentable {}
 extension PulseKit.SessionEventType : Swift.Equatable {}
 extension PulseKit.SessionEventType : Swift.Hashable {}
+extension PulseKit.TextAndInputPrivacy : Swift.Equatable {}
+extension PulseKit.TextAndInputPrivacy : Swift.Hashable {}
+extension PulseKit.ImagePrivacy : Swift.Equatable {}
+extension PulseKit.ImagePrivacy : Swift.Hashable {}
+extension PulseKit.SessionReplayFrame.ImageFormat : Swift.Equatable {}
+extension PulseKit.SessionReplayFrame.ImageFormat : Swift.Hashable {}
+extension PulseKit.SessionReplayFrame.ImageFormat : Swift.RawRepresentable {}
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+extension PulseKit.PulseReplayMaskModifier : Swift.Sendable {}

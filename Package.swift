@@ -2,38 +2,51 @@
 
 import PackageDescription
 
-let version = "0.0.1-beta.4"
-let checksum = "8a7b5e6f57e9d98155ad9732383083e325707fad2d0caf93d4a30fb232807d33"
+let version = "0.0.1-beta.5"
 
 let package = Package(
     name: "PulseKit",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v15),
     ],
     products: [
-        .library(name: "PulseKit", targets: ["PulseKitWrapper"])
+        .library(name: "PulseKit", targets: ["PulseKitWrapper"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/open-telemetry/opentelemetry-swift-core.git", from: "2.2.0"),
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.0"),
-        .package(url: "https://github.com/kstenerud/KSCrash.git", from: "2.5.0"),
-        .package(url: "https://github.com/SDWebImage/libwebp-Xcode.git", from: "1.5.0"),
-    ],
+    dependencies: [],
     targets: [
         .binaryTarget(
             name: "PulseKitBinary",
-            url: "https://github.com/dream-horizon-org/pulse-ios/releases/download/\(version)/PulseKit.xcframework.zip",
-            checksum: checksum
+            path: "PulseKit.xcframework"
+        ),
+        .binaryTarget(
+            name: "KSCrashBinary",
+            path: "KSCrash.xcframework"
+        ),
+        .binaryTarget(
+            name: "OpenTelemetryApiBinary",
+            path: "OpenTelemetryApi.xcframework"
+        ),
+        .binaryTarget(
+            name: "OpenTelemetrySdkBinary",
+            path: "OpenTelemetrySdk.xcframework"
+        ),
+        .binaryTarget(
+            name: "SwiftProtobufBinary",
+            path: "SwiftProtobuf.xcframework"
+        ),
+        .binaryTarget(
+            name: "libwebpBinary",
+            path: "libwebp.xcframework"
         ),
         .target(
             name: "PulseKitWrapper",
             dependencies: [
                 "PulseKitBinary",
-                .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core"),
-                .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
-                .product(name: "Recording", package: "KSCrash"),
-                .product(name: "Filters", package: "KSCrash"),
+                "KSCrashBinary",
+                "OpenTelemetryApiBinary",
+                "OpenTelemetrySdkBinary",
+                "SwiftProtobufBinary",
+                "libwebpBinary",
             ],
             path: "Sources/PulseKitWrapper"
         ),
