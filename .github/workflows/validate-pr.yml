@@ -36,6 +36,7 @@ jobs:
       - name: Inject SPM validation target (CI-only edit)
         run: |
           python3 << 'PYEOF'
+          import re
           from pathlib import Path
 
           path = Path("Package.swift")
