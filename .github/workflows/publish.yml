@@ -68,14 +68,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "$VERSION" \
-            --title "PulseKit v${VERSION}" \
-            --notes "$(cat <<'RELEASE_EOF'
+          NOTES=$(sed "s|__VERSION__|${VERSION}|g" <<'TEMPLATE'
           ## Installation
 
           ### CocoaPods
           ```ruby
-          pod 'PulseKit'
+          pod 'PulseKit', '__VERSION__'
           ```
 
           ### Swift Package Manager
@@ -83,13 +81,22 @@ jobs:
           ```
           https://github.com/dream-horizon-org/pulse-ios.git
           ```
+          Set the dependency rule to **Exact Version** `__VERSION__` (same as this release’s git tag).
+
+          Or in a `Package.swift` dependency:
+          ```swift
+          .package(url: "https://github.com/dream-horizon-org/pulse-ios.git", exact: "__VERSION__"),
+          ```
 
           ### Requirements
           - iOS 15.1+
           - Swift 5.10+
           - Dynamic framework — use `use_frameworks!` in Podfile
-          RELEASE_EOF
-          )"
+          TEMPLATE
+          )
+          gh release create "$VERSION" \
+            --title "PulseKit v${VERSION}" \
+            --notes "$NOTES"
           echo "::notice::Created GitHub Release $VERSION (sources + xcframeworks at tag)"
 
       - name: Install CocoaPods
