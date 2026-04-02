@@ -27,14 +27,6 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "::notice::Publishing version: $VERSION"
 
-      - name: Verify zip exists
-        run: |
-          if [ ! -f PulseKit.xcframework.zip ]; then
-            echo "::error::PulseKit.xcframework.zip not found in repo."
-            exit 1
-          fi
-          echo "::notice::Zip size: $(du -sh PulseKit.xcframework.zip | cut -f1)"
-
       - name: Check publish status
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,13 +63,12 @@ jobs:
           git push origin "$VERSION"
           echo "::notice::Created and pushed tag $VERSION"
 
-      - name: Create GitHub Release with zip
+      - name: Create GitHub Release
         if: env.RELEASE_EXISTS == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "$VERSION" \
-            PulseKit.xcframework.zip \
             --title "PulseKit v${VERSION}" \
             --notes "$(cat <<'RELEASE_EOF'
           ## Installation
@@ -99,7 +90,7 @@ jobs:
           - Dynamic framework — use `use_frameworks!` in Podfile
           RELEASE_EOF
           )"
-          echo "::notice::Created GitHub Release $VERSION with zip"
+          echo "::notice::Created GitHub Release $VERSION (sources + xcframeworks at tag)"
 
       - name: Install CocoaPods
         run: gem install cocoapods

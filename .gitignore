@@ -1,2 +1,6 @@
 .DS_Store
 .build/
+
+# Binary archives not used for distribution (SPM/CocoaPods use xcframework dirs in-repo).
+PulseKit.xcframework.zip
+*.xcframework.zip

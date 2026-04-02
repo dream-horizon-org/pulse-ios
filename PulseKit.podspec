@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "PulseKit"
-  spec.version      = "0.0.1-beta.4"
+  spec.version      = "0.0.1-beta.5"
   spec.summary      = "Pulse iOS SDK - Simplified OpenTelemetry for iOS"
   spec.description  = <<-DESC
     Pulse iOS SDK is a production-ready SDK for instrumenting iOS applications
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'OpenTelemetry-Swift-Api', '2.2.0'
   spec.dependency 'OpenTelemetry-Swift-Sdk', '2.2.0'
-  spec.dependency 'SwiftProtobuf', '~> 1.28'
-  spec.dependency 'KSCrash', '~> 2.5'
   spec.dependency 'libwebp', '~> 1.5'
+  spec.dependency 'SwiftProtobuf', '1.34.1'
+  spec.dependency 'KSCrash', '2.5.1'
 end
