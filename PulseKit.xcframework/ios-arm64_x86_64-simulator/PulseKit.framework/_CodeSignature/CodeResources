@@ -18,47 +18,63 @@
 		</data>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		DXkuQ956Q7iJPIfXP8g/06hLK4c=
+		RE/uHBVnmym9u4Xe8W04z/DY2aw=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		+FV1eRG1XCMtYWWnrVg4Y8o1E8c=
+		k4VClZ95OfylsHwxzldAkSIzXx0=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lcsvkztt2VRxiB4/+6ZaQtxpY9o=
+		XaqJbPtErnb559WpAWOVgy8oJ5Y=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		+FV1eRG1XCMtYWWnrVg4Y8o1E8c=
+		k4VClZ95OfylsHwxzldAkSIzXx0=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qBc2/PdOm4UGLhR4WaSZu/qv/Ws=
+		SP8iFWWR4a/ye3IgitCxcBM/cdM=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		DXkuQ956Q7iJPIfXP8g/06hLK4c=
+		RE/uHBVnmym9u4Xe8W04z/DY2aw=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		FB3UtSM5cWCfHD/Rv4ysXqhzGrw=
+		aQKI3auFOirYmFCa8r8e25YztMQ=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ZggJNTs6bX30aBwDZDHYGxYj2Vg=
+		ycKXcumMVsbhJToKsNLpHOVY5oU=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FB3UtSM5cWCfHD/Rv4ysXqhzGrw=
+		aQKI3auFOirYmFCa8r8e25YztMQ=
 		</data>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XCKZzAhOv3+ti01jANdLxzwR91Y=
+		dOsF3M0QpgLAJc0XF3N15xS/bZE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		SHtpOvRw6cdIk8NzTGIvN75JPVw=
+		</data>
+		<key>pulse-upload-dsym.sh</key>
+		<data>
+		rqHvV6vRH8/9ZsKgDB14tEJMcto=
+		</data>
+		<key>pulse-upload-errors.sh</key>
+		<data>
+		GXUaDqYOXN0TfKfCMnocOZB9sfo=
+		</data>
+		<key>pulse-upload-task.sh</key>
+		<data>
+		434xt+2HpJG7EXrM2baScaf/Ks0=
+		</data>
+		<key>pulse-upload-utils.sh</key>
+		<data>
+		nDAXIb7blPNwmy9Yw3NIRDlf1iY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -81,70 +97,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p4mtXEte/EAzbpop2GNq/6AjBkZps3yxAV4wzHpum58=
+			z4BitBNQ6xqr2ilUh1NzJulC5K6MplPbV8cTpgYH81w=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aFilYkTY2ZwkjKSX0K5MfRjSiNvAYJ7GL7C5wKjj4Wg=
+			JprcIItID5xn/xIGkEcz6yYVih8vKob5Y2TMU331HVg=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u6aI9IOYFYFCuOMJJ+oBYOtiKZ9ArBenIB/PC2d4UZg=
+			oKB6fiGQgh9XKvDwN3SzS/ySwTmcagzQRpy3akCQf5I=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aFilYkTY2ZwkjKSX0K5MfRjSiNvAYJ7GL7C5wKjj4Wg=
+			JprcIItID5xn/xIGkEcz6yYVih8vKob5Y2TMU331HVg=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iQdqWrBRdTr0Ge8FSO86UdK0/8b1imhyZob4xlnO3vs=
+			M8dgFr/NrtFZVQAnquPYK1lVuaXxdCEys0K3ecQ9p1E=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p4mtXEte/EAzbpop2GNq/6AjBkZps3yxAV4wzHpum58=
+			z4BitBNQ6xqr2ilUh1NzJulC5K6MplPbV8cTpgYH81w=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lidPJ4D6FNJdbKV5o4zBhrMdDVoQjrn1LL9jTbnuW/U=
+			pujjTRWHehvqxlVXNu+z9v9ysFzRd5YFMncs63OmBmg=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XgChtcbu74+QUwBZdQ622bZAFnAQyiBxDORJhTCuB3g=
+			/XGGZhF8emzVcJNFGN3e5JmyjgyWZwVR9uPrrMhg4N4=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lidPJ4D6FNJdbKV5o4zBhrMdDVoQjrn1LL9jTbnuW/U=
+			pujjTRWHehvqxlVXNu+z9v9ysFzRd5YFMncs63OmBmg=
 			</data>
 		</dict>
 		<key>Modules/PulseKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1ZJnthpMPehofAy7AYaofvxaI9cS5NKedDrNYbZN6k4=
+			qNtEXYdwWEY7PNafa/GcctHyvKGx2VXAsUJ0LvKKCLs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -152,6 +168,34 @@
 			<key>hash2</key>
 			<data>
 			zm9YyBA0ppI2p5P7IHb2Jcb7pZk0i/Nw5zsbppnOWFc=
+			</data>
+		</dict>
+		<key>pulse-upload-dsym.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tTygPRnefuaXLEC1gOWZ144uUc/BFCrYYqAer4/AhFg=
+			</data>
+		</dict>
+		<key>pulse-upload-errors.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fZ04XfxwLsHAHhxQWwW/hB8riYSbB4KZINED+KnEL9o=
+			</data>
+		</dict>
+		<key>pulse-upload-task.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			S+c5qdlYGL12e6mdv1RS+ydT6lpUyLVcvyf1nXPq6ZM=
+			</data>
+		</dict>
+		<key>pulse-upload-utils.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			E0MNz+7Ix9lf+xZBTDdmviL5Dpm3aRiD+uoEnPEpTAs=
 			</data>
 		</dict>
 	</dict>
