@@ -12,7 +12,7 @@ public enum PulseKitValidation {
 
         pulse.initialize(
             endpointBaseUrl: "http://localhost:4318",
-            projectId: "ci-validation",
+            apiKey: "ci-validation",
             endpointHeaders: nil,
             globalAttributes: [
                 "env": AttributeValue.string("ci"),
