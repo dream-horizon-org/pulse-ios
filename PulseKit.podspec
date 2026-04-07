@@ -4,7 +4,8 @@ Pod::Spec.new do |spec|
   spec.summary      = "Pulse iOS SDK - Simplified OpenTelemetry for iOS"
   spec.description  = <<-DESC
     Pulse iOS SDK is a production-ready SDK for instrumenting iOS applications
-    with OpenTelemetry. Distributed as a prebuilt binary framework.
+    with OpenTelemetry. Distributed as prebuilt xcframeworks (PulseKit and peer
+    dependencies)
   DESC
 
   spec.homepage     = "https://github.com/dream-horizon-org/pulse-ios"
@@ -18,12 +19,13 @@ Pod::Spec.new do |spec|
 
   spec.ios.deployment_target = "15.1"
 
-  spec.vendored_frameworks = "PulseKit.xcframework"
+  spec.vendored_frameworks = [
+    "PulseKit.xcframework",
+    "KSCrash.xcframework",
+    "OpenTelemetryApi.xcframework",
+    "OpenTelemetrySdk.xcframework",
+    "SwiftProtobuf.xcframework",
+    "libwebp.xcframework",
+  ]
   spec.swift_version = "5.10"
-
-  spec.dependency 'OpenTelemetry-Swift-Api', '2.2.0'
-  spec.dependency 'OpenTelemetry-Swift-Sdk', '2.2.0'
-  spec.dependency 'libwebp', '~> 1.5'
-  spec.dependency 'SwiftProtobuf', '1.34.1'
-  spec.dependency 'KSCrash', '2.5.1'
 end
