@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/runner/Library/Developer/Xcode/DerivedData/PulseIOSExample-defojylxeysrhabxufaurleissll/Build/Intermediates.noindex/ArchiveIntermediates/OpenTelemetry-Swift-Api/InstallationBuildProductsLocation/Library/Frameworks/OpenTelemetryApi.framework/OpenTelemetryApi'
+binary-path:     '/Users/runner/Library/Developer/Xcode/DerivedData/PulseIOSExample-dshqvgcjvbegwvdwdhsjktxvugug/Build/Intermediates.noindex/ArchiveIntermediates/OpenTelemetry-Swift-Api/InstallationBuildProductsLocation/Library/Frameworks/OpenTelemetryApi.framework/OpenTelemetryApi'
 relocations:
   - { offset: 0x5DD10, size: 0x8, addend: 0x0, symName: _OpenTelemetryApiVersionString, symObjAddr: 0x0, symBinAddr: 0x50F90, symSize: 0x0 }
   - { offset: 0x5DD45, size: 0x8, addend: 0x0, symName: _OpenTelemetryApiVersionNumber, symObjAddr: 0x30, symBinAddr: 0x50FC0, symSize: 0x0 }
@@ -1190,7 +1190,7 @@ relocations:
   - { offset: 0x7B378, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi19SemanticConventionsV13ElasticsearchOSYAASY8rawValue03RawH0QzvgTW', symObjAddr: 0x1F4, symBinAddr: 0x1B548, symSize: 0x20 }
   - { offset: 0x7B38C, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi19SemanticConventionsV13ElasticsearchOSYAASY8rawValue03RawH0QzvgTW', symObjAddr: 0x1F4, symBinAddr: 0x1B548, symSize: 0x20 }
   - { offset: 0x7B476, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageC8instance_WZ', symObjAddr: 0x0, symBinAddr: 0x1B5BC, symSize: 0x28 }
-  - { offset: 0x7B49A, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageC8instanceACvpZ', symObjAddr: 0x1DA8, symBinAddr: 0x932B8, symSize: 0x0 }
+  - { offset: 0x7B49A, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageC8instanceACvpZ', symObjAddr: 0x1DA0, symBinAddr: 0x932B8, symSize: 0x0 }
   - { offset: 0x7B556, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageC8instance_WZ', symObjAddr: 0x0, symBinAddr: 0x1B5BC, symSize: 0x28 }
   - { offset: 0x7B586, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageCMa', symObjAddr: 0x38, symBinAddr: 0x1B5E4, symSize: 0x20 }
   - { offset: 0x7B603, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi12EmptyBaggageCAA0E0A2aDP14baggageBuilderAA0eG0_pyFZTW', symObjAddr: 0x58, symBinAddr: 0x1B604, symSize: 0x2C }
@@ -2799,7 +2799,7 @@ relocations:
   - { offset: 0xA1247, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi19SemanticConventionsV6SystemO8rawValueSSvg', symObjAddr: 0x2D4, symBinAddr: 0x3800C, symSize: 0x178 }
   - { offset: 0xA1344, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi19SemanticConventionsV6SystemOSYAASY8rawValuexSg03RawH0Qz_tcfCTW', symObjAddr: 0x4E4, symBinAddr: 0x3821C, symSize: 0xC }
   - { offset: 0xA1358, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi19SemanticConventionsV6SystemOSYAASY8rawValue03RawH0QzvgTW', symObjAddr: 0x4F0, symBinAddr: 0x38228, symSize: 0x24 }
-  - { offset: 0xA1486, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi23TaskLocalContextManagerC8$contexts0dE0CySDySSyXlGGvpZ', symObjAddr: 0x7C50, symBinAddr: 0x932C0, symSize: 0x0 }
+  - { offset: 0xA1486, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi23TaskLocalContextManagerC8$contexts0dE0CySDySSyXlGGvpZ', symObjAddr: 0x7C48, symBinAddr: 0x932C0, symSize: 0x0 }
   - { offset: 0xA173C, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi23TaskLocalContextManagerCMa', symObjAddr: 0x1C, symBinAddr: 0x38334, symSize: 0x20 }
   - { offset: 0xA1750, size: 0x8, addend: 0x0, symName: '_$s16OpenTelemetryApi23TaskLocalContextManagerC8$context_WZ', symObjAddr: 0x3C, symBinAddr: 0x38354, symSize: 0x58 }
   - { offset: 0xA1831, size: 0x8, addend: 0x0, symName: '_$ss9TaskLocalC9withValue_9operation9isolation4file4lineqd__x_qd__yYaKXEScA_pSgYiSSSutYaKlFTwB', symObjAddr: 0x830, symBinAddr: 0x38AD4, symSize: 0xC8 }

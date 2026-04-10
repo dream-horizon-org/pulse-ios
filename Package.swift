@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "PulseKit",
     platforms: [
-        .iOS(.v15),
+        .iOS(.v13),
     ],
     products: [
         .library(name: "PulseKit", targets: ["PulseKitWrapper"]),
