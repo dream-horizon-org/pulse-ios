@@ -23,7 +23,7 @@ PulseKit is a production-ready observability SDK for iOS applications, built on 
 Add **PulseKit** to your `Podfile`:
 
 ```ruby
-platform :ios, '15.1'
+platform :ios, '13.0'
 
 target 'YourApp' do
   use_frameworks!
@@ -43,7 +43,7 @@ https://github.com/dream-horizon-org/pulse-ios.git
 
 ## Requirements
 
-- iOS 15.1+
+- iOS 13.0+
 - Swift 5.10+
 - Xcode 15+
 
