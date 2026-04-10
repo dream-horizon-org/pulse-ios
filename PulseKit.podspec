@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
     :tag => "#{spec.version}"
   }
 
-  spec.ios.deployment_target = "15.1"
+  spec.ios.deployment_target = "13.0"
 
   spec.vendored_frameworks = [
     "PulseKit.xcframework",
