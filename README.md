@@ -20,27 +20,18 @@ PulseKit is a production-ready observability SDK for iOS applications, built on 
 
 ### CocoaPods
 
-PulseKit is a dynamic framework. Add it to your Podfile with `use_frameworks!` and the required `post_install` hook for module stability:
+Add **PulseKit** to your `Podfile`:
 
 ```ruby
 platform :ios, '15.1'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'PulseKit'
-end
-
-post_install do |installer|
-  pulse_deps = ['OpenTelemetry-Swift-Api', 'OpenTelemetry-Swift-Sdk', 'SwiftProtobuf', 'KSCrash']
-  installer.pods_project.targets.each do |target|
-    if pulse_deps.any? { |dep| target.name.start_with?(dep) }
-      target.build_configurations.each do |config|
-        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-      end
-    end
-  end
+  pod 'PulseKit', '~> 0.0.1-beta.5'
 end
 ```
+
+Use **`use_frameworks!`** because PulseKit is a **dynamic** Swift framework — CocoaPods needs that to link it into your app the supported way.
 
 ### Swift Package Manager
 
@@ -67,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Pulse.shared.initialize(
             endpointBaseUrl: "https://your-endpoint.com/otlp",
-            projectId: "your-project-id"
+            apiKey: "API_KEY"
         )
         return true
     }
