@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target arm64-apple-ios15.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PulseKit -package-name pulse_kit
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Accelerate
 import Combine
@@ -1877,10 +1877,25 @@ public enum PulseAttributes {
   public static let graphqlOperationName: Swift.String
   public static let graphqlOperationType: Swift.String
   public static let projectId: Swift.String
+  public static let clickType: Swift.String
+  public static let clickIsRage: Swift.String
+  public static let clickRageCount: Swift.String
+  public static let deviceScreenWidth: Swift.String
+  public static let deviceScreenHeight: Swift.String
+  public static let deviceScreenAspectRatio: Swift.String
+  public static let appScreenCoordinateNx: Swift.String
+  public static let appScreenCoordinateNy: Swift.String
   public static func pulseUserParameter(_ key: Swift.String) -> Swift.String
   public enum PulseSdkNames {
     public static let iosSwift: Swift.String
     public static let iosRn: Swift.String
+  }
+  public enum ClickTypeValues {
+    public static let good: Swift.String
+    public static let dead: Swift.String
+  }
+  public enum AppClickContext {
+    public static func buildContext(label: Swift.String?) -> Swift.String?
   }
   public enum PulseTypeValues {
     public static let customEvent: Swift.String
@@ -1946,6 +1961,16 @@ extension PulseKit.PulseSessionSamplingRule {
   public func setUserProperty(name: Swift.String, value: OpenTelemetryApi.AttributeValue?)
   public func setUserProperties(_ properties: [Swift.String : OpenTelemetryApi.AttributeValue?])
   public func setUserProperties(_ builderAction: (inout [Swift.String : OpenTelemetryApi.AttributeValue?]) -> Swift.Void)
+  public func trackLongCounterMetric(name: Swift.String, value: Swift.Int = 1, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackDoubleCounterMetric(name: Swift.String, value: Swift.Double = 1.0, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackLongUpDownCounterMetric(name: Swift.String, value: Swift.Int, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackDoubleUpDownCounterMetric(name: Swift.String, value: Swift.Double, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackDoubleGaugeMetric(name: Swift.String, value: Swift.Double, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackLongGaugeMetric(name: Swift.String, value: Swift.Int, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackDoubleHistogramMetric(name: Swift.String, value: Swift.Double, bucketBoundaries: [Swift.Double]? = nil, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackLongHistogramMetric(name: Swift.String, value: Swift.Int, bucketBoundaries: [Swift.Double]? = nil, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackDoubleSumMetric(name: Swift.String, value: Swift.Double, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
+  public func trackLongSumMetric(name: Swift.String, value: Swift.Int, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
   @objc deinit
 }
 public struct PulseKitConfiguration {
@@ -1957,8 +1982,65 @@ public struct PulseKitConfiguration {
   public mutating func disableNetworkAttributes()
   public mutating func disableGlobalAttributes()
 }
+public struct PulseMetricsToAddEntry : Swift.Codable, Swift.Equatable {
+  public let name: Swift.String
+  public let target: PulseKit.PulseMetricsToAddTarget
+  public let condition: PulseKit.PulseSignalMatchCondition
+  public let type: PulseKit.PulseMetricsData
+  public let attributesToPick: [PulseKit.PulseSignalMatchCondition]
+  public init(name: Swift.String, target: PulseKit.PulseMetricsToAddTarget, condition: PulseKit.PulseSignalMatchCondition, type: PulseKit.PulseMetricsData, attributesToPick: [PulseKit.PulseSignalMatchCondition] = [])
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: PulseKit.PulseMetricsToAddEntry, b: PulseKit.PulseMetricsToAddEntry) -> Swift.Bool
+}
+public enum PulseMetricsToAddTarget : Swift.Codable, Swift.Equatable {
+  case name
+  case attribute(condition: PulseKit.PulseSignalMatchCondition, addPropNameAsSuffix: Swift.Bool)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: PulseKit.PulseMetricsToAddTarget, b: PulseKit.PulseMetricsToAddTarget) -> Swift.Bool
+}
+public enum PulseMetricsData : Swift.Codable, Swift.Equatable {
+  case counter
+  case gauge(isFraction: Swift.Bool)
+  case histogram(bucket: [Swift.Double]?, isFraction: Swift.Bool)
+  case sum(isFraction: Swift.Bool, isMonotonic: Swift.Bool)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: PulseKit.PulseMetricsData, b: PulseKit.PulseMetricsData) -> Swift.Bool
+}
+public enum PulseMockMetricsTestCase : Swift.CaseIterable {
+  case counterTargetNameSpan
+  case counterTargetNameLog
+  case counterAttrSuffixFalse
+  case counterAttrSuffixFalseButMutlipleAttr
+  case counterAttrSuffixTrue
+  case gaugeAttrSuffixFalse
+  case gaugeAttrSuffixTrue
+  case histogramAttrSuffixFalse
+  case histogramAttrSuffixTrue
+  case sumAttrSuffixFalse
+  case sumAttrSuffixTrue
+  public static func == (a: PulseKit.PulseMockMetricsTestCase, b: PulseKit.PulseMockMetricsTestCase) -> Swift.Bool
+  public typealias AllCases = [PulseKit.PulseMockMetricsTestCase]
+  nonisolated public static var allCases: [PulseKit.PulseMockMetricsTestCase] {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PulseMockConfigProvider {
+  public static var activeMetricsTestCase: PulseKit.PulseMockMetricsTestCase?
+  public static func fullMockConfig(metricsCase: PulseKit.PulseMockMetricsTestCase? = nil) -> PulseKit.PulseSdkConfig
+}
+public enum PulseOtelUtils {
+  public static func sanitizeMetricName(name: Swift.String, fallbackChar: Swift.Character = "_") -> Swift.String
+}
+public typealias DataRecorder = (Any?, _ attributeKeyForSuffix: Swift.String?, _ pointAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void
 final public class PulseSamplingSignalProcessors {
-  public init(deviceContext: PulseKit.PulseDeviceContext = .current, sdkConfig: PulseKit.PulseSdkConfig, currentSdkName: PulseKit.PulseSdkName, signalMatcher: any PulseKit.PulseSignalMatcher = PulseSignalsAttrMatcher(), sessionParser: any PulseKit.PulseSessionParser = PulseSessionConfigParser(), randomGenerator: (() -> Swift.Float)? = nil)
+  public init(deviceContext: PulseKit.PulseDeviceContext = .current, sdkConfig: PulseKit.PulseSdkConfig, currentSdkName: PulseKit.PulseSdkName, signalMatcher: any PulseKit.PulseSignalMatcher = PulseSignalsAttrMatcher(), sessionParser: any PulseKit.PulseSessionParser = PulseSessionConfigParser(), randomGenerator: (() -> Swift.Float)? = nil, meterProviderForMetricsToAdd: (any OpenTelemetryApi.MeterProvider)? = nil)
   @_hasMissingDesignatedInitializers final public class SampledSpanExporter : OpenTelemetrySdk.SpanExporter {
     final public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
     final public func flush(explicitTimeout: Foundation.TimeInterval?) -> OpenTelemetrySdk.SpanExporterResultCode
@@ -1986,7 +2068,7 @@ final public class PulseSamplingSignalProcessors {
   @objc deinit
 }
 final public class PulseSdkConfigCoordinator {
-  public init(storage: PulseKit.PulseSdkConfigStorage = PulseSdkConfigStorage())
+  public init(storage: PulseKit.PulseSdkConfigStorage = PulseSdkConfigStorage(), useLocalMockConfig: Swift.Bool = false)
   final public func loadCurrentConfig() -> PulseKit.PulseSdkConfig?
   final public func startBackgroundFetch(configEndpointUrl: Swift.String, endpointHeaders: [Swift.String : Swift.String], currentConfigVersion: Swift.Int?)
   @objc deinit
@@ -2019,11 +2101,10 @@ public struct PulseSdkConfig : Swift.Codable, Swift.Equatable {
 public struct PulseSamplingConfig : Swift.Codable, Swift.Equatable {
   public let `default`: PulseKit.PulseDefaultSamplingConfig
   public let rules: [PulseKit.PulseSessionSamplingRule]
-  public let criticalEventPolicies: PulseKit.PulseCriticalEventPolicies?
-  public let criticalSessionPolicies: PulseKit.PulseCriticalEventPolicies?
+  public let signalsToSample: [PulseKit.PulseSignalsToSampleEntry]
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
-  public init(default: PulseKit.PulseDefaultSamplingConfig, rules: [PulseKit.PulseSessionSamplingRule], criticalEventPolicies: PulseKit.PulseCriticalEventPolicies?, criticalSessionPolicies: PulseKit.PulseCriticalEventPolicies?)
+  public init(default: PulseKit.PulseDefaultSamplingConfig, rules: [PulseKit.PulseSessionSamplingRule], signalsToSample: [PulseKit.PulseSignalsToSampleEntry] = [])
   public static func == (a: PulseKit.PulseSamplingConfig, b: PulseKit.PulseSamplingConfig) -> Swift.Bool
 }
 public struct PulseDefaultSamplingConfig : Swift.Codable, Swift.Equatable {
@@ -2043,10 +2124,11 @@ public struct PulseSessionSamplingRule : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct PulseCriticalEventPolicies : Swift.Codable, Swift.Equatable {
-  public let alwaysSend: [PulseKit.PulseSignalMatchCondition]
-  public init(alwaysSend: [PulseKit.PulseSignalMatchCondition])
-  public static func == (a: PulseKit.PulseCriticalEventPolicies, b: PulseKit.PulseCriticalEventPolicies) -> Swift.Bool
+public struct PulseSignalsToSampleEntry : Swift.Codable, Swift.Equatable {
+  public let condition: PulseKit.PulseSignalMatchCondition
+  public let sampleRate: Swift.Float
+  public init(condition: PulseKit.PulseSignalMatchCondition, sampleRate: Swift.Float)
+  public static func == (a: PulseKit.PulseSignalsToSampleEntry, b: PulseKit.PulseSignalsToSampleEntry) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2058,19 +2140,11 @@ public struct PulseSignalConfig : Swift.Codable, Swift.Equatable {
   public let customEventCollectorUrl: Swift.String
   public let attributesToDrop: [PulseKit.PulseAttributesToDropEntry]
   public let attributesToAdd: [PulseKit.PulseAttributesToAddEntry]
-  public let filters: PulseKit.PulseSignalFilter
+  public let metricsToAdd: [PulseKit.PulseMetricsToAddEntry]
   public init(from decoder: any Swift.Decoder) throws
-  public init(scheduleDurationMs: Swift.Int64, logsCollectorUrl: Swift.String, metricCollectorUrl: Swift.String, spanCollectorUrl: Swift.String, customEventCollectorUrl: Swift.String, attributesToDrop: [PulseKit.PulseAttributesToDropEntry], attributesToAdd: [PulseKit.PulseAttributesToAddEntry], filters: PulseKit.PulseSignalFilter)
+  public init(scheduleDurationMs: Swift.Int64, logsCollectorUrl: Swift.String, metricCollectorUrl: Swift.String, spanCollectorUrl: Swift.String, customEventCollectorUrl: Swift.String, attributesToDrop: [PulseKit.PulseAttributesToDropEntry], attributesToAdd: [PulseKit.PulseAttributesToAddEntry], metricsToAdd: [PulseKit.PulseMetricsToAddEntry] = [])
   public static func == (a: PulseKit.PulseSignalConfig, b: PulseKit.PulseSignalConfig) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
-}
-public struct PulseSignalFilter : Swift.Codable, Swift.Equatable {
-  public let mode: PulseKit.PulseSignalFilterMode
-  public let values: [PulseKit.PulseSignalMatchCondition]
-  public init(mode: PulseKit.PulseSignalFilterMode, values: [PulseKit.PulseSignalMatchCondition])
-  public static func == (a: PulseKit.PulseSignalFilter, b: PulseKit.PulseSignalFilter) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PulseSignalMatchCondition : Swift.Codable, Swift.Equatable {
   public let name: Swift.String
@@ -2180,6 +2254,7 @@ public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
   case rn_screen_interactive
   case ios_crash
   case session_replay
+  case click
   case unknown
   public init?(rawValue: Swift.String)
   public typealias AllCases = [PulseKit.PulseFeatureName]
@@ -2204,15 +2279,6 @@ public enum PulseDeviceAttributeName : Swift.String, Swift.Codable, Swift.CaseIt
   nonisolated public static var allCases: [PulseKit.PulseDeviceAttributeName] {
     get
   }
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum PulseSignalFilterMode : Swift.String, Swift.Codable {
-  case blacklist
-  case whitelist
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2262,6 +2328,7 @@ public struct AlwaysOffSessionParser : PulseKit.PulseSessionParser {
   public func parses(deviceContext: PulseKit.PulseDeviceContext, samplingConfig: PulseKit.PulseSamplingConfig, currentSdkName: PulseKit.PulseSdkName) -> Swift.Float
 }
 final public class PulseSessionSamplingDecision {
+  final public let sessionRandomValue: Swift.Float
   final public var shouldSampleThisSession: Swift.Bool {
     get
   }
@@ -2963,6 +3030,12 @@ extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSucc
     get
   }
 }
+public struct RageConfig {
+  public var timeWindowMs: Swift.Int
+  public var rageThreshold: Swift.Int
+  public var radiusPt: Swift.Float
+  public init(timeWindowMs: Swift.Int = 2000, rageThreshold: Swift.Int = 3, radiusPt: Swift.Float = 50.0)
+}
 public struct UIKitTapInstrumentationConfig {
   public var enabled: Swift.Bool {
     get
@@ -2970,9 +3043,13 @@ public struct UIKitTapInstrumentationConfig {
   public var captureContext: Swift.Bool {
     get
   }
-  public init(enabled: Swift.Bool = true, captureContext: Swift.Bool = true)
+  public var rage: PulseKit.RageConfig {
+    get
+  }
+  public init(enabled: Swift.Bool = false, captureContext: Swift.Bool = false, rage: PulseKit.RageConfig = RageConfig())
   public mutating func enabled(_ value: Swift.Bool)
   public mutating func captureContext(_ value: Swift.Bool)
+  public mutating func rage(_ configure: (inout PulseKit.RageConfig) -> Swift.Void)
 }
 public class URLSessionInstrumentation {
   public var configuration: PulseKit.URLSessionInstrumentationConfiguration {
@@ -3031,6 +3108,8 @@ extension PulseKit.PulseDataCollectionConsent : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Equatable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.RawRepresentable {}
+extension PulseKit.PulseMockMetricsTestCase : Swift.Equatable {}
+extension PulseKit.PulseMockMetricsTestCase : Swift.Hashable {}
 extension PulseKit.PulseSignalScope : Swift.Equatable {}
 extension PulseKit.PulseSignalScope : Swift.Hashable {}
 extension PulseKit.PulseSignalScope : Swift.RawRepresentable {}
@@ -3040,9 +3119,6 @@ extension PulseKit.PulseSdkName : Swift.RawRepresentable {}
 extension PulseKit.PulseFeatureName : Swift.Equatable {}
 extension PulseKit.PulseFeatureName : Swift.Hashable {}
 extension PulseKit.PulseFeatureName : Swift.RawRepresentable {}
-extension PulseKit.PulseSignalFilterMode : Swift.Equatable {}
-extension PulseKit.PulseSignalFilterMode : Swift.Hashable {}
-extension PulseKit.PulseSignalFilterMode : Swift.RawRepresentable {}
 extension PulseKit.PulseAttributeType : Swift.Equatable {}
 extension PulseKit.PulseAttributeType : Swift.Hashable {}
 extension PulseKit.PulseAttributeType : Swift.RawRepresentable {}

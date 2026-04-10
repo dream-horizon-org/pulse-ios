@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/runner/Library/Developer/Xcode/DerivedData/PulseIOSExample-defojylxeysrhabxufaurleissll/Build/Intermediates.noindex/ArchiveIntermediates/libwebp/InstallationBuildProductsLocation/Library/Frameworks/libwebp.framework/libwebp'
+binary-path:     '/Users/runner/Library/Developer/Xcode/DerivedData/PulseIOSExample-dshqvgcjvbegwvdwdhsjktxvugug/Build/Intermediates.noindex/ArchiveIntermediates/libwebp/InstallationBuildProductsLocation/Library/Frameworks/libwebp.framework/libwebp'
 relocations:
   - { offset: 0x5AE2, size: 0x8, addend: 0x0, symName: _libwebpVersionString, symObjAddr: 0x0, symBinAddr: 0x48E50, symSize: 0x0 }
   - { offset: 0x5B16, size: 0x8, addend: 0x0, symName: _libwebpVersionNumber, symObjAddr: 0x28, symBinAddr: 0x48E78, symSize: 0x0 }
