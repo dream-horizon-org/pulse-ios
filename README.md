@@ -26,12 +26,9 @@ Add **PulseKit** to your `Podfile`:
 platform :ios, '13.0'
 
 target 'YourApp' do
-  use_frameworks!
   pod 'PulseKit', '~> 0.0.1-beta.5'
 end
 ```
-
-Use **`use_frameworks!`** because PulseKit is a **dynamic** Swift framework — CocoaPods needs that to link it into your app the supported way.
 
 ### Swift Package Manager
 

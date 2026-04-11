@@ -91,7 +91,6 @@ jobs:
           ### Requirements
           - iOS 13.0+
           - Swift 5.10+
-          - Dynamic framework — use `use_frameworks!` in Podfile
           TEMPLATE
           )
           gh release create "$VERSION" \
