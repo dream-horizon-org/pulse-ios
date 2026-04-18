@@ -26,7 +26,7 @@ Add **PulseKit** to your `Podfile`:
 platform :ios, '13.0'
 
 target 'YourApp' do
-  pod 'PulseKit', '~> 0.0.1-beta.5'
+  pod 'PulseKit', '~> LATEST_VERSION'
 end
 ```
 
