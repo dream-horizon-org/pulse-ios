@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Documentation
 
-Full documentation is available at [pulse.dreamhorizon.org/docs/sdk/ios](https://pulse.dreamhorizon.org/docs/sdk/ios).
+Full documentation is available at [https://pulse-ux.com](https://pulse-ux.com/docs/developer-guide/sdk/ios/installation).
 
 ## License
 
