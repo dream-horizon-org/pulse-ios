@@ -10623,8 +10623,120 @@
           },
           {
             "kind": "Var",
+            "name": "errorTypeCode",
+            "printedName": "errorTypeCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit11InteractionV13errorTypeCodeSSSgvp",
+            "mangledName": "$s8PulseKit11InteractionV13errorTypeCodeSSSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit11InteractionV13errorTypeCodeSSSgvg",
+                "mangledName": "$s8PulseKit11InteractionV13errorTypeCodeSSSgvg",
+                "moduleName": "PulseKit",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorMessage",
+            "printedName": "errorMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit11InteractionV12errorMessageSSSgvp",
+            "mangledName": "$s8PulseKit11InteractionV12errorMessageSSSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit11InteractionV12errorMessageSSSgvg",
+                "mangledName": "$s8PulseKit11InteractionV12errorMessageSSSgvg",
+                "moduleName": "PulseKit",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
             "name": "timeSpanInNanos",
-            "printedName": "timeSpanInNanos",
+            "printedName": "timeSpanInNanos(thresholdMs:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -10652,57 +10764,22 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
               }
             ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit11InteractionV15timeSpanInNanoss5Int64V5start_AF3endtSgvp",
-            "mangledName": "$s8PulseKit11InteractionV15timeSpanInNanoss5Int64V5start_AF3endtSgvp",
+            "declKind": "Func",
+            "usr": "s:8PulseKit11InteractionV15timeSpanInNanos11thresholdMss5Int64V5start_AG3endtSgAG_tF",
+            "mangledName": "$s8PulseKit11InteractionV15timeSpanInNanos11thresholdMss5Int64V5start_AG3endtSgAG_tF",
             "moduleName": "PulseKit",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(start: Swift.Int64, end: Swift.Int64)?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(start: Swift.Int64, end: Swift.Int64)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int64",
-                            "printedName": "Swift.Int64",
-                            "usr": "s:s5Int64V"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int64",
-                            "printedName": "Swift.Int64",
-                            "usr": "s:s5Int64V"
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit11InteractionV15timeSpanInNanoss5Int64V5start_AF3endtSgvg",
-                "mangledName": "$s8PulseKit11InteractionV15timeSpanInNanoss5Int64V5start_AF3endtSgvg",
-                "moduleName": "PulseKit",
-                "accessorKind": "get"
-              }
-            ]
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -12103,6 +12180,16 @@
             "usr": "s:8PulseKit24InteractionConfigFetcherP",
             "mangledName": "$s8PulseKit24InteractionConfigFetcherP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -75363,80 +75450,6 @@
           },
           {
             "kind": "Var",
-            "name": "network_instrumentation",
-            "printedName": "network_instrumentation",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PulseFeatureName",
-                    "printedName": "PulseKit.PulseFeatureName",
-                    "usr": "s:8PulseKit0A11FeatureNameO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "PulseKit.PulseFeatureName.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PulseFeatureName",
-                        "printedName": "PulseKit.PulseFeatureName",
-                        "usr": "s:8PulseKit0A11FeatureNameO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:8PulseKit0A11FeatureNameO23network_instrumentationyA2CmF",
-            "mangledName": "$s8PulseKit0A11FeatureNameO23network_instrumentationyA2CmF",
-            "moduleName": "PulseKit"
-          },
-          {
-            "kind": "Var",
-            "name": "screen_session",
-            "printedName": "screen_session",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PulseFeatureName",
-                    "printedName": "PulseKit.PulseFeatureName",
-                    "usr": "s:8PulseKit0A11FeatureNameO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "PulseKit.PulseFeatureName.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PulseFeatureName",
-                        "printedName": "PulseKit.PulseFeatureName",
-                        "usr": "s:8PulseKit0A11FeatureNameO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:8PulseKit0A11FeatureNameO14screen_sessionyA2CmF",
-            "mangledName": "$s8PulseKit0A11FeatureNameO14screen_sessionyA2CmF",
-            "moduleName": "PulseKit"
-          },
-          {
-            "kind": "Var",
             "name": "custom_events",
             "printedName": "custom_events",
             "children": [
@@ -75548,6 +75561,43 @@
           },
           {
             "kind": "Var",
+            "name": "rn_screen_session",
+            "printedName": "rn_screen_session",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO17rn_screen_sessionyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO17rn_screen_sessionyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
             "name": "ios_crash",
             "printedName": "ios_crash",
             "children": [
@@ -75655,6 +75705,228 @@
             "declKind": "EnumElement",
             "usr": "s:8PulseKit0A11FeatureNameO5clickyA2CmF",
             "mangledName": "$s8PulseKit0A11FeatureNameO5clickyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "ios_network",
+            "printedName": "ios_network",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO11ios_networkyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO11ios_networkyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "rn_network",
+            "printedName": "rn_network",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO10rn_networkyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO10rn_networkyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "ios_lifecycle",
+            "printedName": "ios_lifecycle",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO13ios_lifecycleyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO13ios_lifecycleyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "android_activity",
+            "printedName": "android_activity",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO16android_activityyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO16android_activityyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "android_fragment",
+            "printedName": "android_fragment",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO16android_fragmentyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO16android_fragmentyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "android_slowrendering",
+            "printedName": "android_slowrendering",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseFeatureName.Type) -> PulseKit.PulseFeatureName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseFeatureName",
+                    "printedName": "PulseKit.PulseFeatureName",
+                    "usr": "s:8PulseKit0A11FeatureNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseFeatureName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseFeatureName",
+                        "printedName": "PulseKit.PulseFeatureName",
+                        "usr": "s:8PulseKit0A11FeatureNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A11FeatureNameO21android_slowrenderingyA2CmF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO21android_slowrenderingyA2CmF",
             "moduleName": "PulseKit"
           },
           {
@@ -75825,6 +76097,64 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseFeatureName",
+                "printedName": "PulseKit.PulseFeatureName",
+                "usr": "s:8PulseKit0A11FeatureNameO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A11FeatureNameO4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s8PulseKit0A11FeatureNameO4fromACs7Decoder_p_tKcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A11FeatureNameO6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s8PulseKit0A11FeatureNameO6encode2toys7Encoder_p_tKF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -75832,7 +76162,8 @@
         "mangledName": "$s8PulseKit0A11FeatureNameO",
         "moduleName": "PulseKit",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "String",
         "conformances": [
@@ -75888,20 +76219,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          },
-          {
-            "kind": "Conformance",
             "name": "CaseIterable",
             "printedName": "CaseIterable",
             "children": [
@@ -75929,6 +76246,20 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -103929,105 +104260,119 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 739,
+      "offset": 737,
+      "length": 30,
+      "value": "\"pulse.interaction.error.type\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 798,
+      "length": 33,
+      "value": "\"pulse.interaction.error.message\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 861,
       "length": 17,
       "value": "\"internal_events\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 787,
+      "offset": 909,
       "length": 17,
       "value": "\"internal_marker\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 829,
+      "offset": 951,
       "length": 20,
       "value": "\"InteractionManager\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 902,
+      "offset": 1024,
       "length": 8,
       "value": "\"EQUALS\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 936,
+      "offset": 1058,
       "length": 11,
       "value": "\"NOTEQUALS\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 972,
+      "offset": 1094,
       "length": 10,
       "value": "\"CONTAINS\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1010,
+      "offset": 1132,
       "length": 13,
       "value": "\"NOTCONTAINS\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1050,
+      "offset": 1172,
       "length": 12,
       "value": "\"STARTSWITH\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1087,
+      "offset": 1209,
       "length": 10,
       "value": "\"ENDSWITH\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1162,
+      "offset": 1284,
       "length": 11,
       "value": "\"Excellent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1194,
+      "offset": 1316,
       "length": 6,
       "value": "\"Good\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1224,
+      "offset": 1346,
       "length": 9,
       "value": "\"Average\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1254,
+      "offset": 1376,
       "length": 6,
       "value": "\"Poor\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1323,
+      "offset": 1445,
       "length": 12,
       "value": "\"pulse.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1374,
+      "offset": 1496,
       "length": 13,
       "value": "\"interaction\""
     },
@@ -104093,6 +104438,20 @@
       "offset": 522,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionErrorType.swift",
+      "kind": "StringLiteral",
+      "offset": 228,
+      "length": 9,
+      "value": "\"timeout\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionErrorType.swift",
+      "kind": "StringLiteral",
+      "offset": 267,
+      "length": 20,
+      "value": "\"sequence_violation\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Models\/InteractionEvent.swift",
@@ -108997,189 +109356,189 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2029,
+      "offset": 2154,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2493,
+      "offset": 2618,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3135,
+      "offset": 3260,
       "length": 35,
       "value": "\"com.pulse.ios.sdk.sampling.config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 3585,
+      "offset": 3710,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4210,
+      "offset": 4335,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4509,
+      "offset": 4634,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 34734,
+      "offset": 35546,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35497,
+      "offset": 36309,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36269,
+      "offset": 37081,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 37514,
+      "offset": 38326,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 37903,
+      "offset": 38715,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 39907,
+      "offset": 40719,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 39949,
+      "offset": 40761,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 40296,
+      "offset": 41108,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 40340,
+      "offset": 41152,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 40747,
+      "offset": 41559,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41153,
+      "offset": 41965,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41513,
+      "offset": 42325,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41848,
+      "offset": 42660,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42246,
+      "offset": 43058,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42822,
+      "offset": 43634,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43377,
+      "offset": 44189,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43735,
+      "offset": 44547,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44035,
+      "offset": 44847,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44072,
+      "offset": 44884,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44118,
+      "offset": 44930,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44167,
+      "offset": 44979,
       "length": 2,
       "value": "30"
     },
@@ -109389,28 +109748,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseSignalProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 4652,
+      "offset": 4667,
       "length": 4,
       "value": "16.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseSignalProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 4659,
+      "offset": 4674,
       "length": 6,
       "value": "1000.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseSignalProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 4724,
+      "offset": 4739,
       "length": 5,
       "value": "700.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseSignalProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 4732,
+      "offset": 4747,
       "length": 6,
       "value": "1000.0"
     },
@@ -111447,44 +111806,37 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 724,
+      "offset": 723,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 766,
+      "offset": 765,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "StringLiteral",
-      "offset": 810,
+      "offset": 809,
       "length": 5,
       "value": "\" | \""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 861,
+      "offset": 860,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1079,
+      "offset": 1078,
       "length": 2,
       "value": "10"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
-      "kind": "Dictionary",
-      "offset": 1247,
-      "length": 3,
-      "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",

@@ -383,9 +383,13 @@ public struct Interaction : Swift.Equatable {
   public var isErrored: Swift.Bool {
     get
   }
-  public var timeSpanInNanos: (start: Swift.Int64, end: Swift.Int64)? {
+  public var errorTypeCode: Swift.String? {
     get
   }
+  public var errorMessage: Swift.String? {
+    get
+  }
+  public func timeSpanInNanos(thresholdMs: Swift.Int64) -> (start: Swift.Int64, end: Swift.Int64)?
   public static func == (lhs: PulseKit.Interaction, rhs: PulseKit.Interaction) -> Swift.Bool
 }
 public struct InteractionAttrsEntry : Swift.Codable {
@@ -2239,7 +2243,7 @@ public enum PulseSdkName : Swift.String, Swift.Codable, Swift.CaseIterable {
     get
   }
 }
-public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
+public enum PulseFeatureName : Swift.String, Swift.CaseIterable {
   case java_crash
   case js_crash
   case cpp_crash
@@ -2247,14 +2251,19 @@ public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
   case cpp_anr
   case interaction
   case network_change
-  case network_instrumentation
-  case screen_session
   case custom_events
   case rn_screen_load
   case rn_screen_interactive
+  case rn_screen_session
   case ios_crash
   case session_replay
   case click
+  case ios_network
+  case rn_network
+  case ios_lifecycle
+  case android_activity
+  case android_fragment
+  case android_slowrendering
   case unknown
   public init?(rawValue: Swift.String)
   public typealias AllCases = [PulseKit.PulseFeatureName]
@@ -2265,6 +2274,10 @@ public enum PulseFeatureName : Swift.String, Swift.Codable, Swift.CaseIterable {
   public var rawValue: Swift.String {
     get
   }
+}
+extension PulseKit.PulseFeatureName : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum PulseDeviceAttributeName : Swift.String, Swift.Codable, Swift.CaseIterable {
   case os_version
