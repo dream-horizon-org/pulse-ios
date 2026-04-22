@@ -11,9 +11,8 @@ public enum PulseKitValidation {
         let pulse = Pulse.shared
 
         pulse.initialize(
-            endpointBaseUrl: "http://localhost:4318",
             apiKey: "ci-validation",
-            endpointHeaders: nil,
+            dataCollectionState: .allowed,
             globalAttributes: [
                 "env": AttributeValue.string("ci"),
                 "validation": AttributeValue.bool(true),
