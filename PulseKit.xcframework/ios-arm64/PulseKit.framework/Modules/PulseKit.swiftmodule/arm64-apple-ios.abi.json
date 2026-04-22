@@ -13062,45 +13062,6 @@
               "AccessControl"
             ],
             "funcSelfKind": "Mutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setConfigUrl",
-            "printedName": "setConfigUrl(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "() -> Swift.String",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8PulseKit32InteractionInstrumentationConfigV03setE3UrlyySSycF",
-            "mangledName": "$s8PulseKit32InteractionInstrumentationConfigV03setE3UrlyySSycF",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "Mutating",
-              "AccessControl"
-            ],
-            "funcSelfKind": "Mutating"
           }
         ],
         "declKind": "Struct",
@@ -64187,6 +64148,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "OpenTelemetryApi",
         "printedName": "OpenTelemetryApi",
         "declKind": "Import",
@@ -64319,7 +64290,7 @@
           {
             "kind": "Function",
             "name": "initialize",
-            "printedName": "initialize(endpointBaseUrl:apiKey:configEndpointUrl:customEventCollectorUrl:endpointHeaders:globalAttributes:resource:configuration:instrumentations:dataCollectionState:beforeSendSpan:beforeSendLog:beforeSendMetric:tracerProviderCustomizer:loggerProviderCustomizer:)",
+            "printedName": "initialize(apiKey:dataCollectionState:globalAttributes:resource:configuration:instrumentations:beforeSendSpan:beforeSendLog:beforeSendMetric:tracerProviderCustomizer:loggerProviderCustomizer:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -64334,68 +64305,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String : Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "name": "PulseDataCollectionConsent",
+                "printedName": "PulseKit.PulseDataCollectionConsent",
+                "usr": "s:8PulseKit0A21DataCollectionConsentO"
               },
               {
                 "kind": "TypeNominal",
@@ -64520,13 +64432,6 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PulseDataCollectionConsent",
-                "printedName": "PulseKit.PulseDataCollectionConsent",
-                "hasDefaultArg": true,
-                "usr": "s:8PulseKit0A21DataCollectionConsentO"
               },
               {
                 "kind": "TypeNominal",
@@ -64710,8 +64615,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8PulseKit0A0C10initialize15endpointBaseUrl6apiKey014configEndpointF0020customEventCollectorF00D7Headers16globalAttributes8resource13configuration16instrumentations19dataCollectionState14beforeSendSpan0wX3Log0wX6Metric24tracerProviderCustomizer24loggerProviderCustomizerySS_S2SSgATSDyS2SGSgSDySS16OpenTelemetryApi14AttributeValueOGSgyAZzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSgAA0a4DataU7ConsentO16OpenTelemetrySdk0Y4DataVSgA11_cSgA9_08ReadableZ6RecordVSgA15_cSgA9_10MetricDataVSgA19_cSgA9_21TracerProviderBuilderCA23_cSgSayA9_0Z15RecordProcessor_pGA26_cSgtF",
-            "mangledName": "$s8PulseKit0A0C10initialize15endpointBaseUrl6apiKey014configEndpointF0020customEventCollectorF00D7Headers16globalAttributes8resource13configuration16instrumentations19dataCollectionState14beforeSendSpan0wX3Log0wX6Metric24tracerProviderCustomizer24loggerProviderCustomizerySS_S2SSgATSDyS2SGSgSDySS16OpenTelemetryApi14AttributeValueOGSgyAZzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSgAA0a4DataU7ConsentO16OpenTelemetrySdk0Y4DataVSgA11_cSgA9_08ReadableZ6RecordVSgA15_cSgA9_10MetricDataVSgA19_cSgA9_21TracerProviderBuilderCA23_cSgSayA9_0Z15RecordProcessor_pGA26_cSgtF",
+            "usr": "s:8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU0ySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAUzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg0yZ3Sdk0pW0VSgA4_cSgA2_08ReadableQ6RecordVSgA8_cSgA2_0rW0VSgA12_cSgA2_06TracerT7BuilderCA16_cSgSayA2_0Q15RecordProcessor_pGA19_cSgtF",
+            "mangledName": "$s8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU0ySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAUzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg0yZ3Sdk0pW0VSgA4_cSgA2_08ReadableQ6RecordVSgA8_cSgA2_0rW0VSgA12_cSgA2_06TracerT7BuilderCA16_cSgSayA2_0Q15RecordProcessor_pGA19_cSgtF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
@@ -109298,6 +109203,20 @@
       "value": "\"session_replay\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseHostConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 240,
+      "length": 43,
+      "value": "\"https:\/\/pulse-otel-collector.pulse-ux.com\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseHostConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 331,
+      "length": 18,
+      "value": "\"http:\/\/127.0.0.1\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseInstallationIdManager.swift",
       "kind": "StringLiteral",
       "offset": 394,
@@ -109398,147 +109317,147 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35546,
+      "offset": 35432,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36309,
+      "offset": 36195,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 37081,
+      "offset": 36967,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38326,
+      "offset": 38212,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38715,
+      "offset": 38601,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 40719,
+      "offset": 40605,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 40761,
+      "offset": 40647,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 41108,
+      "offset": 40994,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41152,
+      "offset": 41038,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41559,
+      "offset": 41445,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41965,
+      "offset": 41851,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42325,
+      "offset": 42211,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42660,
+      "offset": 42546,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43058,
+      "offset": 42944,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43634,
+      "offset": 43520,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44189,
+      "offset": 44075,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44547,
+      "offset": 44433,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44847,
+      "offset": 44733,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44884,
+      "offset": 44770,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44930,
+      "offset": 44816,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44979,
+      "offset": 44865,
       "length": 2,
       "value": "30"
     },

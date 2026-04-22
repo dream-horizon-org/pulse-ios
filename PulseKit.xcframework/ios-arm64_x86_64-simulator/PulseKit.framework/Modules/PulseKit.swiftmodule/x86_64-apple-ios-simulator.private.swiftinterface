@@ -463,7 +463,6 @@ public struct InteractionInstrumentationConfig {
   }
   public init(enabled: Swift.Bool = true, configUrlProvider: (() -> Swift.String)? = nil)
   public mutating func enabled(_ value: Swift.Bool)
-  public mutating func setConfigUrl(_ provider: @escaping () -> Swift.String)
 }
 public struct InteractionInstrumentationConfiguration {
   public var configUrlProvider: () -> Swift.String
@@ -1949,7 +1948,7 @@ extension PulseKit.PulseSessionSamplingRule {
   public var isShutdown: Swift.Bool {
     get
   }
-  public func initialize(endpointBaseUrl: Swift.String, apiKey: Swift.String, configEndpointUrl: Swift.String? = nil, customEventCollectorUrl: Swift.String? = nil, endpointHeaders: [Swift.String : Swift.String]? = nil, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, dataCollectionState: PulseKit.PulseDataCollectionConsent = .allowed, beforeSendSpan: PulseKit.BeforeSendSpanCallback? = nil, beforeSendLog: PulseKit.BeforeSendLogCallback? = nil, beforeSendMetric: PulseKit.BeforeSendMetricCallback? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
+  public func initialize(apiKey: Swift.String, dataCollectionState: PulseKit.PulseDataCollectionConsent, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, beforeSendSpan: PulseKit.BeforeSendSpanCallback? = nil, beforeSendLog: PulseKit.BeforeSendLogCallback? = nil, beforeSendMetric: PulseKit.BeforeSendMetricCallback? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
   public func setDataCollectionState(_ newState: PulseKit.PulseDataCollectionConsent)
   public func shutdown()
   public func trackEvent(name: Swift.String, observedTimeStampInMs: Swift.Double, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
