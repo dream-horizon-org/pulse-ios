@@ -1,5 +1,8 @@
 # PulseKit iOS SDK
 
+[![PulseKit Pods](https://img.shields.io/cocoapods/v/PulseKit?style=for-the-badge&)](https://cocoapods.org/pods/PulseKit)
+
+
 PulseKit is a production-ready observability SDK for iOS applications, built on [OpenTelemetry](https://opentelemetry.io/). One-line initialization gives you full-stack instrumentation with sensible defaults — no manual span creation required.
 
 ## Features
