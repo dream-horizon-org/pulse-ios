@@ -7166,6 +7166,58 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "jsCrashCapturedNotificationName",
+            "printedName": "jsCrashCapturedNotificationName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit20CrashInstrumentationC02jsC24CapturedNotificationNameSSvpZ",
+            "mangledName": "$s8PulseKit20CrashInstrumentationC02jsC24CapturedNotificationNameSSvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit20CrashInstrumentationC02jsC24CapturedNotificationNameSSvgZ",
+                "mangledName": "$s8PulseKit20CrashInstrumentationC02jsC24CapturedNotificationNameSSvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(loggerProvider:instrumentationScopeName:instrumentationVersion:flushLogProcessor:)",
@@ -10201,13 +10253,6 @@
         "declAttributes": [
           "RawDocComment"
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "os.log",
-        "printedName": "os.log",
-        "declKind": "Import",
-        "moduleName": "PulseKit"
       },
       {
         "kind": "Import",
@@ -64290,7 +64335,7 @@
           {
             "kind": "Function",
             "name": "initialize",
-            "printedName": "initialize(apiKey:dataCollectionState:globalAttributes:resource:configuration:instrumentations:beforeSendSpan:beforeSendLog:beforeSendMetric:tracerProviderCustomizer:loggerProviderCustomizer:)",
+            "printedName": "initialize(apiKey:dataCollectionState:globalAttributes:resource:configuration:instrumentations:beforeSendSpan:beforeSendLog:beforeSendMetric:tracerProviderCustomizer:loggerProviderCustomizer:logLevel:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -64612,11 +64657,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseLogLevel",
+                "printedName": "PulseKit.PulseLogLevel",
+                "hasDefaultArg": true,
+                "usr": "s:8PulseKit0A8LogLevelO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU0ySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAUzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg0yZ3Sdk0pW0VSgA4_cSgA2_08ReadableQ6RecordVSgA8_cSgA2_0rW0VSgA12_cSgA2_06TracerT7BuilderCA16_cSgSayA2_0Q15RecordProcessor_pGA19_cSgtF",
-            "mangledName": "$s8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU0ySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAUzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg0yZ3Sdk0pW0VSgA4_cSgA2_08ReadableQ6RecordVSgA8_cSgA2_0rW0VSgA12_cSgA2_06TracerT7BuilderCA16_cSgSayA2_0Q15RecordProcessor_pGA19_cSgtF",
+            "usr": "s:8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_cSgA3_08ReadableQ6RecordVSgA9_cSgA3_0rY0VSgA13_cSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
+            "mangledName": "$s8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_cSgA3_08ReadableQ6RecordVSgA9_cSgA3_0rY0VSgA13_cSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
@@ -66238,6 +66290,794 @@
         "moduleName": "PulseKit",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PulseLogger",
+        "printedName": "PulseLogger",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "currentLevel",
+            "printedName": "currentLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseLogLevel",
+                "printedName": "PulseKit.PulseLogLevel",
+                "usr": "s:8PulseKit0A8LogLevelO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvpZ",
+            "mangledName": "$s8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvgZ",
+                "mangledName": "$s8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "isInternal": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvsZ",
+                "mangledName": "$s8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvsZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "isInternal": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvMZ",
+                "mangledName": "$s8PulseKit0A6LoggerO12currentLevelAA0a3LogE0OvMZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "isInternal": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "verbose",
+            "printedName": "verbose(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO7verboseyySSyXKFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO7verboseyySSyXKFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "debug",
+            "printedName": "debug(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO5debugyySSyXKFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO5debugyySSyXKFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "info",
+            "printedName": "info(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO4infoyySSyXKFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO4infoyySSyXKFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "warn",
+            "printedName": "warn(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO4warnyySSyXKFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO4warnyySSyXKFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "error",
+            "printedName": "error(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO5erroryySSyXKFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO5erroryySSyXKFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "log",
+            "printedName": "log(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A6LoggerO3logyySSFZ",
+            "mangledName": "$s8PulseKit0A6LoggerO3logyySSFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "isInternal": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PulseKit0A6LoggerO",
+        "mangledName": "$s8PulseKit0A6LoggerO",
+        "moduleName": "PulseKit",
+        "isInternal": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PulseLogLevel",
+        "printedName": "PulseLogLevel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "verbose",
+            "printedName": "verbose",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO7verboseyA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO7verboseyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "debug",
+            "printedName": "debug",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO5debugyA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO5debugyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "info",
+            "printedName": "info",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO4infoyA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO4infoyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "warn",
+            "printedName": "warn",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO4warnyA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO4warnyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "error",
+            "printedName": "error",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO5erroryA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO5erroryA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Var",
+            "name": "none",
+            "printedName": "none",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PulseKit.PulseLogLevel.Type) -> PulseKit.PulseLogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PulseKit.PulseLogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseLogLevel",
+                        "printedName": "PulseKit.PulseLogLevel",
+                        "usr": "s:8PulseKit0A8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PulseKit0A8LogLevelO4noneyA2CmF",
+            "mangledName": "$s8PulseKit0A8LogLevelO4noneyA2CmF",
+            "moduleName": "PulseKit"
+          },
+          {
+            "kind": "Function",
+            "name": "<",
+            "printedName": "<(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseLogLevel",
+                "printedName": "PulseKit.PulseLogLevel",
+                "usr": "s:8PulseKit0A8LogLevelO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseLogLevel",
+                "printedName": "PulseKit.PulseLogLevel",
+                "usr": "s:8PulseKit0A8LogLevelO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A8LogLevelO1loiySbAC_ACtFZ",
+            "mangledName": "$s8PulseKit0A8LogLevelO1loiySbAC_ACtFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseLogLevel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseLogLevel",
+                    "printedName": "PulseKit.PulseLogLevel",
+                    "usr": "s:8PulseKit0A8LogLevelO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A8LogLevelO8rawValueACSgSi_tcfc",
+            "mangledName": "$s8PulseKit0A8LogLevelO8rawValueACSgSi_tcfc",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A8LogLevelO8rawValueSivp",
+            "mangledName": "$s8PulseKit0A8LogLevelO8rawValueSivp",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A8LogLevelO8rawValueSivg",
+                "mangledName": "$s8PulseKit0A8LogLevelO8rawValueSivg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PulseKit0A8LogLevelO",
+        "mangledName": "$s8PulseKit0A8LogLevelO",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          }
         ]
       },
       {
@@ -68190,6 +69030,102 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PulseRedaction",
+        "printedName": "PulseRedaction",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "redactUrl",
+            "printedName": "redactUrl(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A9RedactionO9redactUrlyS2SFZ",
+            "mangledName": "$s8PulseKit0A9RedactionO9redactUrlyS2SFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "classifyError",
+            "printedName": "classifyError(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A9RedactionO13classifyErrorySSs0E0_pFZ",
+            "mangledName": "$s8PulseKit0A9RedactionO13classifyErrorySSs0E0_pFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PulseKit0A9RedactionO",
+        "mangledName": "$s8PulseKit0A9RedactionO",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl"
         ],
         "conformances": [
           {
@@ -103024,13 +103960,6 @@
       },
       {
         "kind": "Import",
-        "name": "os.log",
-        "printedName": "os.log",
-        "declKind": "Import",
-        "moduleName": "PulseKit"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -103822,112 +104751,133 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 445,
+      "offset": 500,
       "length": 14,
       "value": "\"device.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 632,
+      "offset": 687,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 637,
+      "offset": 692,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 698,
+      "offset": 753,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
+      "kind": "StringLiteral",
+      "offset": 1011,
+      "length": 27,
+      "value": "\"com.pulse.jsCrashCaptured\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
+      "kind": "StringLiteral",
+      "offset": 1321,
+      "length": 25,
+      "value": "\"pulse_js_crash_captured\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "Array",
-      "offset": 832,
+      "offset": 1475,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 887,
+      "offset": 1530,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1454,
+      "offset": 2097,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1522,
+      "offset": 2165,
       "length": 7,
       "value": "\"0.0.1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3675,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10036,
+      "offset": 12200,
       "length": 19,
       "value": "\"exception.message\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10087,
+      "offset": 12251,
       "length": 16,
       "value": "\"exception.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10141,
+      "offset": 12305,
       "length": 22,
       "value": "\"exception.stacktrace\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10190,
+      "offset": 12354,
       "length": 11,
       "value": "\"thread.id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10230,
+      "offset": 12394,
       "length": 13,
       "value": "\"thread.name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10304,
+      "offset": 12468,
       "length": 8,
       "value": "\"report\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10343,
+      "offset": 12507,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 10380,
+      "offset": 12544,
       "length": 6,
       "value": "\"user\""
     },
@@ -104340,7 +105290,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/API\/InteractionConfigRestFetcher.swift",
       "kind": "Dictionary",
-      "offset": 522,
+      "offset": 577,
       "length": 3,
       "value": "[]"
     },
@@ -104452,28 +105402,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Array",
-      "offset": 610,
+      "offset": 665,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Array",
-      "offset": 1179,
+      "offset": 1234,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Dictionary",
-      "offset": 4337,
+      "offset": 4379,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Dictionary",
-      "offset": 5348,
+      "offset": 5390,
       "length": 3,
       "value": "[]"
     },
@@ -107061,6 +108011,20 @@
       "value": "\"error_message\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/NetworkAttributesLogRecordProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 391,
+      "length": 16,
+      "value": "\"network.change\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/NetworkAttributesLogRecordProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 468,
+      "length": 34,
+      "value": "\"network.previous.connection.type\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/NetworkAttributesSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 240,
@@ -107133,21 +108097,21 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/logs\/OtlpHttpLogExporter.swift",
       "kind": "Array",
-      "offset": 547,
+      "offset": 602,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/metric\/OtlpHttpMetricExporter.swift",
       "kind": "Array",
-      "offset": 1114,
+      "offset": 1169,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/OpenTelemetryProtocolHttp\/trace\/OtlpHttpTraceExporter.swift",
       "kind": "Array",
-      "offset": 531,
+      "offset": 586,
       "length": 2,
       "value": "[]"
     },
@@ -109233,231 +110197,224 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 309,
+      "offset": 364,
       "length": 19,
       "value": "\"com.pulse.ios.sdk\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 424,
       "length": 7,
       "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
-      "kind": "BooleanLiteral",
-      "offset": 713,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 864,
+      "offset": 589,
       "length": 34,
       "value": "\"com.pulse.ios.sdk.initialization\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 933,
+      "offset": 658,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 969,
+      "offset": 694,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2154,
+      "offset": 1879,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2618,
+      "offset": 2343,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 3260,
+      "offset": 2985,
       "length": 35,
       "value": "\"com.pulse.ios.sdk.sampling.config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 3710,
+      "offset": 3435,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4335,
+      "offset": 4060,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4634,
+      "offset": 4359,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35432,
+      "offset": 35191,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36195,
+      "offset": 35954,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36967,
+      "offset": 36811,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38212,
+      "offset": 38141,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38601,
+      "offset": 38530,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 40605,
+      "offset": 41079,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 40647,
+      "offset": 41121,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 40994,
+      "offset": 41468,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41038,
+      "offset": 41512,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41445,
+      "offset": 41919,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41851,
+      "offset": 42325,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42211,
+      "offset": 42685,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42546,
+      "offset": 43020,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42944,
+      "offset": 43418,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43520,
+      "offset": 43994,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44075,
+      "offset": 44549,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44433,
+      "offset": 44907,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44733,
+      "offset": 45207,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44770,
+      "offset": 45244,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44816,
+      "offset": 45290,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 44865,
+      "offset": 45339,
       "length": 2,
       "value": "30"
     },
@@ -109483,11 +110440,53 @@
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseLogger.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogger.swift",
       "kind": "StringLiteral",
-      "offset": 322,
-      "length": 9,
-      "value": "\"[Pulse]\""
+      "offset": 294,
+      "length": 10,
+      "value": "\"PulseSDK\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 161,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 180,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 198,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 216,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 235,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 253,
+      "length": 1,
+      "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseMetricsToAddModels.swift",
@@ -109506,14 +110505,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSamplingSignalProcessors.swift",
       "kind": "Dictionary",
-      "offset": 34692,
+      "offset": 34755,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 840,
+      "offset": 895,
       "length": 5,
       "value": "false"
     },
@@ -109576,49 +110575,49 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 858,
+      "offset": 913,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 863,
+      "offset": 918,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 870,
+      "offset": 925,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "Dictionary",
-      "offset": 2273,
+      "offset": 2328,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 512,
+      "offset": 567,
       "length": 18,
       "value": "\"pulse_sdk_config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 598,
+      "offset": 653,
       "length": 12,
       "value": "\"sdk_config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 657,
+      "offset": 712,
       "length": 43,
       "value": "\"com.pulse.ios.sdk.sampling.config.storage\""
     },
@@ -111711,98 +112710,98 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "BooleanLiteral",
-      "offset": 262,
+      "offset": 317,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "BooleanLiteral",
-      "offset": 416,
+      "offset": 471,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 723,
+      "offset": 778,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 765,
+      "offset": 820,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "StringLiteral",
-      "offset": 809,
+      "offset": 864,
       "length": 5,
       "value": "\" | \""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 860,
+      "offset": 915,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1078,
+      "offset": 1133,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 934,
+      "offset": 989,
       "length": 43,
       "value": "\"io.opentelemetry.ddnetworkinstrumentation\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1042,
+      "offset": 1097,
       "length": 32,
       "value": "\"io.opentelemetry.configuration\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1108,
+      "offset": 1163,
       "length": 35,
       "value": "\"io.opentelemetry.instrumentedCall\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "Array",
-      "offset": 1182,
+      "offset": 1237,
       "length": 43,
       "value": "[\"__NSCFURLProxySessionConnection\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "Array",
-      "offset": 1270,
+      "offset": 1325,
       "length": 162,
       "value": "[\"__NSCFBackgroundAVAggregateAssetDownloadTask\", \"__NSCFBackgroundAVAssetDownloadTask\", \"__NSCFBackgroundAVAggregateAssetDownloadTaskNoChildTask\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 8899,
+      "offset": 8974,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 10256,
+      "offset": 10331,
       "length": 4,
       "value": "true"
     },
@@ -111823,30 +112822,30 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 283,
+      "offset": 324,
       "length": 35,
       "value": "\"io.opentelemetry.URLSessionLogger\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 361,
+      "offset": 402,
       "length": 20,
       "value": "\"x-pulse-rn-tracked\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 728,
-      "length": 60,
-      "value": "\"[Pulse] failed to initialize network connection status: %@\""
+      "offset": 727,
+      "length": 79,
+      "value": "\"Failed to initialize network connection status: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 851,
-      "length": 60,
-      "value": "\"[Pulse] failed to initialize network connection status: %@\""
+      "offset": 805,
+      "length": 1,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/VisibleScreenTracker.swift",
