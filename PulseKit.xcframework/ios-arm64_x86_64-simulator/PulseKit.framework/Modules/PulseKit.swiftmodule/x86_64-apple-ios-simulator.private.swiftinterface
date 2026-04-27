@@ -26,7 +26,6 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-import os.log
 import os
 public struct AnyCodable : Swift.Codable, Swift.Equatable {
   public let value: Any
@@ -275,6 +274,7 @@ final public class CrashInstrumentation {
   public static var isInstalled: Swift.Bool {
     get
   }
+  public static let jsCrashCapturedNotificationName: Swift.String
   public init(loggerProvider: any OpenTelemetryApi.LoggerProvider, instrumentationScopeName: Swift.String = "com.pulse.ios.sdk.crash", instrumentationVersion: Swift.String = "0.0.1", flushLogProcessor: (() -> Swift.Void)? = nil)
   final public func install()
   public static func uninstall()
@@ -1948,7 +1948,7 @@ extension PulseKit.PulseSessionSamplingRule {
   public var isShutdown: Swift.Bool {
     get
   }
-  public func initialize(apiKey: Swift.String, dataCollectionState: PulseKit.PulseDataCollectionConsent, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, beforeSendSpan: PulseKit.BeforeSendSpanCallback? = nil, beforeSendLog: PulseKit.BeforeSendLogCallback? = nil, beforeSendMetric: PulseKit.BeforeSendMetricCallback? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil)
+  public func initialize(apiKey: Swift.String, dataCollectionState: PulseKit.PulseDataCollectionConsent, globalAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]? = nil, resource: ((inout [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void)? = nil, configuration: ((inout PulseKit.PulseKitConfiguration) -> Swift.Void)? = nil, instrumentations: ((inout PulseKit.InstrumentationConfiguration) -> Swift.Void)? = nil, beforeSendSpan: PulseKit.BeforeSendSpanCallback? = nil, beforeSendLog: PulseKit.BeforeSendLogCallback? = nil, beforeSendMetric: PulseKit.BeforeSendMetricCallback? = nil, tracerProviderCustomizer: ((OpenTelemetrySdk.TracerProviderBuilder) -> OpenTelemetrySdk.TracerProviderBuilder)? = nil, loggerProviderCustomizer: (([any OpenTelemetrySdk.LogRecordProcessor]) -> [any OpenTelemetrySdk.LogRecordProcessor])? = nil, logLevel: PulseKit.PulseLogLevel = .none)
   public func setDataCollectionState(_ newState: PulseKit.PulseDataCollectionConsent)
   public func shutdown()
   public func trackEvent(name: Swift.String, observedTimeStampInMs: Swift.Double, params: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
@@ -1984,6 +1984,20 @@ public struct PulseKitConfiguration {
   public mutating func disableScreenAttributes()
   public mutating func disableNetworkAttributes()
   public mutating func disableGlobalAttributes()
+}
+public enum PulseLogLevel : Swift.Int, Swift.Comparable {
+  case verbose
+  case debug
+  case info
+  case warn
+  case error
+  case none
+  public static func < (lhs: PulseKit.PulseLogLevel, rhs: PulseKit.PulseLogLevel) -> Swift.Bool
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public struct PulseMetricsToAddEntry : Swift.Codable, Swift.Equatable {
   public let name: Swift.String
@@ -2040,6 +2054,10 @@ public enum PulseMockConfigProvider {
 }
 public enum PulseOtelUtils {
   public static func sanitizeMetricName(name: Swift.String, fallbackChar: Swift.Character = "_") -> Swift.String
+}
+public enum PulseRedaction {
+  public static func redactUrl(_ urlString: Swift.String) -> Swift.String
+  public static func classifyError(_ error: any Swift.Error) -> Swift.String
 }
 public typealias DataRecorder = (Any?, _ attributeKeyForSuffix: Swift.String?, _ pointAttributes: [Swift.String : OpenTelemetryApi.AttributeValue]) -> Swift.Void
 final public class PulseSamplingSignalProcessors {
@@ -3120,6 +3138,8 @@ extension PulseKit.PulseDataCollectionConsent : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Equatable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.RawRepresentable {}
+extension PulseKit.PulseLogLevel : Swift.Hashable {}
+extension PulseKit.PulseLogLevel : Swift.RawRepresentable {}
 extension PulseKit.PulseMockMetricsTestCase : Swift.Equatable {}
 extension PulseKit.PulseMockMetricsTestCase : Swift.Hashable {}
 extension PulseKit.PulseSignalScope : Swift.Equatable {}
