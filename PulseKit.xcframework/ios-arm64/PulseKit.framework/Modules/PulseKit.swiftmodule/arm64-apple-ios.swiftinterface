@@ -10,6 +10,7 @@ import CoreLocation
 import CoreTelephony
 import CryptoKit
 import Darwin
+import Dispatch
 import Foundation
 import Network
 import ObjectiveC
@@ -119,9 +120,9 @@ extension PulseKit.AppStateListener {
   final public func stop()
   @objc deinit
 }
-public typealias BeforeSendLogCallback = (OpenTelemetrySdk.ReadableLogRecord) -> OpenTelemetrySdk.ReadableLogRecord?
-public typealias BeforeSendMetricCallback = (OpenTelemetrySdk.MetricData) -> OpenTelemetrySdk.MetricData?
-public typealias BeforeSendSpanCallback = (OpenTelemetrySdk.SpanData) -> OpenTelemetrySdk.SpanData?
+public typealias BeforeSendLogCallback = (OpenTelemetrySdk.ReadableLogRecord) throws -> OpenTelemetrySdk.ReadableLogRecord?
+public typealias BeforeSendMetricCallback = (OpenTelemetrySdk.MetricData) throws -> OpenTelemetrySdk.MetricData?
+public typealias BeforeSendSpanCallback = (OpenTelemetrySdk.SpanData) throws -> OpenTelemetrySdk.SpanData?
 public struct Opentelemetry_Proto_Common_V1_AnyValue : @unchecked Swift.Sendable {
   public var value: PulseKit.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value?
   public var stringValue: Swift.String {
@@ -1942,6 +1943,9 @@ extension PulseKit.PulseDeviceAttributeName {
 }
 extension PulseKit.PulseSessionSamplingRule {
   public func matches(deviceContext: PulseKit.PulseDeviceContext) -> Swift.Bool
+}
+public enum PulseErrorClassification {
+  public static func classify(_ error: any Swift.Error) -> Swift.String
 }
 @_hasMissingDesignatedInitializers public class Pulse {
   public static let shared: PulseKit.Pulse
