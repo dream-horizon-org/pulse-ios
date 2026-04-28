@@ -6792,15 +6792,15 @@
       },
       {
         "kind": "Import",
-        "name": "OpenTelemetrySdk",
-        "printedName": "OpenTelemetrySdk",
+        "name": "OpenTelemetryApi",
+        "printedName": "OpenTelemetryApi",
         "declKind": "Import",
         "moduleName": "PulseKit"
       },
       {
         "kind": "Import",
-        "name": "OpenTelemetryApi",
-        "printedName": "OpenTelemetryApi",
+        "name": "OpenTelemetrySdk",
+        "printedName": "OpenTelemetrySdk",
         "declKind": "Import",
         "moduleName": "PulseKit"
       },
@@ -7990,6 +7990,26 @@
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -64192,6 +64212,75 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PulseErrorClassification",
+        "printedName": "PulseErrorClassification",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "classify",
+            "printedName": "classify(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A19ErrorClassificationO8classifyySSs0C0_pFZ",
+            "mangledName": "$s8PulseKit0A19ErrorClassificationO8classifyySSs0C0_pFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PulseKit0A19ErrorClassificationO",
+        "mangledName": "$s8PulseKit0A19ErrorClassificationO",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -64205,6 +64294,13 @@
         "kind": "Import",
         "name": "OpenTelemetryApi",
         "printedName": "OpenTelemetryApi",
+        "declKind": "Import",
+        "moduleName": "PulseKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Dispatch",
+        "printedName": "Dispatch",
         "declKind": "Import",
         "moduleName": "PulseKit"
       },
@@ -64481,12 +64577,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((OpenTelemetrySdk.SpanData) -> OpenTelemetrySdk.SpanData?)?",
+                "printedName": "((OpenTelemetrySdk.SpanData) throws -> OpenTelemetrySdk.SpanData?)?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(OpenTelemetrySdk.SpanData) -> OpenTelemetrySdk.SpanData?",
+                    "printedName": "(OpenTelemetrySdk.SpanData) throws -> OpenTelemetrySdk.SpanData?",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -64517,12 +64613,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((OpenTelemetrySdk.ReadableLogRecord) -> OpenTelemetrySdk.ReadableLogRecord?)?",
+                "printedName": "((OpenTelemetrySdk.ReadableLogRecord) throws -> OpenTelemetrySdk.ReadableLogRecord?)?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(OpenTelemetrySdk.ReadableLogRecord) -> OpenTelemetrySdk.ReadableLogRecord?",
+                    "printedName": "(OpenTelemetrySdk.ReadableLogRecord) throws -> OpenTelemetrySdk.ReadableLogRecord?",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -64553,12 +64649,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((OpenTelemetrySdk.MetricData) -> OpenTelemetrySdk.MetricData?)?",
+                "printedName": "((OpenTelemetrySdk.MetricData) throws -> OpenTelemetrySdk.MetricData?)?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(OpenTelemetrySdk.MetricData) -> OpenTelemetrySdk.MetricData?",
+                    "printedName": "(OpenTelemetrySdk.MetricData) throws -> OpenTelemetrySdk.MetricData?",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -64667,8 +64763,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_cSgA3_08ReadableQ6RecordVSgA9_cSgA3_0rY0VSgA13_cSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
-            "mangledName": "$s8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_cSgA3_08ReadableQ6RecordVSgA9_cSgA3_0rY0VSgA13_cSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
+            "usr": "s:8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_KcSgA3_08ReadableQ6RecordVSgA9_KcSgA3_0rY0VSgA13_KcSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
+            "mangledName": "$s8PulseKit0A0C10initialize6apiKey19dataCollectionState16globalAttributes8resource13configuration16instrumentations14beforeSendSpan0nO3Log0nO6Metric24tracerProviderCustomizer06loggertU08logLevelySS_AA0a4DataG7ConsentOSDySS16OpenTelemetryApi14AttributeValueOGSgyAVzcSgyAA0aB13ConfigurationVzcSgyAA28InstrumentationConfigurationVzcSg16OpenTelemetrySdk0pY0VSgA5_KcSgA3_08ReadableQ6RecordVSgA9_KcSgA3_0rY0VSgA13_KcSgA3_06TracerT7BuilderCA17_cSgSayA3_0Q15RecordProcessor_pGA20_cSgAA0aqX0OtF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
@@ -84143,8 +84239,8 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
         "declKind": "Import",
         "moduleName": "PulseKit",
         "declAttributes": [
@@ -84153,8 +84249,8 @@
       },
       {
         "kind": "Import",
-        "name": "CryptoKit",
-        "printedName": "CryptoKit",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "PulseKit"
       },
@@ -104751,133 +104847,133 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 500,
+      "offset": 445,
       "length": 14,
       "value": "\"device.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 687,
+      "offset": 632,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 692,
+      "offset": 637,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 753,
+      "offset": 698,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1011,
+      "offset": 956,
       "length": 27,
       "value": "\"com.pulse.jsCrashCaptured\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1321,
+      "offset": 1266,
       "length": 25,
       "value": "\"pulse_js_crash_captured\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "Array",
-      "offset": 1475,
+      "offset": 1420,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1530,
+      "offset": 1475,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 2097,
+      "offset": 2042,
       "length": 25,
       "value": "\"com.pulse.ios.sdk.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 2165,
+      "offset": 2110,
       "length": 7,
       "value": "\"0.0.1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 3675,
+      "offset": 3620,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12200,
+      "offset": 12145,
       "length": 19,
       "value": "\"exception.message\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12251,
+      "offset": 12196,
       "length": 16,
       "value": "\"exception.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12305,
+      "offset": 12250,
       "length": 22,
       "value": "\"exception.stacktrace\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12354,
+      "offset": 12299,
       "length": 11,
       "value": "\"thread.id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12394,
+      "offset": 12339,
       "length": 13,
       "value": "\"thread.name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12468,
+      "offset": 12413,
       "length": 8,
       "value": "\"report\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12507,
+      "offset": 12452,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Crashes\/CrashInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 12544,
+      "offset": 12489,
       "length": 6,
       "value": "\"user\""
     },
@@ -104982,7 +105078,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/Storage\/FileReader.swift",
       "kind": "Array",
-      "offset": 604,
+      "offset": 659,
       "length": 2,
       "value": "[]"
     },
@@ -104996,28 +105092,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/Storage\/FilesOrchestrator.swift",
       "kind": "Array",
-      "offset": 3181,
+      "offset": 3235,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/Storage\/FilesOrchestrator.swift",
       "kind": "Array",
-      "offset": 4031,
+      "offset": 4085,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/Storage\/FileWriter.swift",
       "kind": "StringLiteral",
-      "offset": 483,
+      "offset": 538,
       "length": 33,
       "value": "\"com.otel.persistence.filewriter\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/Storage\/FileWriter.swift",
       "kind": "BooleanLiteral",
-      "offset": 979,
+      "offset": 1034,
       "length": 5,
       "value": "false"
     },
@@ -105290,7 +105386,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/API\/InteractionConfigRestFetcher.swift",
       "kind": "Dictionary",
-      "offset": 577,
+      "offset": 522,
       "length": 3,
       "value": "[]"
     },
@@ -105402,28 +105498,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Array",
-      "offset": 665,
+      "offset": 610,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Array",
-      "offset": 1234,
+      "offset": 1179,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Dictionary",
-      "offset": 4379,
+      "offset": 4427,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/Interaction\/Core\/InteractionManager.swift",
       "kind": "Dictionary",
-      "offset": 5390,
+      "offset": 5438,
       "length": 3,
       "value": "[]"
     },
@@ -108118,28 +108214,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/PersistenceExporterDecorator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2012,
+      "offset": 2512,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/PersistenceExporterDecorator.swift",
       "kind": "StringLiteral",
-      "offset": 4059,
+      "offset": 4721,
       "length": 3,
       "value": "\"[\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/PersistenceExporterDecorator.swift",
       "kind": "StringLiteral",
-      "offset": 4110,
+      "offset": 4772,
       "length": 7,
       "value": "\"null]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Exporters\/Persistence\/PersistenceExporterDecorator.swift",
       "kind": "StringLiteral",
-      "offset": 4168,
+      "offset": 4830,
       "length": 3,
       "value": "\",\""
     },
@@ -110197,224 +110293,224 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 364,
+      "offset": 325,
       "length": 19,
       "value": "\"com.pulse.ios.sdk\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 424,
+      "offset": 385,
       "length": 7,
       "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 589,
+      "offset": 550,
       "length": 34,
       "value": "\"com.pulse.ios.sdk.initialization\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 658,
+      "offset": 619,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 694,
+      "offset": 655,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 1879,
+      "offset": 1840,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2343,
+      "offset": 2304,
       "length": 30,
       "value": "\"Pulse SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 2985,
+      "offset": 2946,
       "length": 35,
       "value": "\"com.pulse.ios.sdk.sampling.config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "BooleanLiteral",
-      "offset": 3435,
+      "offset": 3396,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4060,
+      "offset": 4021,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "StringLiteral",
-      "offset": 4359,
+      "offset": 4320,
       "length": 60,
       "value": "\"Pulse SDK is not initialized. Please call Pulse.initialize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35191,
+      "offset": 36061,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35954,
+      "offset": 36824,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36811,
+      "offset": 37681,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38141,
+      "offset": 39011,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38530,
+      "offset": 39400,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 41079,
+      "offset": 41949,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41121,
+      "offset": 41991,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 41468,
+      "offset": 42338,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41512,
+      "offset": 42382,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41919,
+      "offset": 42789,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42325,
+      "offset": 43195,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42685,
+      "offset": 43555,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43020,
+      "offset": 43890,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43418,
+      "offset": 44288,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43994,
+      "offset": 44864,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44549,
+      "offset": 45419,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44907,
+      "offset": 45777,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45207,
+      "offset": 46077,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45244,
+      "offset": 46114,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45290,
+      "offset": 46160,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45339,
+      "offset": 46209,
       "length": 2,
       "value": "30"
     },
@@ -110440,49 +110536,49 @@
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogger.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogger.swift",
       "kind": "StringLiteral",
       "offset": 294,
       "length": 10,
       "value": "\"PulseSDK\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 161,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 180,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 198,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 216,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseLogging\/PulseLogLevel.swift",
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Logging\/PulseLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 253,
       "length": 1,
@@ -110505,14 +110601,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSamplingSignalProcessors.swift",
       "kind": "Dictionary",
-      "offset": 34755,
+      "offset": 35143,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 895,
+      "offset": 840,
       "length": 5,
       "value": "false"
     },
@@ -110575,49 +110671,49 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 913,
+      "offset": 858,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 918,
+      "offset": 863,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 925,
+      "offset": 870,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigRestProvider.swift",
       "kind": "Dictionary",
-      "offset": 2328,
+      "offset": 2273,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 567,
+      "offset": 512,
       "length": 18,
       "value": "\"pulse_sdk_config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 653,
+      "offset": 598,
       "length": 12,
       "value": "\"sdk_config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigStorage.swift",
       "kind": "StringLiteral",
-      "offset": 712,
+      "offset": 657,
       "length": 43,
       "value": "\"com.pulse.ios.sdk.sampling.config.storage\""
     },
@@ -110981,14 +111077,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "BooleanLiteral",
-      "offset": 26691,
+      "offset": 26787,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "IntegerLiteral",
-      "offset": 53944,
+      "offset": 54144,
       "length": 5,
       "value": "16383"
     },
@@ -111415,7 +111511,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayPersistingEmitter.swift",
       "kind": "BooleanLiteral",
-      "offset": 10388,
+      "offset": 10931,
       "length": 5,
       "value": "false"
     },
@@ -112710,98 +112806,98 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "BooleanLiteral",
-      "offset": 317,
+      "offset": 262,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "BooleanLiteral",
-      "offset": 471,
+      "offset": 416,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 778,
+      "offset": 723,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 820,
+      "offset": 765,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "StringLiteral",
-      "offset": 864,
+      "offset": 809,
       "length": 5,
       "value": "\" | \""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 915,
+      "offset": 860,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/UIKitTap\/UIWindowSwizzler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1133,
+      "offset": 1078,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 989,
+      "offset": 934,
       "length": 43,
       "value": "\"io.opentelemetry.ddnetworkinstrumentation\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1097,
+      "offset": 1042,
       "length": 32,
       "value": "\"io.opentelemetry.configuration\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "StringLiteral",
-      "offset": 1163,
+      "offset": 1108,
       "length": 35,
       "value": "\"io.opentelemetry.instrumentedCall\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "Array",
-      "offset": 1237,
+      "offset": 1182,
       "length": 43,
       "value": "[\"__NSCFURLProxySessionConnection\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "Array",
-      "offset": 1325,
+      "offset": 1270,
       "length": 162,
       "value": "[\"__NSCFBackgroundAVAggregateAssetDownloadTask\", \"__NSCFBackgroundAVAssetDownloadTask\", \"__NSCFBackgroundAVAggregateAssetDownloadTaskNoChildTask\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 8974,
+      "offset": 8919,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionInstrumentation.swift",
       "kind": "BooleanLiteral",
-      "offset": 10331,
+      "offset": 10276,
       "length": 4,
       "value": "true"
     },
@@ -112822,28 +112918,28 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 324,
+      "offset": 269,
       "length": 35,
       "value": "\"io.opentelemetry.URLSessionLogger\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 402,
+      "offset": 347,
       "length": 20,
       "value": "\"x-pulse-rn-tracked\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 727,
+      "offset": 672,
       "length": 79,
       "value": "\"Failed to initialize network connection status: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/URLSession\/URLSessionLogger.swift",
       "kind": "StringLiteral",
-      "offset": 805,
+      "offset": 750,
       "length": 1,
       "value": "\"\""
     },
