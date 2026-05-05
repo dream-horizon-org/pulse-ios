@@ -2551,15 +2551,12 @@ public class SessionReplayInstrumentation {
   @objc deinit
 }
 public struct SessionReplayInstrumentationConfig {
-  public var enabled: Swift.Bool {
-    get
-  }
   public var config: PulseKit.SessionReplayConfig {
     get
   }
-  public init(enabled: Swift.Bool = false, config: PulseKit.SessionReplayConfig = SessionReplayConfig())
-  public mutating func enabled(_ value: Swift.Bool)
-  public mutating func configure(_ configure: (inout PulseKit.SessionReplayConfig) -> Swift.Void)
+  public init(config: PulseKit.SessionReplayConfig = SessionReplayConfig())
+  public mutating func addMaskViewClass(_ className: Swift.String)
+  public mutating func addUnmaskViewClass(_ className: Swift.String)
 }
 public enum TextAndInputPrivacy {
   case maskAll
@@ -3064,26 +3061,12 @@ extension PulseKit.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSucc
     get
   }
 }
-public struct RageConfig {
-  public var timeWindowMs: Swift.Int
-  public var rageThreshold: Swift.Int
-  public var radiusPt: Swift.Float
-  public init(timeWindowMs: Swift.Int = 2000, rageThreshold: Swift.Int = 3, radiusPt: Swift.Float = 50.0)
-}
 public struct UIKitTapInstrumentationConfig {
-  public var enabled: Swift.Bool {
-    get
-  }
   public var captureContext: Swift.Bool {
     get
   }
-  public var rage: PulseKit.RageConfig {
-    get
-  }
-  public init(enabled: Swift.Bool = false, captureContext: Swift.Bool = false, rage: PulseKit.RageConfig = RageConfig())
-  public mutating func enabled(_ value: Swift.Bool)
+  public init(captureContext: Swift.Bool = false)
   public mutating func captureContext(_ value: Swift.Bool)
-  public mutating func rage(_ configure: (inout PulseKit.RageConfig) -> Swift.Void)
 }
 public class URLSessionInstrumentation {
   public var configuration: PulseKit.URLSessionInstrumentationConfiguration {
