@@ -84718,51 +84718,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "enabled",
-            "printedName": "enabled",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV7enabledSbvp",
-            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV7enabledSbvp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "SetterAccess",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV7enabledSbvg",
-                "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV7enabledSbvg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "config",
             "printedName": "config",
             "children": [
@@ -84809,20 +84764,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(enabled:config:)",
+            "printedName": "init(config:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "SessionReplayInstrumentationConfig",
                 "printedName": "PulseKit.SessionReplayInstrumentationConfig",
                 "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
@@ -84833,8 +84781,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV7enabled6configACSb_AA0cdF0Vtcfc",
-            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV7enabled6configACSb_AA0cdF0Vtcfc",
+            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV6configAcA0cdF0V_tcfc",
+            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV6configAcA0cdF0V_tcfc",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
@@ -84843,8 +84791,8 @@
           },
           {
             "kind": "Function",
-            "name": "enabled",
-            "printedName": "enabled(_:)",
+            "name": "addMaskViewClass",
+            "printedName": "addMaskViewClass(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -84853,25 +84801,26 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV7enabledyySbF",
-            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV7enabledyySbF",
+            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV16addMaskViewClassyySSF",
+            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV16addMaskViewClassyySSF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "Mutating",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "Mutating"
           },
           {
             "kind": "Function",
-            "name": "configure",
-            "printedName": "configure(_:)",
+            "name": "addUnmaskViewClass",
+            "printedName": "addUnmaskViewClass(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -84879,34 +84828,20 @@
                 "printedName": "()"
               },
               {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(inout PulseKit.SessionReplayConfig) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SessionReplayConfig",
-                    "printedName": "PulseKit.SessionReplayConfig",
-                    "usr": "s:8PulseKit19SessionReplayConfigV"
-                  }
-                ],
-                "typeAttributes": [
-                  "noescape"
-                ]
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV9configureyyyAA0cdF0VzXEF",
-            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV9configureyyyAA0cdF0VzXEF",
+            "usr": "s:8PulseKit34SessionReplayInstrumentationConfigV18addUnmaskViewClassyySSF",
+            "mangledName": "$s8PulseKit34SessionReplayInstrumentationConfigV18addUnmaskViewClassyySSF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "Mutating",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "Mutating"
           }
@@ -100004,385 +99939,9 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "RageConfig",
-        "printedName": "RageConfig",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "timeWindowMs",
-            "printedName": "timeWindowMs",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit10RageConfigV12timeWindowMsSivp",
-            "mangledName": "$s8PulseKit10RageConfigV12timeWindowMsSivp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV12timeWindowMsSivg",
-                "mangledName": "$s8PulseKit10RageConfigV12timeWindowMsSivg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV12timeWindowMsSivs",
-                "mangledName": "$s8PulseKit10RageConfigV12timeWindowMsSivs",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV12timeWindowMsSivM",
-                "mangledName": "$s8PulseKit10RageConfigV12timeWindowMsSivM",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "rageThreshold",
-            "printedName": "rageThreshold",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit10RageConfigV13rageThresholdSivp",
-            "mangledName": "$s8PulseKit10RageConfigV13rageThresholdSivp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV13rageThresholdSivg",
-                "mangledName": "$s8PulseKit10RageConfigV13rageThresholdSivg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV13rageThresholdSivs",
-                "mangledName": "$s8PulseKit10RageConfigV13rageThresholdSivs",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV13rageThresholdSivM",
-                "mangledName": "$s8PulseKit10RageConfigV13rageThresholdSivM",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "radiusPt",
-            "printedName": "radiusPt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit10RageConfigV8radiusPtSfvp",
-            "mangledName": "$s8PulseKit10RageConfigV8radiusPtSfvp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Float",
-                    "printedName": "Swift.Float",
-                    "usr": "s:Sf"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV8radiusPtSfvg",
-                "mangledName": "$s8PulseKit10RageConfigV8radiusPtSfvg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Float",
-                    "printedName": "Swift.Float",
-                    "usr": "s:Sf"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV8radiusPtSfvs",
-                "mangledName": "$s8PulseKit10RageConfigV8radiusPtSfvs",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit10RageConfigV8radiusPtSfvM",
-                "mangledName": "$s8PulseKit10RageConfigV8radiusPtSfvM",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(timeWindowMs:rageThreshold:radiusPt:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "RageConfig",
-                "printedName": "PulseKit.RageConfig",
-                "usr": "s:8PulseKit10RageConfigV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "hasDefaultArg": true,
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "hasDefaultArg": true,
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "hasDefaultArg": true,
-                "usr": "s:Sf"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:8PulseKit10RageConfigV12timeWindowMs13rageThreshold8radiusPtACSi_SiSftcfc",
-            "mangledName": "$s8PulseKit10RageConfigV12timeWindowMs13rageThreshold8radiusPtACSi_SiSftcfc",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:8PulseKit10RageConfigV",
-        "mangledName": "$s8PulseKit10RageConfigV",
-        "moduleName": "PulseKit",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
         "name": "UIKitTapInstrumentationConfig",
         "printedName": "UIKitTapInstrumentationConfig",
         "children": [
-          {
-            "kind": "Var",
-            "name": "enabled",
-            "printedName": "enabled",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV7enabledSbvp",
-            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV7enabledSbvp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "SetterAccess",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV7enabledSbvg",
-                "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV7enabledSbvg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
           {
             "kind": "Var",
             "name": "captureContext",
@@ -100430,55 +99989,9 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "rage",
-            "printedName": "rage",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "RageConfig",
-                "printedName": "PulseKit.RageConfig",
-                "usr": "s:8PulseKit10RageConfigV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV4rageAA04RageF0Vvp",
-            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV4rageAA04RageF0Vvp",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "SetterAccess",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "RageConfig",
-                    "printedName": "PulseKit.RageConfig",
-                    "usr": "s:8PulseKit10RageConfigV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV4rageAA04RageF0Vvg",
-                "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV4rageAA04RageF0Vvg",
-                "moduleName": "PulseKit",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(enabled:captureContext:rage:)",
+            "printedName": "init(captureContext:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -100492,57 +100005,16 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "RageConfig",
-                "printedName": "PulseKit.RageConfig",
-                "hasDefaultArg": true,
-                "usr": "s:8PulseKit10RageConfigV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV7enabled14captureContext4rageACSb_SbAA04RageF0Vtcfc",
-            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV7enabled14captureContext4rageACSb_SbAA04RageF0Vtcfc",
+            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV14captureContextACSb_tcfc",
+            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV14captureContextACSb_tcfc",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
             ],
             "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "enabled",
-            "printedName": "enabled(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV7enabledyySbF",
-            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV7enabledyySbF",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "Mutating",
-              "AccessControl"
-            ],
-            "funcSelfKind": "Mutating"
           },
           {
             "kind": "Function",
@@ -100564,48 +100036,6 @@
             "declKind": "Func",
             "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV14captureContextyySbF",
             "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV14captureContextyySbF",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "Mutating",
-              "AccessControl"
-            ],
-            "funcSelfKind": "Mutating"
-          },
-          {
-            "kind": "Function",
-            "name": "rage",
-            "printedName": "rage(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(inout PulseKit.RageConfig) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "RageConfig",
-                    "printedName": "PulseKit.RageConfig",
-                    "usr": "s:8PulseKit10RageConfigV"
-                  }
-                ],
-                "typeAttributes": [
-                  "noescape"
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8PulseKit29UIKitTapInstrumentationConfigV4rageyyyAA04RageF0VzXEF",
-            "mangledName": "$s8PulseKit29UIKitTapInstrumentationConfigV4rageyyyAA04RageF0VzXEF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "Mutating",
@@ -110370,147 +109800,147 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36110,
+      "offset": 35294,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36873,
+      "offset": 36057,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 37730,
+      "offset": 36914,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 39060,
+      "offset": 38244,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 39449,
+      "offset": 38633,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 42416,
+      "offset": 41600,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42458,
+      "offset": 41642,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 42805,
+      "offset": 41989,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42849,
+      "offset": 42033,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43256,
+      "offset": 42440,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43662,
+      "offset": 42846,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44022,
+      "offset": 43206,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44357,
+      "offset": 43541,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44755,
+      "offset": 43939,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 45331,
+      "offset": 44515,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 45886,
+      "offset": 45070,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 46244,
+      "offset": 45428,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 46544,
+      "offset": 45728,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 46581,
+      "offset": 45765,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 46627,
+      "offset": 45811,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 46676,
+      "offset": 45860,
       "length": 2,
       "value": "30"
     },
@@ -111210,30 +110640,23 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/SessionReplayInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 236,
+      "offset": 318,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/SessionReplayInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 527,
+      "offset": 529,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/SessionReplayInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 611,
+      "offset": 613,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/SessionReplayInstrumentationConfig.swift",
-      "kind": "BooleanLiteral",
-      "offset": 649,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",
@@ -111511,7 +110934,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayPersistingEmitter.swift",
       "kind": "BooleanLiteral",
-      "offset": 10931,
+      "offset": 11644,
       "length": 5,
       "value": "false"
     },
@@ -112722,70 +112145,42 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 306,
+      "offset": 288,
       "length": 4,
       "value": "2000"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 347,
+      "offset": 322,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 382,
-      "length": 4,
-      "value": "50.0"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
-      "kind": "IntegerLiteral",
-      "offset": 424,
-      "length": 4,
-      "value": "2000"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
-      "kind": "IntegerLiteral",
-      "offset": 451,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
-      "kind": "FloatLiteral",
-      "offset": 472,
+      "offset": 350,
       "length": 4,
       "value": "50.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1007,
+      "offset": 824,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1317,
+      "offset": 1134,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1554,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Instrumentation\/UIKitTapInstrumentationConfig.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1584,
+      "offset": 1371,
       "length": 5,
       "value": "false"
     },
