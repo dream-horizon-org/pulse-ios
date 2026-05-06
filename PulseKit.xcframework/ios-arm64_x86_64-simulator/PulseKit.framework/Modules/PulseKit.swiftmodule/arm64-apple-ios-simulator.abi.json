@@ -74522,14 +74522,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:8PulseKit0A17InteractionConfigV12collectorUrlSSvp",
-            "mangledName": "$s8PulseKit0A17InteractionConfigV12collectorUrlSSvp",
+            "usr": "s:8PulseKit0A17InteractionConfigV12collectorUrlSSSgvp",
+            "mangledName": "$s8PulseKit0A17InteractionConfigV12collectorUrlSSSgvp",
             "moduleName": "PulseKit",
             "declAttributes": [
               "HasStorage",
@@ -74545,14 +74553,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8PulseKit0A17InteractionConfigV12collectorUrlSSvg",
-                "mangledName": "$s8PulseKit0A17InteractionConfigV12collectorUrlSSvg",
+                "usr": "s:8PulseKit0A17InteractionConfigV12collectorUrlSSSgvg",
+                "mangledName": "$s8PulseKit0A17InteractionConfigV12collectorUrlSSSgvg",
                 "moduleName": "PulseKit",
                 "implicit": true,
                 "accessorKind": "get"
@@ -76014,6 +76030,64 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseSdkName",
+                "printedName": "PulseKit.PulseSdkName",
+                "usr": "s:8PulseKit0A7SdkNameO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A7SdkNameO4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s8PulseKit0A7SdkNameO4fromACs7Decoder_p_tKcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A7SdkNameO6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s8PulseKit0A7SdkNameO6encode2toys7Encoder_p_tKF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -76077,20 +76151,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          },
-          {
-            "kind": "Conformance",
             "name": "CaseIterable",
             "printedName": "CaseIterable",
             "children": [
@@ -76118,6 +76178,20 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
