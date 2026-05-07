@@ -110700,7 +110700,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayExport.swift",
       "kind": "IntegerLiteral",
-      "offset": 2861,
+      "offset": 2895,
       "length": 1,
       "value": "1"
     },
@@ -110737,7 +110737,7 @@
       "kind": "IntegerLiteral",
       "offset": 863,
       "length": 4,
-      "value": "1000"
+      "value": "2000"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",
@@ -110793,7 +110793,7 @@
       "kind": "IntegerLiteral",
       "offset": 3480,
       "length": 4,
-      "value": "1000"
+      "value": "2000"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",
@@ -110807,7 +110807,7 @@
       "kind": "FloatLiteral",
       "offset": 3672,
       "length": 3,
-      "value": "1.0"
+      "value": "0.3"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",
@@ -110849,7 +110849,7 @@
       "kind": "IntegerLiteral",
       "offset": 4617,
       "length": 4,
-      "value": "1000"
+      "value": "2000"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",
@@ -110877,7 +110877,7 @@
       "kind": "FloatLiteral",
       "offset": 4777,
       "length": 3,
-      "value": "1.0"
+      "value": "0.3"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayModels.swift",

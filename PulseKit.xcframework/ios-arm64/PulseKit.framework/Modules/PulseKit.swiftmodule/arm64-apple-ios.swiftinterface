@@ -2621,9 +2621,9 @@ public struct SessionReplayConfig {
   public var effectiveMaxBatchSize: Swift.Int {
     get
   }
-  public init(captureIntervalMs: Swift.Int = 1000, compressionQuality: CoreFoundation.CGFloat = 0.3, textAndInputPrivacy: PulseKit.TextAndInputPrivacy = .maskAll, imagePrivacy: PulseKit.ImagePrivacy = .maskAll, screenshotScale: CoreFoundation.CGFloat = 1.0, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil, maskViewClasses: Swift.Set<Swift.String> = [], unmaskViewClasses: Swift.Set<Swift.String> = [])
+  public init(captureIntervalMs: Swift.Int = 2000, compressionQuality: CoreFoundation.CGFloat = 0.3, textAndInputPrivacy: PulseKit.TextAndInputPrivacy = .maskAll, imagePrivacy: PulseKit.ImagePrivacy = .maskAll, screenshotScale: CoreFoundation.CGFloat = 0.3, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil, maskViewClasses: Swift.Set<Swift.String> = [], unmaskViewClasses: Swift.Set<Swift.String> = [])
   @available(*, deprecated, message: "Use init with textAndInputPrivacy and imagePrivacy instead")
-  public init(captureIntervalMs: Swift.Int = 1000, compressionQuality: CoreFoundation.CGFloat = 0.3, maskAllTextInputs: Swift.Bool = true, maskAllImages: Swift.Bool = true, screenshotScale: CoreFoundation.CGFloat = 1.0, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil)
+  public init(captureIntervalMs: Swift.Int = 2000, compressionQuality: CoreFoundation.CGFloat = 0.3, maskAllTextInputs: Swift.Bool = true, maskAllImages: Swift.Bool = true, screenshotScale: CoreFoundation.CGFloat = 0.3, flushIntervalSeconds: Foundation.TimeInterval = 60, flushAt: Swift.Int = 10, maxBatchSize: Swift.Int = 50, replayEndpointBaseUrl: Swift.String? = nil)
   public mutating func addMaskViewClass(_ className: Swift.String)
   public mutating func addUnmaskViewClass(_ className: Swift.String)
 }
