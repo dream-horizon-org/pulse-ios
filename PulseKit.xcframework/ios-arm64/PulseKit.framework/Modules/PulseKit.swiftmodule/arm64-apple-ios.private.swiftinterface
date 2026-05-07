@@ -2214,7 +2214,7 @@ public struct PulseAttributeValue : Swift.Codable, Swift.Equatable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct PulseInteractionConfig : Swift.Codable, Swift.Equatable {
-  public let collectorUrl: Swift.String
+  public let collectorUrl: Swift.String?
   public let configUrl: Swift.String
   public let beforeInitQueueSize: Swift.Int
   public static func == (a: PulseKit.PulseInteractionConfig, b: PulseKit.PulseInteractionConfig) -> Swift.Bool
@@ -2247,7 +2247,7 @@ public enum PulseSignalScope : Swift.String, Swift.Codable, Swift.CaseIterable {
     get
   }
 }
-public enum PulseSdkName : Swift.String, Swift.Codable, Swift.CaseIterable {
+public enum PulseSdkName : Swift.String, Swift.CaseIterable {
   case pulse_android_java
   case pulse_android_rn
   case pulse_ios_swift
@@ -2263,6 +2263,10 @@ public enum PulseSdkName : Swift.String, Swift.Codable, Swift.CaseIterable {
   public var rawValue: Swift.String {
     get
   }
+}
+extension PulseKit.PulseSdkName : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum PulseFeatureName : Swift.String, Swift.CaseIterable {
   case java_crash
