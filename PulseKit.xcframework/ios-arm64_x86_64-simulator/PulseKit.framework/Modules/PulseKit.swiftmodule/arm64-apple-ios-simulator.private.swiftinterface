@@ -1947,6 +1947,13 @@ extension PulseKit.PulseSessionSamplingRule {
 public enum PulseErrorClassification {
   public static func classify(_ error: any Swift.Error) -> Swift.String
 }
+public protocol PulseFallbackDecodable : Swift.Decodable, Swift.Encodable, Swift.RawRepresentable where Self.RawValue == Swift.String {
+  static var unknown: Self { get }
+}
+extension PulseKit.PulseFallbackDecodable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @_hasMissingDesignatedInitializers public class Pulse {
   public static let shared: PulseKit.Pulse
   public var isShutdown: Swift.Bool {
@@ -2118,7 +2125,8 @@ public struct PulseSdkConfig : Swift.Codable, Swift.Equatable {
   public let signals: PulseKit.PulseSignalConfig
   public let interaction: PulseKit.PulseInteractionConfig
   public let features: [PulseKit.PulseFeatureConfig]
-  public init(version: Swift.Int, description: Swift.String, sampling: PulseKit.PulseSamplingConfig, signals: PulseKit.PulseSignalConfig, interaction: PulseKit.PulseInteractionConfig, features: [PulseKit.PulseFeatureConfig])
+  public let batchConfig: PulseKit.PulseBatchProcessorConfig?
+  public init(version: Swift.Int, description: Swift.String, sampling: PulseKit.PulseSamplingConfig, signals: PulseKit.PulseSignalConfig, interaction: PulseKit.PulseInteractionConfig, features: [PulseKit.PulseFeatureConfig], batchConfig: PulseKit.PulseBatchProcessorConfig? = nil)
   public static func == (a: PulseKit.PulseSdkConfig, b: PulseKit.PulseSdkConfig) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2221,6 +2229,22 @@ public struct PulseInteractionConfig : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct PulseBatchProcessorConfig : Swift.Codable, Swift.Equatable {
+  public let batchLogs: PulseKit.PulseBatchProcessorOption?
+  public let batchSpans: PulseKit.PulseBatchProcessorOption?
+  public init(batchLogs: PulseKit.PulseBatchProcessorOption? = nil, batchSpans: PulseKit.PulseBatchProcessorOption? = nil)
+  public static func == (a: PulseKit.PulseBatchProcessorConfig, b: PulseKit.PulseBatchProcessorConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PulseBatchProcessorOption : Swift.Codable, Swift.Equatable {
+  public let maxExportBatchSize: Swift.Int
+  public let scheduleDelay: Swift.Int
+  public init(maxExportBatchSize: Swift.Int, scheduleDelay: Swift.Int)
+  public static func == (a: PulseKit.PulseBatchProcessorOption, b: PulseKit.PulseBatchProcessorOption) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct PulseFeatureConfig : Swift.Codable, Swift.Equatable {
   public let featureName: PulseKit.PulseFeatureName
   public let sessionSampleRate: Swift.Float
@@ -2231,7 +2255,7 @@ public struct PulseFeatureConfig : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: PulseKit.PulseFeatureConfig, b: PulseKit.PulseFeatureConfig) -> Swift.Bool
 }
-public enum PulseSignalScope : Swift.String, Swift.Codable, Swift.CaseIterable {
+public enum PulseSignalScope : Swift.String, Swift.CaseIterable, PulseKit.PulseFallbackDecodable {
   case logs
   case traces
   case metrics
@@ -2247,7 +2271,7 @@ public enum PulseSignalScope : Swift.String, Swift.Codable, Swift.CaseIterable {
     get
   }
 }
-public enum PulseSdkName : Swift.String, Swift.CaseIterable {
+public enum PulseSdkName : Swift.String, Swift.CaseIterable, PulseKit.PulseFallbackDecodable {
   case pulse_android_java
   case pulse_android_rn
   case pulse_ios_swift
@@ -2264,11 +2288,7 @@ public enum PulseSdkName : Swift.String, Swift.CaseIterable {
     get
   }
 }
-extension PulseKit.PulseSdkName : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public enum PulseFeatureName : Swift.String, Swift.CaseIterable {
+public enum PulseFeatureName : Swift.String, Swift.CaseIterable, PulseKit.PulseFallbackDecodable {
   case java_crash
   case js_crash
   case cpp_crash
@@ -2300,11 +2320,7 @@ public enum PulseFeatureName : Swift.String, Swift.CaseIterable {
     get
   }
 }
-extension PulseKit.PulseFeatureName : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public enum PulseDeviceAttributeName : Swift.String, Swift.Codable, Swift.CaseIterable {
+public enum PulseDeviceAttributeName : Swift.String, Swift.CaseIterable, PulseKit.PulseFallbackDecodable {
   case os_version
   case app_version
   case country
@@ -2669,6 +2685,7 @@ extension SwiftUICore.View {
   
 }
 public class SessionReplayRecorder {
+  public var externalScreenNameProvider: (() -> Swift.String?)?
   public init(config: PulseKit.SessionReplayConfig, exporter: PulseKit.SessionReplayExporter? = nil, isSessionReplayCaptureAllowed: @escaping () -> Swift.Bool = { true }, deferSendCachedEventsUntilAllowed: Swift.Bool = false)
   @objc deinit
   public var isRecording: Swift.Bool {
@@ -2681,6 +2698,7 @@ public class SessionReplayRecorder {
   public func resumeAfterConsentGrant()
   public func flushPersisting()
   public func stop()
+  public func notifyScreenChange()
 }
 public struct SessionsInstrumentationConfig {
   public var enabled: Swift.Bool {
@@ -3128,20 +3146,16 @@ extension PulseKit.PulseDataCollectionConsent : Swift.Equatable {}
 extension PulseKit.PulseDataCollectionConsent : Swift.Hashable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Equatable {}
 extension PulseKit.PulseDeviceAttributeName : Swift.Hashable {}
-extension PulseKit.PulseDeviceAttributeName : Swift.RawRepresentable {}
 extension PulseKit.PulseLogLevel : Swift.Hashable {}
 extension PulseKit.PulseLogLevel : Swift.RawRepresentable {}
 extension PulseKit.PulseMockMetricsTestCase : Swift.Equatable {}
 extension PulseKit.PulseMockMetricsTestCase : Swift.Hashable {}
 extension PulseKit.PulseSignalScope : Swift.Equatable {}
 extension PulseKit.PulseSignalScope : Swift.Hashable {}
-extension PulseKit.PulseSignalScope : Swift.RawRepresentable {}
 extension PulseKit.PulseSdkName : Swift.Equatable {}
 extension PulseKit.PulseSdkName : Swift.Hashable {}
-extension PulseKit.PulseSdkName : Swift.RawRepresentable {}
 extension PulseKit.PulseFeatureName : Swift.Equatable {}
 extension PulseKit.PulseFeatureName : Swift.Hashable {}
-extension PulseKit.PulseFeatureName : Swift.RawRepresentable {}
 extension PulseKit.PulseAttributeType : Swift.Equatable {}
 extension PulseKit.PulseAttributeType : Swift.Hashable {}
 extension PulseKit.PulseAttributeType : Swift.RawRepresentable {}
