@@ -64281,6 +64281,166 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PulseFallbackDecodable",
+        "printedName": "PulseFallbackDecodable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A17FallbackDecodableP7unknownxvpZ",
+            "mangledName": "$s8PulseKit0A17FallbackDecodableP7unknownxvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A17FallbackDecodableP7unknownxvgZ",
+                "mangledName": "$s8PulseKit0A17FallbackDecodableP7unknownxvgZ",
+                "moduleName": "PulseKit",
+                "genericSig": "<τ_0_0 where τ_0_0 : PulseKit.PulseFallbackDecodable>",
+                "sugared_genericSig": "<Self where Self : PulseKit.PulseFallbackDecodable>",
+                "static": true,
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A17FallbackDecodablePAAE4fromxs7Decoder_p_tKcfc",
+            "mangledName": "$s8PulseKit0A17FallbackDecodablePAAE4fromxs7Decoder_p_tKcfc",
+            "moduleName": "PulseKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : PulseKit.PulseFallbackDecodable>",
+            "sugared_genericSig": "<Self where Self : PulseKit.PulseFallbackDecodable>",
+            "isFromExtension": true,
+            "throwing": true,
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A17FallbackDecodablePAAE6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s8PulseKit0A17FallbackDecodablePAAE6encode2toys7Encoder_p_tKF",
+            "moduleName": "PulseKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : PulseKit.PulseFallbackDecodable>",
+            "sugared_genericSig": "<Self where Self : PulseKit.PulseFallbackDecodable>",
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:8PulseKit0A17FallbackDecodableP",
+        "mangledName": "$s8PulseKit0A17FallbackDecodableP",
+        "moduleName": "PulseKit",
+        "genericSig": "<τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable, τ_0_0 : Swift.RawRepresentable, τ_0_0.RawValue == Swift.String>",
+        "sugared_genericSig": "<Self : Swift.Decodable, Self : Swift.Encodable, Self : Swift.RawRepresentable, Self.RawValue == Swift.String>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -70919,9 +71079,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "batchConfig",
+            "printedName": "batchConfig",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorConfig?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorConfig",
+                    "printedName": "PulseKit.PulseBatchProcessorConfig",
+                    "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A9SdkConfigV05batchD0AA0a14BatchProcessorD0VSgvp",
+            "mangledName": "$s8PulseKit0A9SdkConfigV05batchD0AA0a14BatchProcessorD0VSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "PulseKit.PulseBatchProcessorConfig?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseBatchProcessorConfig",
+                        "printedName": "PulseKit.PulseBatchProcessorConfig",
+                        "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A9SdkConfigV05batchD0AA0a14BatchProcessorD0VSgvg",
+                "mangledName": "$s8PulseKit0A9SdkConfigV05batchD0AA0a14BatchProcessorD0VSgvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(version:description:sampling:signals:interaction:features:)",
+            "printedName": "init(version:description:sampling:signals:interaction:features:batchConfig:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -70972,11 +71192,26 @@
                   }
                 ],
                 "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorConfig?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorConfig",
+                    "printedName": "PulseKit.PulseBatchProcessorConfig",
+                    "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8PulseKit0A9SdkConfigV7version11description8sampling7signals11interaction8featuresACSi_SSAA0a8SamplingD0VAA0a6SignalD0VAA0a11InteractionD0VSayAA0a7FeatureD0VGtcfc",
-            "mangledName": "$s8PulseKit0A9SdkConfigV7version11description8sampling7signals11interaction8featuresACSi_SSAA0a8SamplingD0VAA0a6SignalD0VAA0a11InteractionD0VSayAA0a7FeatureD0VGtcfc",
+            "usr": "s:8PulseKit0A9SdkConfigV7version11description8sampling7signals11interaction8features05batchD0ACSi_SSAA0a8SamplingD0VAA0a6SignalD0VAA0a11InteractionD0VSayAA0a7FeatureD0VGAA0a14BatchProcessorD0VSgtcfc",
+            "mangledName": "$s8PulseKit0A9SdkConfigV7version11description8sampling7signals11interaction8features05batchD0ACSi_SSAA0a8SamplingD0VAA0a6SignalD0VAA0a11InteractionD0VSayAA0a7FeatureD0VGAA0a14BatchProcessorD0VSgtcfc",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl"
@@ -74795,6 +75030,567 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "PulseBatchProcessorConfig",
+        "printedName": "PulseBatchProcessorConfig",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "batchLogs",
+            "printedName": "batchLogs",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorOption?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorOption",
+                    "printedName": "PulseKit.PulseBatchProcessorOption",
+                    "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV9batchLogsAA0acD6OptionVSgvp",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV9batchLogsAA0acD6OptionVSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "PulseKit.PulseBatchProcessorOption?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseBatchProcessorOption",
+                        "printedName": "PulseKit.PulseBatchProcessorOption",
+                        "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV9batchLogsAA0acD6OptionVSgvg",
+                "mangledName": "$s8PulseKit0A20BatchProcessorConfigV9batchLogsAA0acD6OptionVSgvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "batchSpans",
+            "printedName": "batchSpans",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorOption?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorOption",
+                    "printedName": "PulseKit.PulseBatchProcessorOption",
+                    "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV10batchSpansAA0acD6OptionVSgvp",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV10batchSpansAA0acD6OptionVSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "PulseKit.PulseBatchProcessorOption?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PulseBatchProcessorOption",
+                        "printedName": "PulseKit.PulseBatchProcessorOption",
+                        "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV10batchSpansAA0acD6OptionVSgvg",
+                "mangledName": "$s8PulseKit0A20BatchProcessorConfigV10batchSpansAA0acD6OptionVSgvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(batchLogs:batchSpans:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorConfig",
+                "printedName": "PulseKit.PulseBatchProcessorConfig",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorOption?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorOption",
+                    "printedName": "PulseKit.PulseBatchProcessorOption",
+                    "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PulseKit.PulseBatchProcessorOption?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PulseBatchProcessorOption",
+                    "printedName": "PulseKit.PulseBatchProcessorOption",
+                    "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV9batchLogs0F5SpansAcA0acD6OptionVSg_AHtcfc",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV9batchLogs0F5SpansAcA0acD6OptionVSg_AHtcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorConfig",
+                "printedName": "PulseKit.PulseBatchProcessorConfig",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV6encode2toys7Encoder_p_tKF",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorConfig",
+                "printedName": "PulseKit.PulseBatchProcessorConfig",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorConfig",
+                "printedName": "PulseKit.PulseBatchProcessorConfig",
+                "usr": "s:8PulseKit0A20BatchProcessorConfigV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A20BatchProcessorConfigV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8PulseKit0A20BatchProcessorConfigV2eeoiySbAC_ACtFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8PulseKit0A20BatchProcessorConfigV",
+        "mangledName": "$s8PulseKit0A20BatchProcessorConfigV",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PulseBatchProcessorOption",
+        "printedName": "PulseBatchProcessorOption",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "maxExportBatchSize",
+            "printedName": "maxExportBatchSize",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV09maxExportC4SizeSivp",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV09maxExportC4SizeSivp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV09maxExportC4SizeSivg",
+                "mangledName": "$s8PulseKit0A20BatchProcessorOptionV09maxExportC4SizeSivg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "scheduleDelay",
+            "printedName": "scheduleDelay",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV13scheduleDelaySivp",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV13scheduleDelaySivp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV13scheduleDelaySivg",
+                "mangledName": "$s8PulseKit0A20BatchProcessorOptionV13scheduleDelaySivg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(maxExportBatchSize:scheduleDelay:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorOption",
+                "printedName": "PulseKit.PulseBatchProcessorOption",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV09maxExportC4Size13scheduleDelayACSi_Sitcfc",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV09maxExportC4Size13scheduleDelayACSi_Sitcfc",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorOption",
+                "printedName": "PulseKit.PulseBatchProcessorOption",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV6encode2toys7Encoder_p_tKF",
+            "moduleName": "PulseKit",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorOption",
+                "printedName": "PulseKit.PulseBatchProcessorOption",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PulseBatchProcessorOption",
+                "printedName": "PulseKit.PulseBatchProcessorOption",
+                "usr": "s:8PulseKit0A20BatchProcessorOptionV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit0A20BatchProcessorOptionV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8PulseKit0A20BatchProcessorOptionV2eeoiySbAC_ACtFZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8PulseKit0A20BatchProcessorOptionV",
+        "mangledName": "$s8PulseKit0A20BatchProcessorOptionV",
+        "moduleName": "PulseKit",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "PulseFeatureConfig",
         "printedName": "PulseFeatureConfig",
         "children": [
@@ -75629,20 +76425,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          },
-          {
-            "kind": "Conformance",
             "name": "CaseIterable",
             "printedName": "CaseIterable",
             "children": [
@@ -75670,6 +76452,27 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PulseFallbackDecodable",
+            "printedName": "PulseFallbackDecodable",
+            "usr": "s:8PulseKit0A17FallbackDecodableP",
+            "mangledName": "$s8PulseKit0A17FallbackDecodableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -76030,64 +76833,6 @@
                 "accessorKind": "get"
               }
             ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "PulseSdkName",
-                "printedName": "PulseKit.PulseSdkName",
-                "usr": "s:8PulseKit0A7SdkNameO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:8PulseKit0A7SdkNameO4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s8PulseKit0A7SdkNameO4fromACs7Decoder_p_tKcfc",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8PulseKit0A7SdkNameO6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s8PulseKit0A7SdkNameO6encode2toys7Encoder_p_tKF",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -76178,6 +76923,13 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PulseFallbackDecodable",
+            "printedName": "PulseFallbackDecodable",
+            "usr": "s:8PulseKit0A17FallbackDecodableP",
+            "mangledName": "$s8PulseKit0A17FallbackDecodableP"
           },
           {
             "kind": "Conformance",
@@ -77108,64 +77860,6 @@
                 "accessorKind": "get"
               }
             ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "PulseFeatureName",
-                "printedName": "PulseKit.PulseFeatureName",
-                "usr": "s:8PulseKit0A11FeatureNameO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:8PulseKit0A11FeatureNameO4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s8PulseKit0A11FeatureNameO4fromACs7Decoder_p_tKcfc",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8PulseKit0A11FeatureNameO6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s8PulseKit0A11FeatureNameO6encode2toys7Encoder_p_tKF",
-            "moduleName": "PulseKit",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -77173,8 +77867,7 @@
         "mangledName": "$s8PulseKit0A11FeatureNameO",
         "moduleName": "PulseKit",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ],
         "enumRawTypeName": "String",
         "conformances": [
@@ -77257,6 +77950,13 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PulseFallbackDecodable",
+            "printedName": "PulseFallbackDecodable",
+            "usr": "s:8PulseKit0A17FallbackDecodableP",
+            "mangledName": "$s8PulseKit0A17FallbackDecodableP"
           },
           {
             "kind": "Conformance",
@@ -77730,20 +78430,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          },
-          {
-            "kind": "Conformance",
             "name": "CaseIterable",
             "printedName": "CaseIterable",
             "children": [
@@ -77771,6 +78457,27 @@
             ],
             "usr": "s:s12CaseIterableP",
             "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PulseFallbackDecodable",
+            "printedName": "PulseFallbackDecodable",
+            "usr": "s:8PulseKit0A17FallbackDecodableP",
+            "mangledName": "$s8PulseKit0A17FallbackDecodableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -87999,6 +88706,177 @@
         "printedName": "SessionReplayRecorder",
         "children": [
           {
+            "kind": "Var",
+            "name": "externalScreenNameProvider",
+            "printedName": "externalScreenNameProvider",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.String?)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvp",
+            "mangledName": "$s8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvp",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(() -> Swift.String?)?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "() -> Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvg",
+                "mangledName": "$s8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvg",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(() -> Swift.String?)?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "() -> Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvs",
+                "mangledName": "$s8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvs",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvM",
+                "mangledName": "$s8PulseKit21SessionReplayRecorderC26externalScreenNameProviderSSSgycSgvM",
+                "moduleName": "PulseKit",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(config:exporter:isSessionReplayCaptureAllowed:deferSendCachedEventsUntilAllowed:)",
@@ -88251,6 +89129,27 @@
             "declKind": "Func",
             "usr": "s:8PulseKit21SessionReplayRecorderC4stopyyF",
             "mangledName": "$s8PulseKit21SessionReplayRecorderC4stopyyF",
+            "moduleName": "PulseKit",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notifyScreenChange",
+            "printedName": "notifyScreenChange()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PulseKit21SessionReplayRecorderC18notifyScreenChangeyyF",
+            "mangledName": "$s8PulseKit21SessionReplayRecorderC18notifyScreenChangeyyF",
             "moduleName": "PulseKit",
             "declAttributes": [
               "AccessControl",
@@ -109873,148 +110772,162 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
+      "kind": "FloatLiteral",
+      "offset": 28402,
+      "length": 6,
+      "value": "1000.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
+      "kind": "FloatLiteral",
+      "offset": 28649,
+      "length": 6,
+      "value": "1000.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 35294,
+      "offset": 36307,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36057,
+      "offset": 37070,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 36914,
+      "offset": 37927,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38244,
+      "offset": 39257,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 38633,
+      "offset": 39646,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 41600,
+      "offset": 42613,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 41642,
+      "offset": 42655,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "FloatLiteral",
-      "offset": 41989,
+      "offset": 43002,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42033,
+      "offset": 43046,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42440,
+      "offset": 43453,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 42846,
+      "offset": 43859,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43206,
+      "offset": 44219,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43541,
+      "offset": 44554,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 43939,
+      "offset": 44952,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 44515,
+      "offset": 45528,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 45070,
+      "offset": 46083,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "Dictionary",
-      "offset": 45428,
+      "offset": 46441,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45728,
-      "length": 1,
-      "value": "5"
+      "offset": 47317,
+      "length": 2,
+      "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45765,
+      "offset": 47355,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45811,
+      "offset": 47401,
       "length": 3,
       "value": "512"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseKit.swift",
       "kind": "IntegerLiteral",
-      "offset": 45860,
+      "offset": 47450,
       "length": 2,
       "value": "30"
     },
@@ -110126,49 +111039,49 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "StringLiteral",
-      "offset": 1755,
+      "offset": 1904,
       "length": 9,
       "value": "\"default\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "Array",
-      "offset": 2683,
+      "offset": 2832,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "Array",
-      "offset": 5960,
+      "offset": 6109,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "StringLiteral",
-      "offset": 7163,
+      "offset": 7312,
       "length": 4,
       "value": "\".*\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "Array",
-      "offset": 7184,
+      "offset": 7333,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "StringLiteral",
-      "offset": 7508,
+      "offset": 7657,
       "length": 12,
       "value": "\"pulse.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/Sampling\/PulseSdkConfigModels.swift",
       "kind": "StringLiteral",
-      "offset": 7549,
+      "offset": 7698,
       "length": 14,
       "value": "\"custom_event\""
     },
@@ -110581,14 +111494,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "BooleanLiteral",
-      "offset": 26787,
+      "offset": 25161,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "IntegerLiteral",
-      "offset": 54144,
+      "offset": 52518,
       "length": 5,
       "value": "16383"
     },
@@ -110700,7 +111613,7 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayExport.swift",
       "kind": "IntegerLiteral",
-      "offset": 2895,
+      "offset": 2927,
       "length": 1,
       "value": "1"
     },
@@ -111071,21 +111984,21 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayRecorder.swift",
       "kind": "BooleanLiteral",
-      "offset": 1873,
+      "offset": 2158,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayRecorder.swift",
       "kind": "BooleanLiteral",
-      "offset": 1931,
+      "offset": 2216,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayRecorder.swift",
       "kind": "BooleanLiteral",
-      "offset": 4499,
+      "offset": 4784,
       "length": 4,
       "value": "true"
     },
