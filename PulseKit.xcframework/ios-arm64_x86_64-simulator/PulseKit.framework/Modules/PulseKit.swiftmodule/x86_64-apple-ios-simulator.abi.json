@@ -111494,14 +111494,14 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "BooleanLiteral",
-      "offset": 25161,
+      "offset": 25497,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/Instrumentation\/SessionReplay\/SessionReplayCapture.swift",
       "kind": "IntegerLiteral",
-      "offset": 52518,
+      "offset": 52896,
       "length": 5,
       "value": "16383"
     },
