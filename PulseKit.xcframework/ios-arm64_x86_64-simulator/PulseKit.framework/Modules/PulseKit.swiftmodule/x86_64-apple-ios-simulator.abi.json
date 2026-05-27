@@ -62191,6 +62191,54 @@
           },
           {
             "kind": "Var",
+            "name": "pulseSdkConfigVersion",
+            "printedName": "pulseSdkConfigVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PulseKit0A10AttributesO21pulseSdkConfigVersionSSvpZ",
+            "mangledName": "$s8PulseKit0A10AttributesO21pulseSdkConfigVersionSSvpZ",
+            "moduleName": "PulseKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PulseKit0A10AttributesO21pulseSdkConfigVersionSSvgZ",
+                "mangledName": "$s8PulseKit0A10AttributesO21pulseSdkConfigVersionSSvgZ",
+                "moduleName": "PulseKit",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "clickType",
             "printedName": "clickType",
             "children": [
@@ -110458,210 +110506,217 @@
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1434,
+      "offset": 1527,
+      "length": 26,
+      "value": "\"pulse.sdk.config.version\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 1596,
       "length": 11,
       "value": "\"X-API-KEY\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1521,
+      "offset": 1683,
       "length": 12,
       "value": "\"click.type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1570,
+      "offset": 1732,
       "length": 15,
       "value": "\"click.is_rage\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1625,
+      "offset": 1787,
       "length": 18,
       "value": "\"click.rage_count\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1686,
+      "offset": 1848,
       "length": 21,
       "value": "\"device.screen.width\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1751,
+      "offset": 1913,
       "length": 22,
       "value": "\"device.screen.height\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1822,
+      "offset": 1984,
       "length": 28,
       "value": "\"device.screen.aspect_ratio\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1897,
+      "offset": 2059,
       "length": 26,
       "value": "\"app.screen.coordinate.nx\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 1970,
+      "offset": 2132,
       "length": 26,
       "value": "\"app.screen.coordinate.ny\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2186,
+      "offset": 2348,
       "length": 17,
       "value": "\"pulse_ios_swift\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2238,
+      "offset": 2400,
       "length": 14,
       "value": "\"pulse_ios_rn\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2327,
+      "offset": 2489,
       "length": 6,
       "value": "\"good\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2367,
+      "offset": 2529,
       "length": 6,
       "value": "\"dead\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2752,
+      "offset": 2914,
       "length": 14,
       "value": "\"custom_event\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2804,
+      "offset": 2966,
       "length": 11,
       "value": "\"non_fatal\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2875,
+      "offset": 3037,
       "length": 9,
       "value": "\"network\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2924,
+      "offset": 3086,
       "length": 13,
       "value": "\"screen_load\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 2975,
+      "offset": 3137,
       "length": 11,
       "value": "\"app_start\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3029,
+      "offset": 3191,
       "length": 16,
       "value": "\"screen_session\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3102,
+      "offset": 3264,
       "length": 14,
       "value": "\"device.crash\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3149,
+      "offset": 3311,
       "length": 5,
       "value": "\"anr\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3190,
+      "offset": 3352,
       "length": 8,
       "value": "\"frozen\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3232,
+      "offset": 3394,
       "length": 6,
       "value": "\"slow\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3273,
+      "offset": 3435,
       "length": 7,
       "value": "\"touch\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3318,
+      "offset": 3480,
       "length": 11,
       "value": "\"app.click\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3372,
+      "offset": 3534,
       "length": 16,
       "value": "\"network_change\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3438,
+      "offset": 3600,
       "length": 30,
       "value": "\"pulse.app.installation.start\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3594,
+      "offset": 3756,
       "length": 15,
       "value": "\"session.start\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3652,
+      "offset": 3814,
       "length": 13,
       "value": "\"session.end\""
     },
     {
       "filePath": "\/Users\/runner\/work\/pulse\/pulse\/pulse-ios-otel\/Sources\/PulseKit\/PulseAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 3735,
+      "offset": 3897,
       "length": 16,
       "value": "\"session_replay\""
     },
