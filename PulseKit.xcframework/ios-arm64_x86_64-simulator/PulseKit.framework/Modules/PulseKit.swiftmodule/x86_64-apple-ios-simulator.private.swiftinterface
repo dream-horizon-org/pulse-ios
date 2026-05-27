@@ -1881,6 +1881,7 @@ public enum PulseAttributes {
   public static let graphqlOperationName: Swift.String
   public static let graphqlOperationType: Swift.String
   public static let projectId: Swift.String
+  public static let pulseSdkConfigVersion: Swift.String
   public static let clickType: Swift.String
   public static let clickIsRage: Swift.String
   public static let clickRageCount: Swift.String
